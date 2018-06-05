@@ -1,0 +1,205 @@
+{
+    "version": "0.6",
+    "scenario_params": {
+        "start_utc": "2016-02-14T04:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
+        "timestep_s": 10.0,
+        "use_crosslinks": true,
+        "all_sats_same_time_system": true,
+        "matlab_verbose": true
+    },
+    "general_orbit_prop_params": {
+        "include_ecef_output": false
+    },
+    "sat_params": {
+        "num_satellites": 6,
+        "sat_id_order": "default",
+        "payload_data_rate_Mbps": 50,
+        "power_params": [
+            {
+                "_comment": "these params are parsed in circinus_tools/io_tools.py. That file should be kept up to date with any changes here.",
+                "sat_ids": "duplicate,range_inclusive,0,5",
+                "base_option": "Zhou 2017",
+                "obs_option": "Zhou 2017",
+                "dlnk_option": "Zhou 2017",
+                "xlnk_tx_option": "Zhou 2017",
+                "xlnk_rx_option": "Zhou 2017",
+                "orbit_insunlight_average_charging_option": "Zhou 2017",
+                "battery_option": "Zhou 2017",
+                "power_consumption_W": {
+                    "_comment": "power params from beginning of section 6",
+                    "base": {
+                        "Zhou 2017": -10,
+                        "test": 0
+                    },
+                    "obs":  {
+                        "Zhou 2017": -25
+                    },
+                    "dlnk": {
+                       "Zhou 2017":  -20
+                    },
+                    "xlnk_tx": {
+                        "Zhou 2017": -20
+                    },
+                    "xlnk_rx": {
+                        "Zhou 2017": -5
+                    },
+                    "orbit_insunlight_average_charging": {
+                        "Zhou 2017": 30,
+                        "_comment": "P_c from Tables II"
+                    }
+                },
+                "battery_storage_Wh": {
+                    "e_min": {
+                        "Zhou 2017": 2.78,
+                        "_comment": "80% DOD"
+                    },
+                    "e_max": {
+                        "Zhou 2017": 13.89,
+                        "_comment": "50KJ",
+                        "_comment": "B_max from Figure 4"
+                    },
+                    "charge_efficiency": 1.0,
+                    "discharge_efficiency": 1.0
+                },
+                "_comment": "most of the power consumption and energy constraints were taken from the 2016 Kennedy, Cahoy JAIS paper. Xlnk and Dlnk power taken from the MDO paper, which as of March 2018 is not quite published. Orbit average charging was calculated from the 8.25 Wh figure (8.25 + 20% margin, all acquired over ~55 minutes of in-sunlight time in a 600 km orbit for 11.25 watts average during sunlight) from page 12 of Smallsat 2014 MiRaTA paper - Blackwell, W. J. et al, Microwave Radiometer Technology Acceleration Mission (MiRaTA): Advancing Weather Remote Sensing with Nanosatellites"
+            }
+        ],
+        "data_storage_params": [
+            {
+                "sat_ids": "duplicate,range_inclusive,0,5",
+                "storage_option": "Zhou 2017",
+                "data_storage_Gbit": {
+                    "d_min": {
+                        "Zhou 2017": 0
+                    },
+                    "d_max": {
+                        "Zhou 2017": 12
+                    }
+                }
+            }
+        ],
+        "initial_state": [
+            {
+                "sat_ids": "duplicate,range_inclusive,0,5",
+                "batt_e_Wh": 12
+            }
+        ],
+        "activity_params": {
+            "transition_time_s": {
+                "inter-sat": {
+                    "dlnk-dlnk": 0
+                },
+                "intra-sat": {
+                    "_comment": "todo: if these are explicitly set, need to go back into route selection v2 and add adherence to transition time constraints in individual data routes (otherwise some of the routes selected in RS might be invalid for activity scheduling, and are effectively just clutter) - I currently have not implemented this. Check todos in gp_route_selection_v2"
+                },
+                "default": 0
+            },
+            "min_duration_s": {
+                "obs": 3,
+                "dlnk": 60,
+                "xlnk": 20
+            }
+        }
+    },
+    "sat_orbit_params": [
+        {
+            "sat_id": 0,
+            "kepler_meananom": {
+                "a_km":  7378,
+                "e": 0,
+                "i_deg": 97.86,
+                "RAAN_deg": 0,
+                "arg_per_deg": 0,
+                "M_deg": 90
+            },
+            "propagation_method": "matlab_delkep"
+        },
+        {
+            "sat_id": 1,
+            "kepler_meananom": {
+                "a_km":  7378,
+                "e": 0,
+                "i_deg": 97.86,
+                "RAAN_deg": 0,
+                "arg_per_deg": 0,
+                "M_deg": 180
+            },
+            "propagation_method": "matlab_delkep"
+        },
+        {
+            "sat_id": 2,
+            "kepler_meananom": {
+                "a_km":  7378,
+                "e": 0,
+                "i_deg": 97.86,
+                "RAAN_deg": 0,
+                "arg_per_deg": 0,
+                "M_deg": 270
+            },
+            "propagation_method": "matlab_delkep"
+        },
+        {
+            "sat_id": 3,
+            "kepler_meananom": {
+                "a_km":  7378,
+                "e": 0,
+                "i_deg": 83.86,
+                "RAAN_deg": 0,
+                "arg_per_deg": 0,
+                "M_deg": 60
+            },
+            "propagation_method": "matlab_delkep"
+        },
+        {
+            "sat_id": 4,
+            "kepler_meananom": {
+                "a_km":  7378,
+                "e": 0,
+                "i_deg": 83.86,
+                "RAAN_deg": 0,
+                "arg_per_deg": 0,
+                "M_deg": 120
+            },
+            "propagation_method": "matlab_delkep"
+        },
+        {
+            "sat_id": 5,
+            "kepler_meananom": {
+                "a_km":  7378,
+                "e": 0,
+                "i_deg": 83.86,
+                "RAAN_deg": 0,
+                "arg_per_deg": 0,
+                "M_deg": 180
+            },
+            "propagation_method": "matlab_delkep"
+        }
+    ],
+    "obs_params": {
+        "num_targets": 5,
+        "target_set_name": "Zhou 2017 Missions",
+        "target_set_version": "1",
+        "target_set_id": "2018-4-14",
+        "elevation_cutoff_deg":60,
+        "targets": [
+            {"id": 0,"name": "Himalaya","name_pretty": "obs0",     "latitude_deg": 28.0,  "longitude_deg": 87.0,"height_m": 0},
+            {"id": 1,"name": "Mamiraus","name_pretty": "obs1",     "latitude_deg": -2.0,  "longitude_deg": -66.0,"height_m": 0},
+            {"id": 2,"name": "Cape York","name_pretty": "obs2",    "latitude_deg": -11.0, "longitude_deg": 142.5,"height_m": 0},
+            {"id": 3,"name": "Alaska Coast","name_pretty": "obs3", "latitude_deg": 60.0,  "longitude_deg": -148,"height_m": 0},
+            {"id": 4,"name": "Greenland","name_pretty": "obs4",    "latitude_deg": 69.0,  "longitude_deg": -49,"height_m": 0}
+        ]
+    },
+    "gs_params": {
+        "num_stations": 4,
+        "gs_network_name": "Zhou 2017 GS",
+        "gs_network_version": "1",
+        "elevation_cutoff_deg":10, 
+        "stations": [
+            {"id": "0", "name": "Beijing","name_pretty": "Beijing 0","latitude_deg":40.0,"longitude_deg":116.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "1", "name": "Kashi","name_pretty":   "Kashi 1",  "latitude_deg":39.5,"longitude_deg":76.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "2", "name": "Sanya","name_pretty":   "Sanya 2",  "latitude_deg":18.0,"longitude_deg":109.5,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "3", "name": "Xi'an","name_pretty":   "Xi'an 3",  "latitude_deg":34.0,"longitude_deg":108.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"}
+        ]
+    }
+}

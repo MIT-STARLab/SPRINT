@@ -3,7 +3,7 @@
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
-        "restore_from_checkpoint": true, 
+        "restore_from_checkpoint": false, 
         "restore_pkl_name": "/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/circinus_inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/full_day_end_sim_checkpoint_2018_01_19T00_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
@@ -14,7 +14,7 @@
         "restore_gp_output_from_pickle" :  false,
         "pickle_gp_output" :  false,
         "gp_output_pickle_to_restore" :  "pickles/gp_output_2018-05-16T21_02_42.778960.pkl",
-        "gp_path" :  "../../GlobalPlanner",
+        "gp_path" :  "../../access_global_planner",
         "gp_params": {
             "_comments": [
                 "planning_past_horizon_mins allows us to look back at windows in the past in the global planner.  not sure this is useful because you can't make decisions about the scheduling of those windows.",

@@ -5,9 +5,9 @@ dir_opt=4hour
 # scen_name=sso10sat
 scen_name=walker100_inc60
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
-dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
+dir_opt_params=7gs_targs3/dlnk_and_xlnk
 
-run_orbit_prop="false"
+run_orbit_prop="true"
 
 
 

@@ -193,13 +193,13 @@
         "gs_network_version": "1",
         "elevation_cutoff_deg":10, 
         "stations": [
-            {"id": 3, "name": "New Mexico","name_pretty": "New Mexico 3","latitude_deg":32.7872,"longitude_deg":-106.3257,"height_m":0,"comm_type":"X-band-general"},
-            {"id": 5, "name": "Hawaii","name_pretty": "Hawaii 5","latitude_deg":19.8968,"longitude_deg":-155.5828,"height_m":0,"comm_type":"X-band-general"},
-            {"id": 8, "name": "Brazil","name_pretty": "Brazil 8","latitude_deg":-18.415921,"longitude_deg":-45.633627,"height_m":0,"comm_type":"X-band-general"},
-            {"id": 11, "name": "South Africa","name_pretty": "South Africa 11","latitude_deg":-25.89,"longitude_deg":27.6853,"height_m":0,"comm_type":"X-band-general"},
-            {"id": 12, "name": "Dubai","name_pretty": "Dubai 12","latitude_deg":25.2048,"longitude_deg":55.2708,"height_m":0,"comm_type":"X-band-general"},
-            {"id": 13, "name": "Singapore","name_pretty": "Singapore 13","latitude_deg":1.3521,"longitude_deg":103.8198,"height_m":0,"comm_type":"X-band-general"},
-            {"id": 14, "name": "Guam","name_pretty": "Guam 14","latitude_deg":13.4443,"longitude_deg":144.7937,"height_m":0,"comm_type":"X-band-general"}
+            {"id": 3, "name": "New Mexico","name_pretty": "New Mexico 3","latitude_deg":32.7872,"longitude_deg":-106.3257,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"},
+            {"id": 5, "name": "Hawaii","name_pretty": "Hawaii 5","latitude_deg":19.8968,"longitude_deg":-155.5828,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"},
+            {"id": 8, "name": "Brazil","name_pretty": "Brazil 8","latitude_deg":-18.415921,"longitude_deg":-45.633627,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"},
+            {"id": 11, "name": "South Africa","name_pretty": "South Africa 11","latitude_deg":-25.89,"longitude_deg":27.6853,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"},
+            {"id": 12, "name": "Dubai","name_pretty": "Dubai 12","latitude_deg":25.2048,"longitude_deg":55.2708,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"},
+            {"id": 13, "name": "Singapore","name_pretty": "Singapore 13","latitude_deg":1.3521,"longitude_deg":103.8198,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"},
+            {"id": 14, "name": "Guam","name_pretty": "Guam 14","latitude_deg":13.4443,"longitude_deg":144.7937,"height_m":0,"comm_type":"X_band_BBSDR_SFN_fixed_rate"}
         ]
     }
 }

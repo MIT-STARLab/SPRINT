@@ -1,7 +1,10 @@
 #! /bin/bash
 
-dir_opt=1day
-scen_name=sso10sat
+# dir_opt=1day
+dir_opt=4hour
+# scen_name=sso10sat
+scen_name=walker100_inc60
+# dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 
 run_orbit_prop="false"

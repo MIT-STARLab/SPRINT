@@ -28,7 +28,7 @@
     "route_selection_params_v2": {
         "verbose_step1" :  true,
         "step2_params": {
-            "num_rts_sel_per_obs_overlap": 30,
+            "num_rts_sel_per_obs_overlap": 10,
             "num_rts_sel_per_obs_dv": 6,
             "num_rts_sel_per_obs_lat": 6
         }

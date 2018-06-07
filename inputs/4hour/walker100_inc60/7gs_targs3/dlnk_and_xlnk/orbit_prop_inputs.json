@@ -16,7 +16,7 @@
         "sat_id_order": "default",
         "_comments": [
             "assuming a 6U bus here",
-            "127.5 Mbps is from hyperspectral imager design in Tsitas, S. R., “6U CubeSat design for Earth observation with 6.5 m GSD, five spectral bands and 14 Mbps downlink,” The Aeronautical Journal, vol. 114, 2010, pp. 689–697."
+            "127.5 Mbps is from hyperspectral imager design in Tsitas, S. R., '6U CubeSat design for Earth observation with 6.5 m GSD, five spectral bands and 14 Mbps downlink,' The Aeronautical Journal, vol. 114, 2010, pp. 689–697."
         ],
         "payload_data_rate_Mbps": 127.5,
         "power_params": [
@@ -27,7 +27,7 @@
                     "For X-band (BBSDR/SFN,fixed rate), got info from http://spaceflight.com/wp-content/uploads/2017/06/SF-Networks-Data-Sheet.pdf and http://www.spaceflight.com/wp-content/uploads/2015/05/BitBeam-BBSDR_Leaflet.pdf. Assumed power consumption equal to their max number, 12.3W",
                     "for power params, used the Clydspace brochure here: https://www.clyde.space/what-we-do/platforms."
                 ],
-                "sat_ids": "duplicate,range_inclusive,0,9",
+                "sat_ids": "duplicate,range_inclusive,0,99",
                 "base_option": "Kit ballpark",
                 "obs_option": "Hyperspectral imager (Tsitas and Kingston, 2010)",
                 "dlnk_option": "X-band (BBSDR/SFN,fixed rate)",
@@ -88,7 +88,7 @@
                 "_comments": [
                     "data storage chosen based on availability of industrial SD cards. chose 32 from the top of Delkin's industrial card storage range: https://www.delkin.com/products/industrial-sd/. Note that clydespace 6U bus comes with 4GB storage, but I'm assuming it'll be okay to use an industrial flash chip"
                 ],
-                "sat_ids": "duplicate,range_inclusive,0,9",
+                "sat_ids": "duplicate,range_inclusive,0,99",
                 "storage_option": "test",
                 "data_storage_Gbit": {
                     "d_min": {
@@ -102,7 +102,7 @@
         ],
         "initial_state": [
             {
-                "sat_ids": "duplicate,range_inclusive,0,9",
+                "sat_ids": "duplicate,range_inclusive,0,99",
                 "batt_e_Wh": 40
             }
         ],

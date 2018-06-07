@@ -1,11 +1,16 @@
 #! /bin/bash
 
-# dir_opt=4hour
-dir_opt=1day
-# scen_name=sso10sat
-scen_name=walker30_inc30
+dir_opt=4hour
+# dir_opt=1day
+scen_name=sso10sat
+scen_name=sso10sat
+# scen_name=walker18_inc30
+# scen_name=walker30_inc30
+# scen_name=walker100_inc60
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
-dir_opt_params=17gs_targs3/dlnk_and_xlnk
+# dir_opt_params=17gs_targs3/dlnk_and_xlnk
+dir_opt_params=7gs_targs3/dlnk_and_xlnk
+
 
 
 
@@ -49,6 +54,6 @@ echo  $sat_link
 echo  $display_link_info
 
 pushd $ORBIT_VIZ_PATH/python_runner/
-python runner_orbitviz.py --prop_inputs_file "$prop_inputs_r" --prop_data_file "$prop_data_r" --sat_link_file "$sat_link_r" --history_input_option  $history_input_option $display_link_info
-# python -m ipdb -c continue runner_orbitviz.py --prop_inputs_file $prop_inputs --prop_data_file $prop_data --sat_link_file $sat_link --history_input_option  $history_input_option
+# python runner_orbitviz.py --prop_inputs_file "$prop_inputs_r" --prop_data_file "$prop_data_r" --sat_link_file "$sat_link_r" --history_input_option  $history_input_option $display_link_info
+python -m ipdb -c continue runner_orbitviz.py --prop_inputs_file "$prop_inputs_r" --prop_data_file "$prop_data_r" --sat_link_file "$sat_link_r" --history_input_option  $history_input_option $display_link_info
 popd

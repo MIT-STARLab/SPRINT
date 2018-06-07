@@ -3,11 +3,15 @@
 # dir_opt=1day
 dir_opt=4hour
 # scen_name=sso10sat
-scen_name=walker100_inc60
+# scen_name=walker100_inc60
+# scen_name=walker30_inc30
+scen_name=walker18_inc30
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 dir_opt_params=7gs_targs3/dlnk_and_xlnk
 
 run_orbit_prop="true"
+use_cached="false"
+# use_cached="true"
 
 
 
@@ -20,8 +24,6 @@ prop_data=orbit_prop_data.json
 data_rates=data_rates_output.json
 sat_link=sat_link_history.json
 cached_accesses=cached_xlnks_ecl.json
-# use_cached="false"
-use_cached="true"
 
 prop_inputs=orbit_prop_inputs.json
 link_inputs=orbit_link_inputs.json

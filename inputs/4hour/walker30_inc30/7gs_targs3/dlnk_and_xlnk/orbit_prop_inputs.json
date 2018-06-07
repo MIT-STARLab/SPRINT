@@ -12,7 +12,7 @@
         "include_ecef_output": false
     },
     "sat_params": {
-        "num_satellites": 100,
+        "num_satellites": 30,
         "sat_id_order": "default",
         "_comments": [
             "assuming a 6U bus here",

@@ -22,6 +22,8 @@ if __name__ == '__main__':
 
     
     if not prop_data_file['version'] == "0.3":
+        print("prop_data_file['version']")
+        print(prop_data_file['version'])
         raise NotImplementedError
 
 

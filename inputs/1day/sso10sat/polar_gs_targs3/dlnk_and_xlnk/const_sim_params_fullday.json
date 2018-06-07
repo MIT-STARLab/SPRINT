@@ -1,10 +1,10 @@
 {
-    "version": "0.2",
+    "version": "0.3",
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
-        "restore_from_checkpoint": false, 
-        "restore_pkl_name": "/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/circinus_inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/full_day_end_sim_checkpoint_2018_01_19T00_00_00.pkl", 
+        "restore_from_checkpoint": true, 
+        "restore_pkl_name": "../../../inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/full_day_end_sim_checkpoint_2018_01_19T00_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,
@@ -146,7 +146,18 @@
             "display_d_max_constraint": false,
             "include_eclipse_windows": true,
             "time_units": "hours"
+        },
+        "aoi_plots" : {
+            "a_axis_time_units": "hours"
         }
+    },
+    "sim_metrics_params" : {
+        "latency_calculation": {
+            "dlnk": "center",
+            "obs": "center"
+        },
+        "targ_id_ignore_list" : [],
+        "aoi_units": "hours"
     },
     "sim_run_perturbations": {
         "do_inject_obs": false,

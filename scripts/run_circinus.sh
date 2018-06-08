@@ -1,13 +1,16 @@
 #! /bin/bash
 
-# dir_opt=1day
-dir_opt=4hour
+dir_opt=1day
+# dir_opt=4hour
 # scen_name=sso10sat
 # scen_name=walker100_inc60
+# scen_name=walker60_inc60
 # scen_name=walker30_inc30
-scen_name=walker18_inc30
+# scen_name=walker18_inc30
+scen_name=zhou2017_comparison
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
-dir_opt_params=7gs_targs3/dlnk_and_xlnk
+# dir_opt_params=7gs_targs3/dlnk_and_xlnk
+dir_opt_params=dlnk_and_xlnk
 
 run_orbit_prop="true"
 use_cached="false"
@@ -33,8 +36,10 @@ ORBIT_PROP_PATH="../source/circinus_orbit_propagation"
 ORBIT_LINK_PATH="../source/circinus_orbit_link"
 ORBIT_VIZ_PATH="../source/circinus_orbit_viz"
 
+# this is relative to THIS file
 gen_inp_dir="../inputs/$dir_opt/$scen_name"
 opt_inp_dir="../inputs/$dir_opt/$scen_name/$dir_opt_params"
+# this is relative to each repo base in CIRCINUS/source/
 opt_inp_dir_python="../../inputs/$dir_opt/$scen_name/$dir_opt_params"
 
 

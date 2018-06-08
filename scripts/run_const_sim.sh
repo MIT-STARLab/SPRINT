@@ -17,6 +17,7 @@ const_sim_params_inputs_opt=custom
 
 CIRCINUS_SIM_PATH="../source/circinus_sim"
 
+# this is relative to each repo base in CIRCINUS/source/
 gen_inp_dir_python="../../inputs/$dir_opt/$scen_name"
 opt_inp_dir_python="../../inputs/$dir_opt/$scen_name/$dir_opt_params"
 

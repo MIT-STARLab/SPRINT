@@ -3,7 +3,10 @@
 dir_opt=4hour
 # dir_opt=1day
 # scen_name=sso10sat
-scen_name=walker30_inc30
+scen_name=walker18_inc30
+# scen_name=walker30_inc30
+# scen_name=walker100_inc60
+# scen_name=walker60_inc60
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 dir_opt_params=7gs_targs3/dlnk_and_xlnk
 
@@ -93,9 +96,9 @@ fi
 
 pushd  $GLOBAL_PLANNER_PATH/python_runner/
 echo "python runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2" $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2""
-# python runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2"  $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2"
+python runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2"  $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2"
 # # python -m cProfile runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r"  $rs_s1_pickle_arg $rs_s2_pickle_arg $as_pickle_arg
-python -m ipdb -c continue runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2" $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2"
+# python -m ipdb -c continue runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2" $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2"
 
 cp $gp_outputs "$opt_inp_dir"
 

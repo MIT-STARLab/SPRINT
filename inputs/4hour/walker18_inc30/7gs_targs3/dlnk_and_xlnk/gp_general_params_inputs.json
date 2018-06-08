@@ -28,7 +28,7 @@
     "route_selection_params_v2": {
         "verbose_step1" :  true,
         "step2_params": {
-            "num_rts_sel_per_obs_overlap": 30,
+            "num_rts_sel_per_obs_overlap": 10,
             "num_rts_sel_per_obs_dv": 6,
             "num_rts_sel_per_obs_lat": 6
         }
@@ -77,9 +77,9 @@
         "run_coupled_rs_as": false
     },
     "pickle_params":  {
-        "pickle_route_selection_step1_results":                   false,
+        "pickle_route_selection_step1_results":                   true,
         "pickle_route_selection_step2_results":                   false,
-        "pickle_act_scheduling_results":                            false
+        "pickle_act_scheduling_results":                            true
     },
     "other_params": {
         "targ_id_ignore_list": [],

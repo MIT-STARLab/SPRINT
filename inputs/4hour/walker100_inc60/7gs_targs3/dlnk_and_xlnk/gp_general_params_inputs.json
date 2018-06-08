@@ -77,9 +77,9 @@
         "run_coupled_rs_as": false
     },
     "pickle_params":  {
-        "pickle_route_selection_step1_results":                   false,
+        "pickle_route_selection_step1_results":                   true,
         "pickle_route_selection_step2_results":                   false,
-        "pickle_act_scheduling_results":                            false
+        "pickle_act_scheduling_results":                            true
     },
     "other_params": {
         "targ_id_ignore_list": [],

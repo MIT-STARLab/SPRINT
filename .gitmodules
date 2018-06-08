@@ -1,15 +1,20 @@
 [submodule "source/circinus_sim"]
 	path = source/circinus_sim
 	url = git@github.mit.edu:star-lab/circinus_sim.git
+    branch = master
 [submodule "source/circinus_orbit_propagation"]
 	path = source/circinus_orbit_propagation
 	url = git@github.mit.edu:star-lab/circinus_orbit_propagation.git
+	branch = master
 [submodule "source/access_global_planner"]
 	path = source/access_global_planner
 	url = git@github.mit.edu:star-lab/access_global_planner.git
+	branch = master
 [submodule "source/circinus_orbit_link"]
 	path = source/circinus_orbit_link
 	url = git@github.mit.edu:star-lab/circinus_orbit_link.git
+	branch = master
 [submodule "source/circinus_orbit_viz"]
 	path = source/circinus_orbit_viz
 	url = git@github.mit.edu:star-lab/circinus_orbit_viz.git
+	branch = master

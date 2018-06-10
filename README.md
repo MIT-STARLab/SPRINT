@@ -9,11 +9,45 @@
 **U**ncertainty, and
 **S**cheduling
 
-original `Comm_constellation_MDO` repo: [https://github.com/ebclements/Comm_constellation_MDO](https://github.com/ebclements/Comm_constellation_MDO)
-
 # Setup
 
-Make sure to do a recursive clone of this repo, to get all the submodules. E.g. `git clone --recursive git@github.mit.edu:star-lab/CIRCINUS.git`
+1. Clone the repo: `git clone --recursive git@github.mit.edu:star-lab/CIRCINUS.git`
+1. Init empty folder for outputs: `mkdir CIRCINUS/source/access_global_planner/python_runner/plots`
+1. Set up your environment:
+    1. Configure your default `python` and pip to exactly Python **3.5**, recommended in a [virtual environment](https://github.mit.edu/star-lab/access_global_planner/blob/master/SETUP.md#get-python-installed-and-makeactivate-a-virtual-environment).
+        1. Kit's been successful with direct installations. 
+        1. Alternatively Homebrew, [pyenv to set to 3.5](https://github.com/pyenv/pyenv).
+        1. Pick your poison and stick with it or it'll get messy.
+        1. Confirm your version of Python (`python --version`) & location of the installation (`which python`) is the same for all subsequent steps.
+    1. If you're using a virtual environment, activate it and make sure your Python version is correct within it at your CIRCINUS repo.
+    1. Install [required libraries](https://github.mit.edu/star-lab/access_global_planner/blob/master/python_runner/requirements.txt): `python -m pip install ipdb scipy numpy jdcal matlab matplotlib pyomo`
+    1. Install Gurobi:
+        1. Download and install [Gurobi 8.0.0](http://www.gurobi.com/downloads/gurobi-optimizer)
+        1. Acquire and activate Gurobi License ([Academic is free if appropriate](https://user.gurobi.com/download/licenses/free-academic))
+    1. Install [Matlab python engine](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html?refresh=true) (assumed Matlab 2017a+ installed).
+        1. Ensure the correct version of python is enabled being referenced where you execute this installation command (pyenv is directory specific, for instance).
+        2. Sudo or admin terminal will be necessary.
+    1. Framework setting:
+        1. `nano ~/.matplotlib/matplotlibrc`
+        1. add line: `backend: TkAgg`
+
+1. Settings for demo:
+    1. Ensure scenario referenced by each stage in the pipeline is the same by settings at top of<br> `run_gp.sh` and `run_circinus.sh`:<br>
+        ```
+        dir_opt=1day
+        scen_name=zhou2017_comparison
+        dir_opt_params=dlnk_and_xlnk
+        ```
+    1. Set solver to Gurobi (alternatively set up CPLEX instead of Gurobi above): 
+        1. Navigate to: `CIRCINUS/inputs/1day/zhou2017_comparison/dlnk_and_xlnk` (per above settings) 
+        1. Modify `const_sim_params_fullday.json` and `gp_general_params_inpus.json`:
+            1. change value associated with `solver_name` to `gurobi`
+
+# Run Pipeline:
+1. Navigate to `CIRCINUS/scripts`
+1. Circinus must be run first: `./run_circinus.sh`
+1. Copy output file to inputs location: `cp ../source/circinus_orbit_link/python_runner/data_rates_output.json ../inputs/1day/zhou2017_comparison/dlnk_and_xlnk/`
+1. Run Global Planner: `./run_gp.sh`
 
 # Updating git submodules
 

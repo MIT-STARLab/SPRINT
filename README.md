@@ -14,7 +14,7 @@
 1. Clone the repo: `git clone --recursive git@github.mit.edu:star-lab/CIRCINUS.git`
 1. Init empty folder for outputs: `mkdir CIRCINUS/source/access_global_planner/python_runner/plots`
 1. Set up your environment:
-    1. Configure your default `python` and pip to exactly Python **3.5**, (recommended in a virtual environment, see next step).
+    1. Install and configure your default `python` and pip to exactly Python **3.5**, (recommended in a virtual environment, see next step).
         1. Recommended: Direct installation, if needed: Download from https://www.python.org/downloads/. Note that the global planner code is currently tested with Python 3.5.4.
         1. Not recommended: alternatively Homebrew, [pyenv to set to 3.5](https://github.com/pyenv/pyenv).
         1. Pick your poison and stick with it or it'll get messy.
@@ -27,13 +27,13 @@
         1. cd to CIRCINUS base directory
         2. `pip install -r requirements.txt`
         3. Note that this DOES NOT install the required matlab package needed for many CIRCINUS repos. See below for those instructions
-    1. Install Gurobi:
-        1. Download and install [Gurobi 8.0.0](http://www.gurobi.com/downloads/gurobi-optimizer)
-        1. Acquire and activate Gurobi License ([Academic is free if appropriate](https://user.gurobi.com/download/licenses/free-academic))
     1. Install [Matlab python engine](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html?refresh=true) (assumed Matlab 2017a+ installed).
         1. Ensure the correct version of python is enabled being referenced where you execute this installation command (pyenv is directory specific, for instance).
         2. Sudo or admin terminal will be necessary.
         3. after installation, check output of `pip freeze` to see that a line like `matlabengineforpython===R2017a` appears.
+    1. Install Gurobi:
+        1. Download and install [Gurobi 8.0.0](http://www.gurobi.com/downloads/gurobi-optimizer)
+        1. Acquire and activate Gurobi License ([Academic is free if appropriate](https://user.gurobi.com/download/licenses/free-academic))
     1. Framework setting:
         1. `nano ~/.matplotlib/matplotlibrc`
         1. add line: `backend: TkAgg`

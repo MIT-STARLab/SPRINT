@@ -90,7 +90,7 @@
                 "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times",
                 ""
             ],
-            "params_option": "test_xlnk_txrx_one_side",
+            "params_option": "Zhou 2017",
             "intra-orbit_neighbor_direction_method": "by_increasing_id",
             "transition_time_s": {
                 "_comment": "the structure here is the following: transition context (e.g. inter-sat) -> act1/act2 transition activities -> transition type -> params option",

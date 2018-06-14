@@ -2,12 +2,12 @@
 
 
 dir_opt=1day
-# scen_name=zhou2017_comparison
-scen_name=sso10sat
+scen_name=zhou2017_comparison
+# scen_name=sso10sat
 # scen_name=walker30_inc30
-dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
+# dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 # dir_opt_params=polar_gs_targs3/dlnk
-# dir_opt_params=17gs_targs3/dlnk_and_xlnk
+dir_opt_params=dlnk_and_xlnk
 const_sim_params_inputs=const_sim_params_fullday.json
 
 
@@ -66,8 +66,8 @@ fi
 
 pushd  $CIRCINUS_SIM_PATH/python_runner/
 echo "python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2""
-python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
+# python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
 # python -m cProfile runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
-# python -m ipdb -c continue runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
+python -m ipdb -c continue runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
 
 popd

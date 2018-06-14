@@ -148,7 +148,7 @@
             "time_units": "hours"
         },
         "aoi_plots" : {
-            "a_axis_time_units": "hours"
+            "x_axis_time_units": "hours"
         }
     },
     "sim_metrics_params" : {

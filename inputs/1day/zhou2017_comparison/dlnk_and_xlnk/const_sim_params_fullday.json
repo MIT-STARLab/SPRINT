@@ -1,14 +1,17 @@
 {
-    "version": "0.4",
+    "version": "0.5",
     "sim_run_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
         "end_utc": "2016-02-14T08:00:00.000000Z",
-        "restore_from_checkpoint": true, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
+        "restore_from_checkpoint": false, 
+        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T07_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,
-        "sat_schedule_hotstart": true
+        "sat_schedule_hotstart": true,
+        "_comments": [
+            "the sim tick should be larger than the minimum activity window length allowed by the GP for scheduling"
+        ]
     },
     "gp_wrapper_params": {
         "restore_gp_output_from_pickle" :  false,
@@ -175,13 +178,13 @@
         "do_inject_obs": false,
         "injected_observations": [
             {
-                "sat_id": "3",
+                "sat_id": "sat3",
                 "start_utc": "2016-02-14T05:00:00.000000Z",
                 "end_utc": "2016-02-14T05:01:00.000000Z",
                 "type": "hardcoded"
             },
             {
-                "sat_id": "5",
+                "sat_id": "sat5",
                 "start_utc": "2016-02-14T05:20:00.000000Z",
                 "end_utc": "2016-02-14T05:21:00.000000Z",
                 "type": "hardcoded"

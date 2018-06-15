@@ -1,5 +1,5 @@
 {
-    "version": "0.7",
+    "version": "0.8",
     "scenario_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
         "end_utc": "2016-02-15T04:00:00.000000Z",
@@ -13,11 +13,13 @@
     },
     "sat_params": {
         "num_satellites": 6,
+        "sat_id_prefix": "sat",
         "sat_id_order": "default",
         "payload_data_rate_Mbps": 50,
         "power_params": [
             {
                 "_comment": "these params are parsed in circinus_tools/io_tools.py. That file should be kept up to date with any changes here.",
+                "sat_id_prefix": "sat",
                 "sat_ids": "duplicate,range_inclusive,0,5",
                 "base_option": "Zhou 2017",
                 "obs_option": "Zhou 2017",
@@ -67,6 +69,7 @@
         ],
         "data_storage_params": [
             {
+                "sat_id_prefix": "sat",                
                 "sat_ids": "duplicate,range_inclusive,0,5",
                 "storage_option": "Zhou 2017",
                 "data_storage_Gbit": {
@@ -81,17 +84,18 @@
         ],
         "initial_state": [
             {
+                "sat_id_prefix": "sat",                
                 "sat_ids": "duplicate,range_inclusive,0,5",
                 "batt_e_Wh": 12
             }
         ],
         "activity_params": {
             "_comments" : [
-                "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times",
+                "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times. by_increasing_sat_index means that if the receive sat index is larger than tx sat index (i.e. further in sat_id_order list) then the crosslink is in an INCREASING direction",
                 ""
             ],
             "params_option": "Zhou 2017",
-            "intra-orbit_neighbor_direction_method": "by_increasing_id",
+            "intra-orbit_neighbor_direction_method": "by_increasing_sat_index",
             "transition_time_s": {
                 "_comment": "the structure here is the following: transition context (e.g. inter-sat) -> act1/act2 transition activities -> transition type -> params option",
                 "inter-sat": {
@@ -129,9 +133,9 @@
                 }
             },
             "min_duration_s": {
-                "obs": 3,
+                "obs": 15,
                 "dlnk": 60,
-                "xlnk": 20
+                "xlnk": 60
             }
         }
     },
@@ -141,12 +145,12 @@
             ""
         ],
         "sat_ids_by_orbit_name": {
-            "orbit0": ["0","1","2"],
-            "orbit1": ["3","4","5"]
+            "orbit0": ["sat0","sat1","sat2"],
+            "orbit1": ["sat3","sat4","sat5"]
         },
         "sat_orbital_elems": [
             {
-                "sat_id": 0,
+                "sat_id": "sat0",
                 "kepler_meananom": {
                     "a_km":  7378,
                     "e": 0,
@@ -158,7 +162,7 @@
                 "propagation_method": "matlab_delkep"
             },
             {
-                "sat_id": 1,
+                "sat_id": "sat1",
                 "kepler_meananom": {
                     "a_km":  7378,
                     "e": 0,
@@ -170,7 +174,7 @@
                 "propagation_method": "matlab_delkep"
             },
             {
-                "sat_id": 2,
+                "sat_id": "sat2",
                 "kepler_meananom": {
                     "a_km":  7378,
                     "e": 0,
@@ -182,7 +186,7 @@
                 "propagation_method": "matlab_delkep"
             },
             {
-                "sat_id": 3,
+                "sat_id": "sat3",
                 "kepler_meananom": {
                     "a_km":  7378,
                     "e": 0,
@@ -194,7 +198,7 @@
                 "propagation_method": "matlab_delkep"
             },
             {
-                "sat_id": 4,
+                "sat_id": "sat4",
                 "kepler_meananom": {
                     "a_km":  7378,
                     "e": 0,
@@ -206,7 +210,7 @@
                 "propagation_method": "matlab_delkep"
             },
             {
-                "sat_id": 5,
+                "sat_id": "sat5",
                 "kepler_meananom": {
                     "a_km":  7378,
                     "e": 0,
@@ -226,11 +230,11 @@
         "target_set_id": "2018-4-14",
         "elevation_cutoff_deg":60,
         "targets": [
-            {"id": 0,"name": "Himalaya","name_pretty": "obs0",     "latitude_deg": 28.0,  "longitude_deg": 87.0,"height_m": 0},
-            {"id": 1,"name": "Mamiraus","name_pretty": "obs1",     "latitude_deg": -2.0,  "longitude_deg": -66.0,"height_m": 0},
-            {"id": 2,"name": "Cape York","name_pretty": "obs2",    "latitude_deg": -11.0, "longitude_deg": 142.5,"height_m": 0},
-            {"id": 3,"name": "Alaska Coast","name_pretty": "obs3", "latitude_deg": 60.0,  "longitude_deg": -148,"height_m": 0},
-            {"id": 4,"name": "Greenland","name_pretty": "obs4",    "latitude_deg": 69.0,  "longitude_deg": -49,"height_m": 0}
+            {"id": "targ0","name": "Himalaya","name_pretty": "obs0",     "latitude_deg": 28.0,  "longitude_deg": 87.0,"height_m": 0},
+            {"id": "targ1","name": "Mamiraus","name_pretty": "obs1",     "latitude_deg": -2.0,  "longitude_deg": -66.0,"height_m": 0},
+            {"id": "targ2","name": "Cape York","name_pretty": "obs2",    "latitude_deg": -11.0, "longitude_deg": 142.5,"height_m": 0},
+            {"id": "targ3","name": "Alaska Coast","name_pretty": "obs3", "latitude_deg": 60.0,  "longitude_deg": -148,"height_m": 0},
+            {"id": "targ4","name": "Greenland","name_pretty": "obs4",    "latitude_deg": 69.0,  "longitude_deg": -49,"height_m": 0}
         ]
     },
     "gs_params": {
@@ -239,10 +243,10 @@
         "gs_network_version": "1",
         "elevation_cutoff_deg":10, 
         "stations": [
-            {"id": "0", "name": "Beijing","name_pretty": "Beijing 0","latitude_deg":40.0,"longitude_deg":116.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
-            {"id": "1", "name": "Kashi","name_pretty":   "Kashi 1",  "latitude_deg":39.5,"longitude_deg":76.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
-            {"id": "2", "name": "Sanya","name_pretty":   "Sanya 2",  "latitude_deg":18.0,"longitude_deg":109.5,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
-            {"id": "3", "name": "Xi'an","name_pretty":   "Xi'an 3",  "latitude_deg":34.0,"longitude_deg":108.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"}
+            {"id": "gs0", "name": "Beijing","name_pretty": "Beijing 0","latitude_deg":40.0,"longitude_deg":116.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "gs1", "name": "Kashi","name_pretty":   "Kashi 1",  "latitude_deg":39.5,"longitude_deg":76.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "gs2", "name": "Sanya","name_pretty":   "Sanya 2",  "latitude_deg":18.0,"longitude_deg":109.5,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "gs3", "name": "Xi'an","name_pretty":   "Xi'an 3",  "latitude_deg":34.0,"longitude_deg":108.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"}
         ]
     }
 }

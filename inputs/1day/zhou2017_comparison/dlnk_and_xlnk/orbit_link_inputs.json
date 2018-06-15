@@ -12,6 +12,7 @@
     },
     "sat_link_params": [
         {
+            "sat_id_prefix": "sat",                
             "sat_ids": "duplicate,range_inclusive,0,5",
             "dlnk_params": {
                 "HPBW_rad": 0.2,

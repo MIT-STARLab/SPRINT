@@ -1,14 +1,17 @@
 {
-    "version": "0.3",
+    "version": "0.5",
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
         "restore_from_checkpoint": true, 
-        "restore_pkl_name": "../../../inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/full_day_end_sim_checkpoint_2018_01_19T00_00_00.pkl", 
+        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,
-        "sat_schedule_hotstart": true
+        "sat_schedule_hotstart": true,
+        "_comments": [
+            "the sim tick should be larger than the minimum activity window length allowed by the GP for scheduling"
+        ]
     },
     "gp_wrapper_params": {
         "restore_gp_output_from_pickle" :  false,
@@ -22,7 +25,7 @@
                 "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
-                "210 minutes is two orbits for 1000 km altitude"
+                "190 minutes is two orbits for 600 km altitude"
             ],
             "planning_past_horizon_mins" :  0,
             "planning_horizon_fixed_mins" : 0,
@@ -147,7 +150,19 @@
             "include_eclipse_windows": true,
             "time_units": "hours"
         },
-        "aoi_plots" : {
+        "obs_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 4,
+            "x_axis_time_units": "hours"
+        },
+        "sat_cmd_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5,
+            "x_axis_time_units": "hours"
+        },
+        "sat_tlm_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5,
             "x_axis_time_units": "hours"
         }
     },
@@ -163,13 +178,13 @@
         "do_inject_obs": false,
         "injected_observations": [
             {
-                "sat_id": "3",
+                "sat_id": "sat3",
                 "start_utc": "2016-02-14T05:00:00.000000Z",
                 "end_utc": "2016-02-14T05:01:00.000000Z",
                 "type": "hardcoded"
             },
             {
-                "sat_id": "5",
+                "sat_id": "sat5",
                 "start_utc": "2016-02-14T05:20:00.000000Z",
                 "end_utc": "2016-02-14T05:21:00.000000Z",
                 "type": "hardcoded"

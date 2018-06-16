@@ -3,8 +3,8 @@
     "sim_run_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
         "end_utc": "2016-02-14T08:00:00.000000Z",
-        "restore_from_checkpoint": false, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T07_00_00.pkl", 
+        "restore_from_checkpoint": true, 
+        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,

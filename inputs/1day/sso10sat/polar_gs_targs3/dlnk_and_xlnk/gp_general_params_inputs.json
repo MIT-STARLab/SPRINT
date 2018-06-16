@@ -1,5 +1,5 @@
 {
-    "version": "0.6",
+    "version": "0.8",
     "metrics_params": {
         "aoi_units": "hours",
         "overlap_window_s": 3600,
@@ -27,6 +27,17 @@
     },
     "route_selection_params_v2": {
         "verbose_step1" :  true,
+        "step2_params": {
+            "num_rts_sel_per_obs_overlap": 30,
+            "num_rts_sel_per_obs_dv": 6,
+            "num_rts_sel_per_obs_lat": 6
+        }
+    },
+    "route_selection_params_v3": {
+        "verbose_step1" :  true,
+        "step1_params": {
+            "num_routes_to_pick": 1
+        },
         "step2_params": {
             "num_rts_sel_per_obs_overlap": 30,
             "num_rts_sel_per_obs_dv": 6,
@@ -122,16 +133,16 @@
             "include_eclipse_windows": true
         },
         "obs_aoi_metrics_plot_params" : {
-            "plot_bound_min_aoi_h": 0,    
-            "plot_bound_max_aoi_h": 4
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 4
         },
         "cmd_aoi_metrics_plot_params" : {
-            "plot_bound_min_aoi_h": 0,    
-            "plot_bound_max_aoi_h": 1.5
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5
         },
         "tlm_aoi_metrics_plot_params" : {
-            "plot_bound_min_aoi_h": 0,    
-            "plot_bound_max_aoi_h": 1.5
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5
         }
     }
 }

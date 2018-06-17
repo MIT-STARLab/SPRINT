@@ -16,7 +16,7 @@
         "sat_id_order": "default",
         "_comments": [
             "assuming a 6U bus here",
-            "127.5 Mbps is from hyperspectral imager design in Tsitas, S. R., “6U CubeSat design for Earth observation with 6.5 m GSD, five spectral bands and 14 Mbps downlink,” The Aeronautical Journal, vol. 114, 2010, pp. 689–697."
+            "127.5 Mbps is from hyperspectral imager design in Tsitas, S. R., '6U CubeSat design for Earth observation with 6.5 m GSD, five spectral bands and 14 Mbps downlink,' The Aeronautical Journal, vol. 114, 2010, pp. 689–697."
         ],
         "payload_data_rate_Mbps": 127.5,
         "power_params": [

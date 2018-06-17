@@ -3,7 +3,7 @@
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
-        "restore_from_checkpoint": true, 
+        "restore_from_checkpoint": false, 
         "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 

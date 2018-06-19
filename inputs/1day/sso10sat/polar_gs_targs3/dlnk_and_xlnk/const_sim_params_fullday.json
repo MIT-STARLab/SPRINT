@@ -4,7 +4,7 @@
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
         "restore_from_checkpoint": false, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
+        "restore_pkl_name": "/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/full_day_end_sim_checkpoint_2018_01_19T00_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,
@@ -85,9 +85,13 @@
             "obs": "center"
         }
     },
+    "sim_gs_params": {
+        "_comment": "currently params are same for every gs",
+        "time_epsilon_s": 1
+    },
     "sim_satellite_params": {
         "_comment": "currently params are same for every sat",
-        "time_epsilon_s": 5,
+        "time_epsilon_s": 1,
         "state_simulator": {
             "es_state_update": {
                 "add_noise": false,
@@ -107,6 +111,7 @@
         }
     },
     "sim_gs_network_params": {
+        "time_epsilon_s": 1,
         "gsn_ps_params" : {
             "_comments": [
                 "replan_release_wait_time_s simulates the amount of time required to actually run the global planner in real life. from the perspective of this code the global planner will run instantaneously. After it runs, the sim will wait this amount of time before making those plans available",

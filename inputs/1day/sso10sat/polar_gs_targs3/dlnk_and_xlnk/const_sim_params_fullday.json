@@ -25,13 +25,13 @@
                 "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
-                "190 minutes is two orbits for 600 km altitude"
+                "95 minutes is ~ 1 orbit for 600 km altitude"
             ],
             "planning_past_horizon_mins" :  0,
             "planning_horizon_fixed_mins" : 0,
-            "planning_horizon_obs_mins" :  190,
-            "planning_horizon_xlnk_mins" :  190,
-            "planning_horizon_dlnk_mins" :  190
+            "planning_horizon_obs_mins" :  95,
+            "planning_horizon_xlnk_mins" :  95,
+            "planning_horizon_dlnk_mins" :  95
         }
     },
     "lp_wrapper_params": {
@@ -55,7 +55,7 @@
         "solver_params": {
             "run_remotely" :   false,
             "max_runtime_s" : 1000,
-            "optimality_gap" :  1e-3,
+            "optimality_gap" :  1e-2,
             "integer_feasibility_tolerance" :  1e-5,
             "gurobi": {
                 "_helpful_links": [
@@ -116,11 +116,11 @@
             "_comments": [
                 "replan_release_wait_time_s simulates the amount of time required to actually run the global planner in real life. from the perspective of this code the global planner will run instantaneously. After it runs, the sim will wait this amount of time before making those plans available",
                 "release_first_plans_immediately = True means that global planner will immediately make its first set of global plans available (they won't be queued up for release at a later time)",
-                "5700 seconds is 95 minutes, about the length of an orbit at 1000 km altitude",
-                "replan release time is conservative here"
+                "3000 seconds is 50 minutes, about half the length of an orbit (95 mins) at 600 km altitude",
+                "replan release time is a conservative 10 minutes here"
             ],
-            "replan_interval_s": 5700,
-            "replan_release_wait_time_s": 60,
+            "replan_interval_s": 3000,
+            "replan_release_wait_time_s": 600,
             "release_first_plans_immediately": true
         }
     },

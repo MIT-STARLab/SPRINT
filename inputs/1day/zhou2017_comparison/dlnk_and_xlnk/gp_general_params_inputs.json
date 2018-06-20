@@ -53,7 +53,7 @@
         "min_latency_for_sf_1_mins" :  10,
         "dv_epsilon_Mb" :  1,
         "fixed_utilization_epsilon" :  0.00001,
-        "solver_name" :  "cplex",
+        "solver_name" :  "gurobi",
         "solver_params": {
             "run_remotely" :   false,
             "max_runtime_s" : 1000,

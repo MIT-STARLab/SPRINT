@@ -11,8 +11,8 @@
     "route_selection_general_params": {
         "plot_route_selection_results":       false,
         "adjust_window_timing_post_selection": true,
-        "min_rs_route_dv_Mb" :  50, 
-        "run_rs_parallel" :  true, 
+        "min_rs_route_dv_Mb" :  50,
+        "run_rs_parallel" :  true,
         "num_parallel_workers" :  8,
         "include_crosslinks" :  true,
         "_comments": [
@@ -90,7 +90,7 @@
     "pickle_params":  {
         "pickle_route_selection_step1_results":                   false,
         "pickle_route_selection_step2_results":                   false,
-        "pickle_act_scheduling_results":                            false
+        "pickle_act_scheduling_results":                            true
     },
     "other_params": {
         "targ_id_ignore_list": [],
@@ -111,7 +111,7 @@
         "plot_RS_include_xlnk_labels": true,
         "plot_AS_include_obs_labels": true,
         "plot_AS_include_dlnk_labels": true,
-        "plot_AS_include_xlnk_labels": true,
+        "plot_AS_include_xlnk_labels": false,
         "plot_fig_extension":  "pdf",
         "time_units":  "minutes",
         "winds_plot_obs":  true,
@@ -121,27 +121,27 @@
         "winds_plot_xlnks":  true,
         "winds_plot_xlnks_choices":    true,
         "energy_usage_plot_params": {
-            "plot_bound_e_min_Wh_delta": -1,    
+            "plot_bound_e_min_Wh_delta": -1,
             "plot_bound_e_max_Wh_delta": 1,
             "show_min_max_bounds": true,
             "include_eclipse_windows": true
         },
         "data_usage_plot_params": {
-            "plot_bound_d_min_Gb_delta": -1,    
+            "plot_bound_d_min_Gb_delta": -1,
             "plot_bound_d_max_Gb_delta": 1,
             "show_min_max_bounds": true,
             "include_eclipse_windows": true
         },
         "obs_aoi_metrics_plot_params" : {
-            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_min_aoi_hours": 0,
             "plot_bound_max_aoi_hours": 4
         },
         "cmd_aoi_metrics_plot_params" : {
-            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_min_aoi_hours": 0,
             "plot_bound_max_aoi_hours": 1.5
         },
         "tlm_aoi_metrics_plot_params" : {
-            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_min_aoi_hours": 0,
             "plot_bound_max_aoi_hours": 1.5
         }
     }

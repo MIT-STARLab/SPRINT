@@ -115,7 +115,7 @@
                 "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times. by_increasing_sat_index means that if the receive sat index is larger than tx sat index (i.e. further in sat_id_order list) then the crosslink is in an INCREASING direction",
                 ""
             ],
-            "params_option": "test_xlnk_txrx_one_side",
+            "params_option": "test_notrans",
             "intra-orbit_neighbor_direction_method": "by_increasing_sat_index",
             "transition_time_s": {
                 "_comment": "the structure here is the following: transition context (e.g. inter-sat) -> act1/act2 transition activities -> transition type -> params option",

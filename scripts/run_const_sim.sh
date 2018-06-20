@@ -67,8 +67,8 @@ fi
 
 pushd  $CIRCINUS_SIM_PATH/python_runner/
 echo "python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2""
-# python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
+python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
 # python -m cProfile runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
-python -m ipdb -c continue runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
+# python -m ipdb -c continue runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
 
 popd

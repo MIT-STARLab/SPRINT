@@ -4,7 +4,7 @@
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
         "restore_from_checkpoint": false, 
-        "restore_pkl_name": "/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/full_day_end_sim_checkpoint_2018_01_19T00_00_00.pkl", 
+        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T20_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,

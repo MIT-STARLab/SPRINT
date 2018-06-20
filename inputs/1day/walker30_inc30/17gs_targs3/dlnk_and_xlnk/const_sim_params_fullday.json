@@ -29,9 +29,9 @@
             ],
             "planning_past_horizon_mins" :  0,
             "planning_horizon_fixed_mins" : 0,
-            "planning_horizon_obs_mins" :  190,
-            "planning_horizon_xlnk_mins" :  190,
-            "planning_horizon_dlnk_mins" :  190
+            "planning_horizon_obs_mins" :  100,
+            "planning_horizon_xlnk_mins" :  100,
+            "planning_horizon_dlnk_mins" :  100
         }
     },
     "lp_wrapper_params": {
@@ -55,7 +55,7 @@
         "solver_params": {
             "run_remotely" :   false,
             "max_runtime_s" : 1000,
-            "optimality_gap" :  1e-3,
+            "optimality_gap" :  1e-2,
             "integer_feasibility_tolerance" :  1e-5,
             "gurobi": {
                 "_helpful_links": [

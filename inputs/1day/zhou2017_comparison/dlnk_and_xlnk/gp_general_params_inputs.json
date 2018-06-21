@@ -90,7 +90,7 @@
     "pickle_params":  {
         "pickle_route_selection_step1_results":                   false,
         "pickle_route_selection_step2_results":                   false,
-        "pickle_act_scheduling_results":                            true
+        "pickle_act_scheduling_results":                            false
     },
     "other_params": {
         "targ_id_ignore_list": [],

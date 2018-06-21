@@ -2,7 +2,7 @@
     "version": "0.5",
     "sim_run_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-14T08:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
         "restore_from_checkpoint": false, 
         "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
         "sim_tick_s": 10,
@@ -41,7 +41,7 @@
                 "planning_horizon_fixed specifies how far ahead the local planner should look"
             ],
             "planning_leaving_flow_start_mins" :  2,
-            "planning_horizon_mins" :  60
+            "planning_horizon_mins" :  105
         }
     },
     "lp_general_params": {
@@ -126,11 +126,11 @@
     },
     "sim_plot_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-14T08:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
         "sat_acts_plot": {
             "time_units": "hours",
             "include_obs_labels": true,
-            "include_xlnk_labels": true,
+            "include_xlnk_labels": false,
             "include_dlnk_labels": true
         },
         "gs_acts_plot": {

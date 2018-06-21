@@ -4,7 +4,7 @@
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
         "restore_from_checkpoint": false, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
+        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T02_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true,
         "checkpoint_spacing_s": 3600,
@@ -25,10 +25,11 @@
                 "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
-                "95 minutes is ~ 1 orbit for 600 km altitude"
+                "95 minutes is ~ 1 orbit for 600 km altitude",
+                "fixed horizon set to time to release for GP"
             ],
             "planning_past_horizon_mins" :  0,
-            "planning_horizon_fixed_mins" : 0,
+            "planning_horizon_fixed_mins" : 10,
             "planning_horizon_obs_mins" :  95,
             "planning_horizon_xlnk_mins" :  95,
             "planning_horizon_dlnk_mins" :  95

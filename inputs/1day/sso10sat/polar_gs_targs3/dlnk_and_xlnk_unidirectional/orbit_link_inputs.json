@@ -48,8 +48,16 @@
             "sat1": []
         },
         "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {
-            "sat0": [],
-            "sat1": []
+            "sat0": ["sat9"],
+            "sat1": ["sat0"],
+            "sat2": ["sat1"],
+            "sat3": ["sat2"],
+            "sat4": ["sat3"],
+            "sat5": ["sat4"],
+            "sat6": ["sat5"],
+            "sat7": ["sat6"],
+            "sat8": ["sat7"],
+            "sat9": ["sat8"]
         }
     },
     "lookup_params": {

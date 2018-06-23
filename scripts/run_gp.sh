@@ -9,22 +9,24 @@ scen_name=zhou2017_comparison
 # scen_name=walker100_inc60
 # scen_name=walker60_inc60
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
+# dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_unidirectional
 # dir_opt_params=7gs_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk
 dir_opt_params=dlnk_and_xlnk
 
 # pickle_choice=b
-gp_inst_inputs=gp_instance_params_inputs_3.json
+gp_inst_inputs=gp_instance_params_inputs_1.json
 
-pickle_choice=a
+# pickle_choice=fast
+# pickle_choice=opt
 # pickle_choice=b
 
 # dir_opt_params=
 
 # rs_pickle_opt=step1
 # rs_pickle_opt=step2
-rs_pickle_opt=as
-# rs_pickle_opt=none
+# rs_pickle_opt=as
+rs_pickle_opt=none
 gp_general_inputs_opt=custom
 
 

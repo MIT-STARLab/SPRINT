@@ -21,12 +21,12 @@
         "gp_params": {
             "_comments": [
                 "planning_past_horizon_mins allows us to look back at windows in the past in the global planner.  not sure this is useful because you can't make decisions about the scheduling of those windows.",
-                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows",
+                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows. Note that this should be at least as long as the time required to run the GP (so that we're not planning for windows that will be stale immediately post-execution!)",
                 "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
                 "95 minutes is ~ 1 orbit for 600 km altitude",
-                "fixed horizon set to time to release time for GP"
+                "fixed horizon set to time to release time for GP."
             ],
             "planning_past_horizon_mins" :  0,
             "planning_horizon_fixed_mins" : 10,

@@ -4,7 +4,7 @@
         "start_utc": "2016-02-14T04:00:00.000000Z",
         "end_utc": "2016-02-15T04:00:00.000000Z",
         "restore_from_checkpoint": false, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T08_00_00.pkl", 
+        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_15T04_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,
@@ -21,7 +21,7 @@
         "gp_params": {
             "_comments": [
                 "planning_past_horizon_mins allows us to look back at windows in the past in the global planner.  not sure this is useful because you can't make decisions about the scheduling of those windows.",
-                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows",
+                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows. Note that this should be at least as long as the time required to run the GP (so that we're not planning for windows that will be stale immediately post-execution!)",
                 "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
@@ -131,7 +131,7 @@
             "time_units": "hours",
             "include_obs_labels": true,
             "include_xlnk_labels": false,
-            "include_dlnk_labels": true
+            "include_dlnk_labels": false
         },
         "gs_acts_plot": {
             "include_labels": true,
@@ -157,17 +157,17 @@
         },
         "obs_aoi_plot" : {
             "plot_bound_min_aoi_hours": 0,    
-            "plot_bound_max_aoi_hours": 4,
+            "plot_bound_max_aoi_hours": 5,
             "x_axis_time_units": "hours"
         },
         "sat_cmd_aoi_plot" : {
             "plot_bound_min_aoi_hours": 0,    
-            "plot_bound_max_aoi_hours": 1.5,
+            "plot_bound_max_aoi_hours": 2,
             "x_axis_time_units": "hours"
         },
         "sat_tlm_aoi_plot" : {
             "plot_bound_min_aoi_hours": 0,    
-            "plot_bound_max_aoi_hours": 1.5,
+            "plot_bound_max_aoi_hours": 2,
             "x_axis_time_units": "hours"
         }
     },

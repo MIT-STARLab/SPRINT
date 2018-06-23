@@ -1,34 +1,38 @@
 {
-    "version": "0.2",
+    "version": "0.5",
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
         "restore_from_checkpoint": false, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_19T00_00_00.pkl", 
+        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T20_00_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
         "checkpoint_spacing_s": 3600,
-        "sat_schedule_hotstart": true
+        "sat_schedule_hotstart": true,
+        "_comments": [
+            "the sim tick should be larger than the minimum activity window length allowed by the GP for scheduling"
+        ]
     },
     "gp_wrapper_params": {
         "restore_gp_output_from_pickle" :  false,
         "pickle_gp_output" :  false,
         "gp_output_pickle_to_restore" :  "pickles/gp_output_2018-05-16T21_02_42.778960.pkl",
-        "gp_path" :  "../../GlobalPlanner",
+        "gp_path" :  "../../access_global_planner",
         "gp_params": {
             "_comments": [
                 "planning_past_horizon_mins allows us to look back at windows in the past in the global planner.  not sure this is useful because you can't make decisions about the scheduling of those windows.",
-                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows",
+                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows. Note that this should be at least as long as the time required to run the GP (so that we're not planning for windows that will be stale immediately post-execution!)",
                 "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
-                "210 minutes is two orbits for 1000 km altitude"
+                "95 minutes is ~ 1 orbit for 600 km altitude",
+                "fixed horizon set to time to release time for GP."
             ],
             "planning_past_horizon_mins" :  0,
-            "planning_horizon_fixed_mins" : 0,
-            "planning_horizon_obs_mins" :  190,
-            "planning_horizon_xlnk_mins" :  190,
-            "planning_horizon_dlnk_mins" :  190
+            "planning_horizon_fixed_mins" : 10,
+            "planning_horizon_obs_mins" :  95,
+            "planning_horizon_xlnk_mins" :  95,
+            "planning_horizon_dlnk_mins" :  95
         }
     },
     "lp_wrapper_params": {
@@ -52,7 +56,7 @@
         "solver_params": {
             "run_remotely" :   false,
             "max_runtime_s" : 1000,
-            "optimality_gap" :  1e-3,
+            "optimality_gap" :  1e-2,
             "integer_feasibility_tolerance" :  1e-5,
             "gurobi": {
                 "_helpful_links": [
@@ -82,9 +86,13 @@
             "obs": "center"
         }
     },
+    "sim_gs_params": {
+        "_comment": "currently params are same for every gs",
+        "time_epsilon_s": 1
+    },
     "sim_satellite_params": {
         "_comment": "currently params are same for every sat",
-        "time_epsilon_s": 5,
+        "time_epsilon_s": 1,
         "state_simulator": {
             "es_state_update": {
                 "add_noise": false,
@@ -104,15 +112,16 @@
         }
     },
     "sim_gs_network_params": {
+        "time_epsilon_s": 1,
         "gsn_ps_params" : {
             "_comments": [
                 "replan_release_wait_time_s simulates the amount of time required to actually run the global planner in real life. from the perspective of this code the global planner will run instantaneously. After it runs, the sim will wait this amount of time before making those plans available",
                 "release_first_plans_immediately = True means that global planner will immediately make its first set of global plans available (they won't be queued up for release at a later time)",
-                "5700 seconds is 95 minutes, about the length of an orbit at 1000 km altitude",
-                "replan release time is conservative here"
+                "3000 seconds is 50 minutes, about half the length of an orbit (95 mins) at 600 km altitude",
+                "replan release time is a conservative 10 minutes here"
             ],
-            "replan_interval_s": 5700,
-            "replan_release_wait_time_s": 60,
+            "replan_interval_s": 3000,
+            "replan_release_wait_time_s": 600,
             "release_first_plans_immediately": true
         }
     },
@@ -121,9 +130,9 @@
         "end_utc": "2018-01-19T00:00:00.000000Z",
         "sat_acts_plot": {
             "time_units": "hours",
-            "include_obs_labels": true,
+            "include_obs_labels": false,
             "include_xlnk_labels": false,
-            "include_dlnk_labels": true
+            "include_dlnk_labels": false
         },
         "gs_acts_plot": {
             "include_labels": true,
@@ -146,19 +155,42 @@
             "display_d_max_constraint": false,
             "include_eclipse_windows": true,
             "time_units": "hours"
+        },
+        "obs_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 4,
+            "x_axis_time_units": "hours"
+        },
+        "sat_cmd_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5,
+            "x_axis_time_units": "hours"
+        },
+        "sat_tlm_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5,
+            "x_axis_time_units": "hours"
         }
+    },
+    "sim_metrics_params" : {
+        "latency_calculation": {
+            "dlnk": "center",
+            "obs": "center"
+        },
+        "targ_id_ignore_list" : [],
+        "aoi_units": "hours"
     },
     "sim_run_perturbations": {
         "do_inject_obs": false,
         "injected_observations": [
             {
-                "sat_id": "3",
+                "sat_id": "sat3",
                 "start_utc": "2016-02-14T05:00:00.000000Z",
                 "end_utc": "2016-02-14T05:01:00.000000Z",
                 "type": "hardcoded"
             },
             {
-                "sat_id": "5",
+                "sat_id": "sat5",
                 "start_utc": "2016-02-14T05:20:00.000000Z",
                 "end_utc": "2016-02-14T05:21:00.000000Z",
                 "type": "hardcoded"

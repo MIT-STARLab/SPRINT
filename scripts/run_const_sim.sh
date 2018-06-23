@@ -12,8 +12,8 @@ dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 const_sim_params_inputs=const_sim_params_fullday.json
 
 # NOTE! THIS MUST MATCH PARAMS ABOVE!
-restore_pickle_cmdline_opt=true
-restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/sim_checkpoint_2018_01_18T03_00_00.pkl"
+restore_pickle_cmdline_opt=false
+restore_pickle_cmdline_name="/c/Users/Kit Kennedy/Desktop/circinus_stuff/CIRCINUS/source/circinus_sim/python_runner/pickles/sim_checkpoint_2018_01_18T22_00_00.pkl"
 
 
 
@@ -56,7 +56,7 @@ then
     gp_general_inputs_arg1="--gp_general_inputs_file"
     gp_general_inputs_arg2="$gp_general_inputs_r"
 else
-    gp_general_inputs_arg1=
+    gp_general_inputs_arg1="--gp_general_inputs_file"
     gp_general_inputs_arg2=
 fi
 
@@ -65,7 +65,7 @@ then
     const_sim_params_inputs_arg1="--const_sim_params_file"
     const_sim_params_inputs_arg2="$const_sim_params_inputs_r"
 else
-    const_sim_params_inputs_arg1=
+    const_sim_params_inputs_arg1="--const_sim_params_file"
     const_sim_params_inputs_arg2=
 fi
 
@@ -74,15 +74,15 @@ then
     restore_pickle_cmdline_arg1="--restore_pickle"
     restore_pickle_cmdline_arg2="$restore_pickle_cmdline_name"
 else
-    restore_pickle_cmdline_arg1=
+    restore_pickle_cmdline_arg1="--restore_pickle"
     restore_pickle_cmdline_arg2=
 fi
 
 
 pushd  $CIRCINUS_SIM_PATH/python_runner/
 echo "python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2""
-# python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2" $restore_pickle_cmdline_arg1 "$restore_pickle_cmdline_arg2"
+python runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2" $restore_pickle_cmdline_arg1 "$restore_pickle_cmdline_arg2"
 # python -m cProfile runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2"
-python -m ipdb -c continue runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2" $restore_pickle_cmdline_arg1 "$restore_pickle_cmdline_arg2"
+# python -m ipdb -c continue runner_const_sim.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" $const_sim_params_inputs_arg1 "$const_sim_params_inputs_arg2" $restore_pickle_cmdline_arg1 "$restore_pickle_cmdline_arg2"
 
 popd

@@ -13,7 +13,7 @@ const_sim_params_inputs=const_sim_params_fullday.json
 
 # NOTE! THIS MUST MATCH PARAMS ABOVE!
 restore_pickle_cmdline_opt=true
-restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/sim_checkpoint_2018_01_18T03_00_00.pkl"
+restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/sim_checkpoint_2018_01_19T00_00_00.pkl"
 
 
 

@@ -12,6 +12,7 @@
     },
     "sat_link_params": [
         {
+            "sat_id_prefix": "sat",                
             "sat_ids": "duplicate,range_inclusive,0,9",
             "dlnk_params": {
                 "HPBW_rad": 0.2,
@@ -39,14 +40,16 @@
         }
     ],
     "link_disables": {
-        "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+        "_comments": ["The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "the direc is to be interpreted as sat -> gs, sat -> xsat"
+        ],
         "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {
-            "0": [],
-            "1": []
+            "sat0": [],
+            "sat1": []
         },
         "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {
-            "0": [],
-            "1": []
+            "sat0": [],
+            "sat1": []
         }
     },
     "lookup_params": {

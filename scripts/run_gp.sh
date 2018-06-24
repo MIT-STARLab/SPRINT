@@ -15,7 +15,7 @@ scen_name=zhou2017_comparison
 dir_opt_params=dlnk_and_xlnk
 
 # pickle_choice=b
-gp_inst_inputs=gp_instance_params_inputs_1.json
+gp_inst_inputs=gp_instance_params_inputs_var.json
 
 # pickle_choice=fast
 # pickle_choice=opt

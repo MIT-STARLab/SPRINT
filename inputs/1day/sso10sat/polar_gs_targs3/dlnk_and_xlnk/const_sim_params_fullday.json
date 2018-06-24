@@ -1,5 +1,5 @@
 {
-    "version": "0.5",
+    "version": "0.6",
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
@@ -26,13 +26,16 @@
                 "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
                 "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
                 "95 minutes is ~ 1 orbit for 600 km altitude",
-                "fixed horizon set to time to release time for GP."
+                "fixed horizon set to time to release time for GP.",
+                "max_num_dlnks_allowed_after_planning_end_xlnk is how many additional dlnks are allowed to be used for routing after planning_end_xlnk, for each sat. If large, this can vastly increase number of routes considered. null means there is no limit",
+                "760 minutes is about 8 orbits for 600 km alt, to give plenty of room to find downlinks"
             ],
             "planning_past_horizon_mins" :  0,
             "planning_horizon_fixed_mins" : 10,
             "planning_horizon_obs_mins" :  95,
             "planning_horizon_xlnk_mins" :  95,
-            "planning_horizon_dlnk_mins" :  95
+            "planning_horizon_dlnk_mins" :  95,
+            "max_num_dlnks_allowed_after_planning_end_xlnk": 1
         }
     },
     "lp_wrapper_params": {

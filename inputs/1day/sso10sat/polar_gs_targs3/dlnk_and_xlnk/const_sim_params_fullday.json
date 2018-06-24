@@ -34,7 +34,7 @@
             "planning_horizon_fixed_mins" : 10,
             "planning_horizon_obs_mins" :  95,
             "planning_horizon_xlnk_mins" :  95,
-            "planning_horizon_dlnk_mins" :  95,
+            "planning_horizon_dlnk_mins" :  760,
             "max_num_dlnks_allowed_after_planning_end_xlnk": 1
         }
     },

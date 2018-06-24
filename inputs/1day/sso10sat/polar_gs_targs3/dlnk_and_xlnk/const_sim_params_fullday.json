@@ -55,7 +55,7 @@
         ],
         "dv_epsilon_Mb" :  0.1,
         "existing_utilization_epsilon" :  0.00001,
-        "solver_name" :  "cplex",
+        "solver_name" :  "gurobi",
         "solver_params": {
             "run_remotely" :   false,
             "max_runtime_s" : 1000,

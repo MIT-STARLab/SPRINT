@@ -109,9 +109,13 @@
             }
         },
         "sat_schedule_arbiter_params" : {
-            "_comment": "being conservative with the wait time here, considering how quickly the local planner runs on my machine. but I'm assuming that you wouldn't be able to run a commercial solver (e.g. gurobi) on a spacecraft... well, maybe you could",
+            "_comments": [
+                "being conservative with the wait time here, considering how quickly the local planner runs on my machine. but I'm assuming that you wouldn't be able to run a commercial solver (e.g. gurobi) on a spacecraft... well, maybe you could",
+                "figured 15 mins (900 seconds) was a good wait time before automatically running the LP again"
+            ],
             "replan_release_wait_time_s": 60,
-            "allow_lp_execution": true
+            "allow_lp_execution": true,
+            "replan_interval_s": 900
         }
     },
     "sim_gs_network_params": {

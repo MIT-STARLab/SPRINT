@@ -54,7 +54,8 @@
             "min_latency_for_sf_1_mins: this is the mimimum latency requirement for the highest latency score factor, 1.0. If multiple routes/dlnks for a single obs have latency less than this, they will both have sf 1.0"
         ],
         "dv_epsilon_Mb" :  0.1,
-        "existing_utilization_epsilon" :  0.00001,
+        "inflow_dv_minimum_Mb" :  5,
+        "existing_utilization_epsilon" :  0.001,
         "solver_name" :  "gurobi",
         "solver_params": {
             "run_remotely" :   false,
@@ -78,9 +79,9 @@
             "flow_dv": 1.0,
             "existing_flow_dv": 1.0,
             "existing_flow_indicators": 1.0,
-            "injected_inflow_dv": 0,
-            "injected_inflow_indicators": 1.0,
-            "injected_inflow_latency": 1.0,
+            "injected_inflow_dv": 2.0,
+            "injected_inflow_indicators": 5.0,
+            "injected_obs_latency": 0,
             "energy_storage": 0
         },
         "min_latency_for_sf_1_mins" :  10,
@@ -109,9 +110,13 @@
             }
         },
         "sat_schedule_arbiter_params" : {
-            "_comment": "being conservative with the wait time here, considering how quickly the local planner runs on my machine. but I'm assuming that you wouldn't be able to run a commercial solver (e.g. gurobi) on a spacecraft... well, maybe you could",
+            "_comments": [
+                "being conservative with the wait time here, considering how quickly the local planner runs on my machine. but I'm assuming that you wouldn't be able to run a commercial solver (e.g. gurobi) on a spacecraft... well, maybe you could",
+                "figured 15 mins (900 seconds) was a good wait time before automatically running the LP again"
+            ],
             "replan_release_wait_time_s": 60,
-            "allow_lp_execution": true
+            "allow_lp_execution": false,
+            "replan_interval_s": 900
         }
     },
     "sim_gs_network_params": {

@@ -2,9 +2,9 @@
     "version": "0.6",
     "sim_run_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-15T04:00:00.000000Z",
+        "end_utc": "2016-02-14T12:00:00.000000Z",
         "restore_from_checkpoint": false,
-        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T23_15_00.pkl",
+        "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T11_45_00.pkl",
         "sim_tick_s": 10,
         "pickle_checkpoints": true,
         "checkpoint_spacing_s": 900,
@@ -77,9 +77,9 @@
             "flow_dv": 1.0,
             "existing_flow_dv": 1.0,
             "existing_flow_indicators": 1.0,
-            "injected_inflow_dv": 2.0,
-            "injected_inflow_indicators": 5.0,
-            "injected_obs_latency": 0,
+            "injected_inflow_dv": 0,
+            "injected_inflow_indicators": 0,
+            "injected_obs_latency": 5.0,
             "energy_storage": 0
         },
         "min_latency_for_sf_1_mins" :  10,
@@ -133,7 +133,7 @@
     },
     "sim_plot_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-15T04:00:00.000000Z",
+        "end_utc": "2016-02-14T12:00:00.000000Z",
         "sat_acts_plot": {
             "time_units": "hours",
             "include_obs_labels": true,
@@ -191,10 +191,10 @@
         "injected_observations": [
             {
                 "indx": 0,
-                "end_utc": "2016-02-14T08:55:37.164153Z",
+                "end_utc": "2016-02-14T09:55:37.164153Z",
                 "sat_id": "sat4",
                 "type": "hardcoded",
-                "start_utc": "2016-02-14T08:54:37.164153Z"
+                "start_utc": "2016-02-14T09:54:37.164153Z"
             },
             {
                 "indx": 1,
@@ -218,13 +218,6 @@
                 "start_utc": "2016-02-14T21:22:23.298319Z"
             },
             {
-                "indx": 4,
-                "end_utc": "2016-02-14T08:31:59.662854Z",
-                "sat_id": "sat0",
-                "type": "hardcoded",
-                "start_utc": "2016-02-14T08:30:59.662854Z"
-            },
-            {
                 "indx": 5,
                 "end_utc": "2016-02-14T18:10:00.708361Z",
                 "sat_id": "sat1",
@@ -233,10 +226,10 @@
             },
             {
                 "indx": 6,
-                "end_utc": "2016-02-14T05:37:54.450560Z",
+                "end_utc": "2016-02-14T04:16:54.450560Z",
                 "sat_id": "sat5",
                 "type": "hardcoded",
-                "start_utc": "2016-02-14T05:36:54.450560Z"
+                "start_utc": "2016-02-14T04:15:54.450560Z"
             },
             {
                 "indx": 7,
@@ -268,17 +261,10 @@
             },
             {
                 "indx": 11,
-                "end_utc": "2016-02-14T09:06:12.829820Z",
+                "end_utc": "2016-02-14T10:06:12.829820Z",
                 "sat_id": "sat1",
                 "type": "hardcoded",
-                "start_utc": "2016-02-14T09:05:12.829820Z"
-            },
-            {
-                "indx": 12,
-                "end_utc": "2016-02-14T06:15:44.018586Z",
-                "sat_id": "sat3",
-                "type": "hardcoded",
-                "start_utc": "2016-02-14T06:14:44.018586Z"
+                "start_utc": "2016-02-14T10:05:12.829820Z"
             },
             {
                 "indx": 13,
@@ -286,13 +272,6 @@
                 "sat_id": "sat2",
                 "type": "hardcoded",
                 "start_utc": "2016-02-14T09:54:20.718866Z"
-            },
-            {
-                "indx": 14,
-                "end_utc": "2016-02-15T02:10:56.281411Z",
-                "sat_id": "sat5",
-                "type": "hardcoded",
-                "start_utc": "2016-02-15T02:09:56.281411Z"
             },
             {
                 "indx": 15,
@@ -351,13 +330,6 @@
                 "start_utc": "2016-02-14T15:12:31.779520Z"
             },
             {
-                "indx": 23,
-                "end_utc": "2016-02-14T07:23:47.624491Z",
-                "sat_id": "sat3",
-                "type": "hardcoded",
-                "start_utc": "2016-02-14T07:22:47.624491Z"
-            },
-            {
                 "indx": 24,
                 "end_utc": "2016-02-14T14:12:12.058434Z",
                 "sat_id": "sat0",
@@ -387,10 +359,10 @@
             },
             {
                 "indx": 28,
-                "end_utc": "2016-02-14T04:31:51.509312Z",
-                "sat_id": "sat1",
+                "end_utc": "2016-02-14T05:02:51.509312Z",
+                "sat_id": "sat0",
                 "type": "hardcoded",
-                "start_utc": "2016-02-14T04:30:51.509312Z"
+                "start_utc": "2016-02-14T05:01:51.509312Z"
             },
             {
                 "indx": 29,
@@ -398,13 +370,6 @@
                 "sat_id": "sat5",
                 "type": "hardcoded",
                 "start_utc": "2016-02-14T21:52:18.709511Z"
-            },
-            {
-                "indx": 30,
-                "end_utc": "2016-02-14T05:45:39.252353Z",
-                "sat_id": "sat5",
-                "type": "hardcoded",
-                "start_utc": "2016-02-14T05:44:39.252353Z"
             },
             {
                 "indx": 31,
@@ -419,13 +384,6 @@
                 "sat_id": "sat4",
                 "type": "hardcoded",
                 "start_utc": "2016-02-15T03:45:24.708834Z"
-            },
-            {
-                "indx": 33,
-                "end_utc": "2016-02-14T08:24:55.609917Z",
-                "sat_id": "sat0",
-                "type": "hardcoded",
-                "start_utc": "2016-02-14T08:23:55.609917Z"
             },
             {
                 "indx": 34,

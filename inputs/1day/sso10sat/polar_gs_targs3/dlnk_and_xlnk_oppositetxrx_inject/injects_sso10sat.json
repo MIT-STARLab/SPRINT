@@ -1,0 +1,702 @@
+[
+    {
+        "end_utc": "2018-01-18T05:22:02.420217Z",
+        "start_utc": "2018-01-18T05:21:02.420217Z",
+        "sat_id": "sat0",
+        "indx": 0,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T18:56:23.702618Z",
+        "start_utc": "2018-01-18T18:55:23.702618Z",
+        "sat_id": "sat0",
+        "indx": 1,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T19:27:42.339941Z",
+        "start_utc": "2018-01-18T19:26:42.339941Z",
+        "sat_id": "sat0",
+        "indx": 2,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T17:39:07.368535Z",
+        "start_utc": "2018-01-18T17:38:07.368535Z",
+        "sat_id": "sat0",
+        "indx": 3,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T22:05:31.334092Z",
+        "start_utc": "2018-01-18T22:04:31.334092Z",
+        "sat_id": "sat0",
+        "indx": 4,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T12:32:52.641588Z",
+        "start_utc": "2018-01-18T12:31:52.641588Z",
+        "sat_id": "sat0",
+        "indx": 5,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:50:58.538291Z",
+        "start_utc": "2018-01-18T02:49:58.538291Z",
+        "sat_id": "sat0",
+        "indx": 6,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T12:33:40.326316Z",
+        "start_utc": "2018-01-18T12:32:40.326316Z",
+        "sat_id": "sat0",
+        "indx": 7,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:07:52.832919Z",
+        "start_utc": "2018-01-18T05:06:52.832919Z",
+        "sat_id": "sat0",
+        "indx": 8,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T09:53:03.673093Z",
+        "start_utc": "2018-01-18T09:52:03.673093Z",
+        "sat_id": "sat0",
+        "indx": 9,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:18:49.451091Z",
+        "start_utc": "2018-01-18T05:17:49.451091Z",
+        "sat_id": "sat1",
+        "indx": 10,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:35:48.105974Z",
+        "start_utc": "2018-01-18T02:34:48.105974Z",
+        "sat_id": "sat1",
+        "indx": 11,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T04:27:00.445007Z",
+        "start_utc": "2018-01-18T04:26:00.445007Z",
+        "sat_id": "sat1",
+        "indx": 12,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T08:46:23.540565Z",
+        "start_utc": "2018-01-18T08:45:23.540565Z",
+        "sat_id": "sat1",
+        "indx": 13,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T07:34:26.934216Z",
+        "start_utc": "2018-01-18T07:33:26.934216Z",
+        "sat_id": "sat1",
+        "indx": 14,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T18:06:22.408105Z",
+        "start_utc": "2018-01-18T18:05:22.408105Z",
+        "sat_id": "sat1",
+        "indx": 15,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T06:02:22.220743Z",
+        "start_utc": "2018-01-18T06:01:22.220743Z",
+        "sat_id": "sat1",
+        "indx": 16,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T00:08:30.700206Z",
+        "start_utc": "2018-01-18T00:07:30.700206Z",
+        "sat_id": "sat1",
+        "indx": 17,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T07:02:16.423488Z",
+        "start_utc": "2018-01-18T07:01:16.423488Z",
+        "sat_id": "sat1",
+        "indx": 18,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T19:33:42.940745Z",
+        "start_utc": "2018-01-18T19:32:42.940745Z",
+        "sat_id": "sat1",
+        "indx": 19,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T01:42:52.862158Z",
+        "start_utc": "2018-01-18T01:41:52.862158Z",
+        "sat_id": "sat2",
+        "indx": 20,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T22:41:55.412805Z",
+        "start_utc": "2018-01-18T22:40:55.412805Z",
+        "sat_id": "sat2",
+        "indx": 21,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T13:08:51.740274Z",
+        "start_utc": "2018-01-18T13:07:51.740274Z",
+        "sat_id": "sat2",
+        "indx": 22,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T17:23:05.526293Z",
+        "start_utc": "2018-01-18T17:22:05.526293Z",
+        "sat_id": "sat2",
+        "indx": 23,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:16:42.941162Z",
+        "start_utc": "2018-01-18T02:15:42.941162Z",
+        "sat_id": "sat2",
+        "indx": 24,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T12:03:01.448841Z",
+        "start_utc": "2018-01-18T12:02:01.448841Z",
+        "sat_id": "sat2",
+        "indx": 25,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T12:03:58.442056Z",
+        "start_utc": "2018-01-18T12:02:58.442056Z",
+        "sat_id": "sat2",
+        "indx": 26,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T22:42:01.201572Z",
+        "start_utc": "2018-01-18T22:41:01.201572Z",
+        "sat_id": "sat2",
+        "indx": 27,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T13:53:34.665433Z",
+        "start_utc": "2018-01-18T13:52:34.665433Z",
+        "sat_id": "sat2",
+        "indx": 28,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T21:59:38.241245Z",
+        "start_utc": "2018-01-18T21:58:38.241245Z",
+        "sat_id": "sat2",
+        "indx": 29,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T20:13:29.383783Z",
+        "start_utc": "2018-01-18T20:12:29.383783Z",
+        "sat_id": "sat3",
+        "indx": 30,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T12:33:42.234109Z",
+        "start_utc": "2018-01-18T12:32:42.234109Z",
+        "sat_id": "sat3",
+        "indx": 31,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T16:10:02.194677Z",
+        "start_utc": "2018-01-18T16:09:02.194677Z",
+        "sat_id": "sat3",
+        "indx": 32,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T11:05:09.640044Z",
+        "start_utc": "2018-01-18T11:04:09.640044Z",
+        "sat_id": "sat3",
+        "indx": 33,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:03:13.803875Z",
+        "start_utc": "2018-01-18T05:02:13.803875Z",
+        "sat_id": "sat3",
+        "indx": 34,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T20:55:39.397291Z",
+        "start_utc": "2018-01-18T20:54:39.397291Z",
+        "sat_id": "sat3",
+        "indx": 35,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T08:34:57.109931Z",
+        "start_utc": "2018-01-18T08:33:57.109931Z",
+        "sat_id": "sat3",
+        "indx": 36,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T08:15:17.015066Z",
+        "start_utc": "2018-01-18T08:14:17.015066Z",
+        "sat_id": "sat3",
+        "indx": 37,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T09:37:19.955034Z",
+        "start_utc": "2018-01-18T09:36:19.955034Z",
+        "sat_id": "sat3",
+        "indx": 38,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T04:00:17.289883Z",
+        "start_utc": "2018-01-18T03:59:17.289883Z",
+        "sat_id": "sat3",
+        "indx": 39,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T23:34:25.004187Z",
+        "start_utc": "2018-01-18T23:33:25.004187Z",
+        "sat_id": "sat4",
+        "indx": 40,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T15:13:53.310988Z",
+        "start_utc": "2018-01-18T15:12:53.310988Z",
+        "sat_id": "sat4",
+        "indx": 41,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T03:44:38.219040Z",
+        "start_utc": "2018-01-18T03:43:38.219040Z",
+        "sat_id": "sat4",
+        "indx": 42,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:24:35.935529Z",
+        "start_utc": "2018-01-18T02:23:35.935529Z",
+        "sat_id": "sat4",
+        "indx": 43,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:31:57.604225Z",
+        "start_utc": "2018-01-18T02:30:57.604225Z",
+        "sat_id": "sat4",
+        "indx": 44,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T18:17:00.412716Z",
+        "start_utc": "2018-01-18T18:16:00.412716Z",
+        "sat_id": "sat4",
+        "indx": 45,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:20:24.222635Z",
+        "start_utc": "2018-01-18T02:19:24.222635Z",
+        "sat_id": "sat4",
+        "indx": 46,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T08:58:21.796098Z",
+        "start_utc": "2018-01-18T08:57:21.796098Z",
+        "sat_id": "sat4",
+        "indx": 47,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T04:51:10.617249Z",
+        "start_utc": "2018-01-18T04:50:10.617249Z",
+        "sat_id": "sat4",
+        "indx": 48,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T03:47:52.147261Z",
+        "start_utc": "2018-01-18T03:46:52.147261Z",
+        "sat_id": "sat4",
+        "indx": 49,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T01:41:11.366369Z",
+        "start_utc": "2018-01-18T01:40:11.366369Z",
+        "sat_id": "sat5",
+        "indx": 50,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T06:38:20.804811Z",
+        "start_utc": "2018-01-18T06:37:20.804811Z",
+        "sat_id": "sat5",
+        "indx": 51,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T22:54:51.235145Z",
+        "start_utc": "2018-01-18T22:53:51.235145Z",
+        "sat_id": "sat5",
+        "indx": 52,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T19:03:03.349147Z",
+        "start_utc": "2018-01-18T19:02:03.349147Z",
+        "sat_id": "sat5",
+        "indx": 53,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T03:54:23.360073Z",
+        "start_utc": "2018-01-18T03:53:23.360073Z",
+        "sat_id": "sat5",
+        "indx": 54,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T04:26:06.576610Z",
+        "start_utc": "2018-01-18T04:25:06.576610Z",
+        "sat_id": "sat5",
+        "indx": 55,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T16:53:10.690834Z",
+        "start_utc": "2018-01-18T16:52:10.690834Z",
+        "sat_id": "sat5",
+        "indx": 56,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T10:45:24.280553Z",
+        "start_utc": "2018-01-18T10:44:24.280553Z",
+        "sat_id": "sat5",
+        "indx": 57,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T17:43:35.537447Z",
+        "start_utc": "2018-01-18T17:42:35.537447Z",
+        "sat_id": "sat5",
+        "indx": 58,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T13:47:33.802377Z",
+        "start_utc": "2018-01-18T13:46:33.802377Z",
+        "sat_id": "sat5",
+        "indx": 59,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T08:09:31.891666Z",
+        "start_utc": "2018-01-18T08:08:31.891666Z",
+        "sat_id": "sat6",
+        "indx": 60,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T07:05:23.742937Z",
+        "start_utc": "2018-01-18T07:04:23.742937Z",
+        "sat_id": "sat6",
+        "indx": 61,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:18:51.932568Z",
+        "start_utc": "2018-01-18T02:17:51.932568Z",
+        "sat_id": "sat6",
+        "indx": 62,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T11:50:03.748776Z",
+        "start_utc": "2018-01-18T11:49:03.748776Z",
+        "sat_id": "sat6",
+        "indx": 63,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T00:48:45.254202Z",
+        "start_utc": "2018-01-18T00:47:45.254202Z",
+        "sat_id": "sat6",
+        "indx": 64,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:43:15.298872Z",
+        "start_utc": "2018-01-18T05:42:15.298872Z",
+        "sat_id": "sat6",
+        "indx": 65,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T22:03:06.394456Z",
+        "start_utc": "2018-01-18T22:02:06.394456Z",
+        "sat_id": "sat6",
+        "indx": 66,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T04:46:19.804566Z",
+        "start_utc": "2018-01-18T04:45:19.804566Z",
+        "sat_id": "sat6",
+        "indx": 67,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T18:21:37.707460Z",
+        "start_utc": "2018-01-18T18:20:37.707460Z",
+        "sat_id": "sat6",
+        "indx": 68,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T15:00:19.032570Z",
+        "start_utc": "2018-01-18T14:59:19.032570Z",
+        "sat_id": "sat6",
+        "indx": 69,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T20:33:58.242861Z",
+        "start_utc": "2018-01-18T20:32:58.242861Z",
+        "sat_id": "sat7",
+        "indx": 70,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T19:22:33.282583Z",
+        "start_utc": "2018-01-18T19:21:33.282583Z",
+        "sat_id": "sat7",
+        "indx": 71,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T21:45:57.619138Z",
+        "start_utc": "2018-01-18T21:44:57.619138Z",
+        "sat_id": "sat7",
+        "indx": 72,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T06:35:34.247881Z",
+        "start_utc": "2018-01-18T06:34:34.247881Z",
+        "sat_id": "sat7",
+        "indx": 73,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T10:47:38.324742Z",
+        "start_utc": "2018-01-18T10:46:38.324742Z",
+        "sat_id": "sat7",
+        "indx": 74,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T09:59:08.881978Z",
+        "start_utc": "2018-01-18T09:58:08.881978Z",
+        "sat_id": "sat7",
+        "indx": 75,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T07:21:31.872145Z",
+        "start_utc": "2018-01-18T07:20:31.872145Z",
+        "sat_id": "sat7",
+        "indx": 76,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T10:59:30.694517Z",
+        "start_utc": "2018-01-18T10:58:30.694517Z",
+        "sat_id": "sat7",
+        "indx": 77,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T23:00:45.822239Z",
+        "start_utc": "2018-01-18T22:59:45.822239Z",
+        "sat_id": "sat7",
+        "indx": 78,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T03:52:22.330868Z",
+        "start_utc": "2018-01-18T03:51:22.330868Z",
+        "sat_id": "sat7",
+        "indx": 79,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:13:22.882129Z",
+        "start_utc": "2018-01-18T05:12:22.882129Z",
+        "sat_id": "sat8",
+        "indx": 80,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T00:54:50.746589Z",
+        "start_utc": "2018-01-18T00:53:50.746589Z",
+        "sat_id": "sat8",
+        "indx": 81,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T09:43:07.453601Z",
+        "start_utc": "2018-01-18T09:42:07.453601Z",
+        "sat_id": "sat8",
+        "indx": 82,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T12:15:05.043376Z",
+        "start_utc": "2018-01-18T12:14:05.043376Z",
+        "sat_id": "sat8",
+        "indx": 83,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T02:04:09.483851Z",
+        "start_utc": "2018-01-18T02:03:09.483851Z",
+        "sat_id": "sat8",
+        "indx": 84,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T18:29:50.718566Z",
+        "start_utc": "2018-01-18T18:28:50.718566Z",
+        "sat_id": "sat8",
+        "indx": 85,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T20:10:42.674639Z",
+        "start_utc": "2018-01-18T20:09:42.674639Z",
+        "sat_id": "sat8",
+        "indx": 86,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T11:39:05.335509Z",
+        "start_utc": "2018-01-18T11:38:05.335509Z",
+        "sat_id": "sat8",
+        "indx": 87,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T17:40:19.006791Z",
+        "start_utc": "2018-01-18T17:39:19.006791Z",
+        "sat_id": "sat8",
+        "indx": 88,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T10:53:11.793140Z",
+        "start_utc": "2018-01-18T10:52:11.793140Z",
+        "sat_id": "sat8",
+        "indx": 89,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T09:16:29.520839Z",
+        "start_utc": "2018-01-18T09:15:29.520839Z",
+        "sat_id": "sat9",
+        "indx": 90,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:08:29.956909Z",
+        "start_utc": "2018-01-18T05:07:29.956909Z",
+        "sat_id": "sat9",
+        "indx": 91,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T17:26:49.450332Z",
+        "start_utc": "2018-01-18T17:25:49.450332Z",
+        "sat_id": "sat9",
+        "indx": 92,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T03:56:18.202663Z",
+        "start_utc": "2018-01-18T03:55:18.202663Z",
+        "sat_id": "sat9",
+        "indx": 93,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T11:13:17.445780Z",
+        "start_utc": "2018-01-18T11:12:17.445780Z",
+        "sat_id": "sat9",
+        "indx": 94,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T11:04:10.143163Z",
+        "start_utc": "2018-01-18T11:03:10.143163Z",
+        "sat_id": "sat9",
+        "indx": 95,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T05:50:24.550743Z",
+        "start_utc": "2018-01-18T05:49:24.550743Z",
+        "sat_id": "sat9",
+        "indx": 96,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T10:35:49.798847Z",
+        "start_utc": "2018-01-18T10:34:49.798847Z",
+        "sat_id": "sat9",
+        "indx": 97,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T21:13:48.675086Z",
+        "start_utc": "2018-01-18T21:12:48.675086Z",
+        "sat_id": "sat9",
+        "indx": 98,
+        "type": "hardcoded"
+    },
+    {
+        "end_utc": "2018-01-18T10:22:49.448114Z",
+        "start_utc": "2018-01-18T10:21:49.448114Z",
+        "sat_id": "sat9",
+        "indx": 99,
+        "type": "hardcoded"
+    }
+]

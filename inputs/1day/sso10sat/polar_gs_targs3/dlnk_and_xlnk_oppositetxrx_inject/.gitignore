@@ -10,3 +10,5 @@
 !gp_instance_params_inputs_3.json
 !gp_instance_params_inputs_4.json
 !const_sim_params_2.json
+!injects_sso10sat.json
+!injected_obs_sso10sat.pdf

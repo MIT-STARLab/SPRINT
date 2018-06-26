@@ -3,11 +3,11 @@
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-19T00:00:00.000000Z",
-        "restore_from_checkpoint": false, 
-        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T20_00_00.pkl", 
+        "restore_from_checkpoint": true, 
+        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T22_30_00.pkl", 
         "sim_tick_s": 10,
         "pickle_checkpoints": true, 
-        "checkpoint_spacing_s": 3600,
+        "checkpoint_spacing_s": 1800,
         "sat_schedule_hotstart": true,
         "_comments": [
             "the sim tick should be larger than the minimum activity window length allowed by the GP for scheduling"
@@ -76,11 +76,11 @@
             }
         },
         "obj_weights": {
-            "flow_dv": 1.0,
+            "flow_dv": 0,
             "existing_flow_dv": 1.0,
             "existing_flow_indicators": 1.0,
             "injected_inflow_dv": 0,
-            "injected_inflow_indicators": 0,
+            "injected_inflow_indicators": 1.0,
             "injected_obs_latency": 5.0,
             "energy_storage": 0
         },
@@ -96,6 +96,7 @@
     },
     "sim_satellite_params": {
         "_comment": "currently params are same for every sat",
+        "dv_epsilon_Mb" :  1.0,
         "time_epsilon_s": 1,
         "state_simulator": {
             "es_state_update": {

@@ -95,6 +95,7 @@
     },
     "sim_satellite_params": {
         "_comment": "currently params are same for every sat",
+        "dv_epsilon_Mb" :  1.0,
         "time_epsilon_s": 1,
         "state_simulator": {
             "es_state_update": {

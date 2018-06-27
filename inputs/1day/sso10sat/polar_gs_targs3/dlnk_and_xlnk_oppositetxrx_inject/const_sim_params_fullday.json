@@ -2,7 +2,7 @@
     "version": "0.6",
     "sim_run_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
-        "end_utc": "2018-01-19T00:00:00.000000Z",
+        "end_utc": "2018-01-18T06:00:00.000000Z",
         "restore_from_checkpoint": false, 
         "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T20_00_00.pkl", 
         "sim_tick_s": 10,
@@ -135,7 +135,7 @@
     },
     "sim_plot_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
-        "end_utc": "2018-01-19T00:00:00.000000Z",
+        "end_utc": "2018-01-18T06:00:00.000000Z",
         "sat_acts_plot": {
             "time_units": "hours",
             "include_obs_labels": false,

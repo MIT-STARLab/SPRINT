@@ -2,7 +2,7 @@
     "version": "0.6",
     "sim_run_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-14T12:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
         "restore_from_checkpoint": false,
         "restore_pkl_name": "pickles/sim_checkpoint_2016_02_14T11_45_00.pkl",
         "sim_tick_s": 10,
@@ -94,6 +94,7 @@
     },
     "sim_satellite_params": {
         "_comment": "currently params are same for every sat",
+        "dv_epsilon_Mb" :  1.0,
         "time_epsilon_s": 1,
         "state_simulator": {
             "es_state_update": {
@@ -204,13 +205,6 @@
                 "start_utc": "2016-02-14T11:59:35.483029Z"
             },
             {
-                "indx": 2,
-                "end_utc": "2016-02-15T00:10:42.982159Z",
-                "sat_id": "sat1",
-                "type": "hardcoded",
-                "start_utc": "2016-02-15T00:09:42.982159Z"
-            },
-            {
                 "indx": 3,
                 "end_utc": "2016-02-14T21:23:23.298319Z",
                 "sat_id": "sat5",
@@ -230,13 +224,6 @@
                 "sat_id": "sat5",
                 "type": "hardcoded",
                 "start_utc": "2016-02-14T04:15:54.450560Z"
-            },
-            {
-                "indx": 7,
-                "end_utc": "2016-02-15T00:23:36.030311Z",
-                "sat_id": "sat4",
-                "type": "hardcoded",
-                "start_utc": "2016-02-15T00:22:36.030311Z"
             },
             {
                 "indx": 8,
@@ -281,25 +268,11 @@
                 "start_utc": "2016-02-14T20:38:46.383513Z"
             },
             {
-                "indx": 16,
-                "end_utc": "2016-02-14T23:53:42.858195Z",
-                "sat_id": "sat0",
-                "type": "hardcoded",
-                "start_utc": "2016-02-14T23:52:42.858195Z"
-            },
-            {
                 "indx": 17,
                 "end_utc": "2016-02-14T10:55:33.461534Z",
                 "sat_id": "sat4",
                 "type": "hardcoded",
                 "start_utc": "2016-02-14T10:54:33.461534Z"
-            },
-            {
-                "indx": 18,
-                "end_utc": "2016-02-15T04:00:18.288585Z",
-                "sat_id": "sat1",
-                "type": "hardcoded",
-                "start_utc": "2016-02-15T03:59:18.288585Z"
             },
             {
                 "indx": 19,
@@ -379,13 +352,6 @@
                 "start_utc": "2016-02-14T19:25:09.145608Z"
             },
             {
-                "indx": 32,
-                "end_utc": "2016-02-15T03:46:24.708834Z",
-                "sat_id": "sat4",
-                "type": "hardcoded",
-                "start_utc": "2016-02-15T03:45:24.708834Z"
-            },
-            {
                 "indx": 34,
                 "end_utc": "2016-02-14T14:00:13.611338Z",
                 "sat_id": "sat0",
@@ -394,17 +360,17 @@
             },
             {
                 "indx": 35,
-                "end_utc": "2016-02-14T22:10:56.972232Z",
+                "end_utc": "2016-02-14T18:10:56.972232Z",
                 "sat_id": "sat3",
                 "type": "hardcoded",
-                "start_utc": "2016-02-14T22:09:56.972232Z"
+                "start_utc": "2016-02-14T18:09:56.972232Z"
             },
             {
                 "indx": 36,
-                "end_utc": "2016-02-14T22:36:05.824133Z",
+                "end_utc": "2016-02-14T17:36:05.824133Z",
                 "sat_id": "sat3",
                 "type": "hardcoded",
-                "start_utc": "2016-02-14T22:35:05.824133Z"
+                "start_utc": "2016-02-14T17:35:05.824133Z"
             },
             {
                 "indx": 37,
@@ -419,13 +385,6 @@
                 "sat_id": "sat5",
                 "type": "hardcoded",
                 "start_utc": "2016-02-14T13:33:49.865042Z"
-            },
-            {
-                "indx": 39,
-                "end_utc": "2016-02-15T00:32:25.791908Z",
-                "sat_id": "sat3",
-                "type": "hardcoded",
-                "start_utc": "2016-02-15T00:31:25.791908Z"
             }
         ]
     }

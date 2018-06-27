@@ -8,15 +8,15 @@ from datetime import datetime,timedelta
 import json
 import sys
 
-# day_start = datetime(2016,2,14,4,0,0)
-# day_end = datetime(2016,2,15,4,0,0)
-# sats = ["sat0","sat1","sat2","sat3","sat4","sat5"]
+day_start = datetime(2016,2,14,4,0,0)
+day_end = datetime(2016,2,15,4,0,0)
+sats = ["sat0","sat1","sat2","sat3","sat4","sat5"]
 
-day_start = datetime(2018,1,18,0,0,0)
-day_end = datetime(2018,1,19,0,0,0)
+# day_start = datetime(2018,1,18,0,0,0)
+# day_end = datetime(2018,1,19,0,0,0)
 # sats = ["sat0","sat1","sat2","sat3","sat4","sat5","sat6","sat7","sat8","sat9"]
 # sats = ["sat0","sat1","sat2","sat3","sat4","sat5","sat6","sat7","sat8","sat9","sat10","sat11","sat12","sat13","sat14"]
-sats = ["sat15","sat16","sat17","sat18","sat19","sat20","sat21","sat22","sat23","sat24","sat25","sat26","sat27","sat28","sat29"]
+# sats = ["sat15","sat16","sat17","sat18","sat19","sat20","sat21","sat22","sat23","sat24","sat25","sat26","sat27","sat28","sat29"]
 # sats = ["sat0","sat1","sat2","sat3","sat4","sat5","sat6","sat7","sat8","sat9","sat10","sat11","sat12","sat13","sat14","sat15","sat16","sat17","sat18","sat19","sat20","sat21","sat22","sat23","sat24","sat25","sat26","sat27","sat28","sat29"]
 
 
@@ -26,7 +26,7 @@ from circinus_tools.plotting import plot_tools as pltl
 from circinus_tools.scheduling.custom_window import   ObsWindow
 from circinus_tools import time_tools as tt
 
-with open('injects_walker30_inc30.json','r') as f:
+with open('injects_zhou.json','r') as f:
     the_json = json.load(f)
 
 

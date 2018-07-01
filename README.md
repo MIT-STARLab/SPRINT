@@ -30,6 +30,7 @@
         1. Ensure the correct version of python is enabled being referenced where you execute this installation command (pyenv is directory specific, for instance).
         2. Sudo or admin terminal will be necessary.
         3. after installation, check output of `pip freeze` to see that a line like `matlabengineforpython===R2017a` appears.
+        4. install screen. Ubuntu: `sudo apt-get install screen`
     1. Install Gurobi:
         1. Download and install [Gurobi 8.0.0](http://www.gurobi.com/downloads/gurobi-optimizer)
         1. Acquire and activate Gurobi License ([Academic is free if appropriate](https://user.gurobi.com/download/licenses/free-academic))

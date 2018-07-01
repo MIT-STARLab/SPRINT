@@ -134,7 +134,7 @@
     },
     "sim_plot_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-14T12:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
         "sat_acts_plot": {
             "time_units": "hours",
             "include_obs_labels": true,
@@ -188,7 +188,7 @@
         "aoi_units": "hours"
     },
     "sim_run_perturbations": {
-        "do_inject_obs": true,
+        "do_inject_obs": false,
         "injected_observations": [
             {
                 "indx": 0,

@@ -188,7 +188,7 @@
         "aoi_units": "hours"
     },
     "sim_run_perturbations": {
-        "do_inject_obs": true,
+        "do_inject_obs": false,
         "injected_observations": [
             {
                 "indx": 0,

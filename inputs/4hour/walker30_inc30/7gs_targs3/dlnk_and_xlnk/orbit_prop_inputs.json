@@ -1,5 +1,5 @@
 {
-    "version": "0.6",
+    "version": "0.5",
     "scenario_params": {
         "start_utc": "2018-01-18T00:00:00.000000Z",
         "end_utc": "2018-01-18T04:00:00.000000Z",

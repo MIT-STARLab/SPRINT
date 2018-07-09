@@ -42,10 +42,11 @@
         "min_latency_for_sf_1_mins" :  10,
         "dv_epsilon_Mb" :  1,
         "fixed_utilization_epsilon" :  0.00001,
-        "solver_name" :  "gurobi",
+        "solver_name" :  "cplex",
         "solver_params": {
             "run_remotely" :   false,
-            "max_runtime_s" : 1000,
+            "_comment": "give it 5 hours to run, for good measure",
+            "max_runtime_s" : 18000,
             "optimality_gap" :  1e-2,
             "integer_feasibility_tolerance" :  1e-5,
             "gurobi": {
@@ -78,7 +79,7 @@
     },
     "pickle_params":  {
         "pickle_route_selection_step1_results":                   true,
-        "pickle_route_selection_step2_results":                   false,
+        "pickle_route_selection_step2_results":                   true,
         "pickle_act_scheduling_results":                            true
     },
     "other_params": {

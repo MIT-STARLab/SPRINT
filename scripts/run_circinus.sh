@@ -6,14 +6,16 @@ dir_opt=1day
 # scen_name=walker100_inc60
 # scen_name=walker28_4orb_inc30
 # scen_name=walker60_inc60
-scen_name=walker30_inc30
+# scen_name=walker30_inc30
 # scen_name=walker18_inc30
-# scen_name=zhou2017_comparxison
+scen_name=zhou2017_comparison
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
-dir_opt_params=17gs_targs3/dlnk_and_xlnk
+# dir_opt_params=17gs_targs3/dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk
+dir_opt_params=dlnk_and_xlnk_obj_sensitivity
 
-run_orbit_prop="true"
+# run_orbit_prop="true"
+run_orbit_prop="false"
 use_cached="false"
 # use_cached="true"
 

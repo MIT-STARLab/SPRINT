@@ -12,7 +12,8 @@ scen_name=zhou2017_comparison
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_unidirectional
 # dir_opt_params=7gs_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk
-dir_opt_params=dlnk_and_xlnk
+# dir_opt_params=dlnk_and_xlnk
+dir_opt_params=dlnk_and_xlnk_obj_sensitivity
 
 # pickle_choice=b
 gp_inst_inputs=gp_instance_params_inputs_var.json

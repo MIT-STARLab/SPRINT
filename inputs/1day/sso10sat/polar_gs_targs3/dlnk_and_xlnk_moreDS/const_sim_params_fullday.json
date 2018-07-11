@@ -1,0 +1,209 @@
+{
+    "version": "0.6",
+    "sim_run_params": {
+        "start_utc": "2018-01-18T00:00:00.000000Z",
+        "end_utc": "2018-01-19T00:00:00.000000Z",
+        "restore_from_checkpoint": false, 
+        "restore_pkl_name": "pickles/sim_checkpoint_2018_01_18T20_00_00.pkl", 
+        "sim_tick_s": 10,
+        "pickle_checkpoints": true, 
+        "checkpoint_spacing_s": 3600,
+        "sat_schedule_hotstart": true,
+        "_comments": [
+            "the sim tick should be larger than the minimum activity window length allowed by the GP for scheduling"
+        ]
+    },
+    "gp_wrapper_params": {
+        "restore_gp_output_from_pickle" :  false,
+        "pickle_gp_output" :  false,
+        "gp_output_pickle_to_restore" :  "pickles/gp_output_2018-05-16T21_02_42.778960.pkl",
+        "gp_path" :  "../../access_global_planner",
+        "gp_params": {
+            "_comments": [
+                "planning_past_horizon_mins allows us to look back at windows in the past in the global planner.  not sure this is useful because you can't make decisions about the scheduling of those windows.",
+                "planning_horizon_fixed allows us to fix a certain period of time up to which no new data routes can introduce new activity windows. Note that this should be at least as long as the time required to run the GP (so that we're not planning for windows that will be stale immediately post-execution!)",
+                "planning_horizon_obs_xlnk specifies how far forward to look for observation windows",
+                "planning_horizon_obs_xlnk specifies how far forward to look for cross-link windows",
+                "planning_horizon_dlnk specifies how far forward to look for downlink windows. generally want this to be large because down links have more bandwidth than cross-links and you want to give the satellite the option to wait to downlink instead of just cross-linking",
+                "95 minutes is ~ 1 orbit for 600 km altitude",
+                "fixed horizon set to time to release time for GP.",
+                "max_num_dlnks_allowed_after_planning_end_xlnk is how many additional dlnks are allowed to be used for routing after planning_end_xlnk, for each sat. If large, this can vastly increase number of routes considered. null means there is no limit",
+                "760 minutes is about 8 orbits for 600 km alt, to give plenty of room to find downlinks"
+            ],
+            "planning_past_horizon_mins" :  0,
+            "planning_horizon_fixed_mins" : 10,
+            "planning_horizon_obs_mins" :  95,
+            "planning_horizon_xlnk_mins" :  95,
+            "planning_horizon_dlnk_mins" :  760,
+            "max_num_dlnks_allowed_after_planning_end_xlnk": 1
+        }
+    },
+    "lp_wrapper_params": {
+        "lp_params": {
+            "_comments": [
+                "planning_leaving_flow_start_mins specifies the earliest time at which we can consider an outgoing (transmission) activity window to be available for re-routing with any data. this should be greater than the release time (replan_release_wait_time_s) for the satellite schedule arbiter, so that we don't choose too late to different data through a given activity window",
+                "planning_horizon_fixed specifies how far ahead the local planner should look"
+            ],
+            "planning_leaving_flow_start_mins" :  2,
+            "planning_horizon_mins" :  95
+        }
+    },
+    "lp_general_params": {
+        "_comments": [
+            "existing_utilization_epsilon is the extra utilization allowed for existing routes so that they don't miss the minimum required dv due to roundoff error. It also functions as a general round off precision bound.",
+            "min_latency_for_sf_1_mins: this is the mimimum latency requirement for the highest latency score factor, 1.0. If multiple routes/dlnks for a single obs have latency less than this, they will both have sf 1.0"
+        ],
+        "dv_epsilon_Mb" :  0.1,
+        "existing_utilization_epsilon" :  0.00001,
+        "solver_name" :  "gurobi",
+        "solver_params": {
+            "run_remotely" :   false,
+            "max_runtime_s" : 1000,
+            "optimality_gap" :  1e-2,
+            "integer_feasibility_tolerance" :  1e-5,
+            "gurobi": {
+                "_helpful_links": [
+                    "http://www.gurobi.com/documentation/7.5/refman/intfeastol.html#parameter:IntFeasTol",
+                    "http://www.gurobi.com/documentation/7.5/refman/mipgap2.html#parameter:MIPGap",
+                    "http://www.gurobi.com/documentation/7.5/refman/timelimit.html#parameter:TimeLimit"
+                ]
+            },
+            "cplex": {
+                "_helpful_links": [
+                    "https://www.ibm.com/support/knowledgecenter/SSSA5P_12.8.0/ilog.odms.cplex.help/CPLEX/Parameters/topics/introListAlpha.html"
+                ]
+            }
+        },
+        "obj_weights": {
+            "flow_dv": 1.0,
+            "existing_flow_dv": 1.0,
+            "existing_flow_indicators": 1.0,
+            "injected_inflow_dv": 0,
+            "injected_inflow_indicators": 1.0,
+            "injected_inflow_latency": 1.0,
+            "energy_storage": 0
+        },
+        "min_latency_for_sf_1_mins" :  10,
+        "latency_calculation": {
+            "dlnk": "center",
+            "obs": "center"
+        }
+    },
+    "sim_gs_params": {
+        "_comment": "currently params are same for every gs",
+        "time_epsilon_s": 1
+    },
+    "sim_satellite_params": {
+        "_comment": "currently params are same for every sat",
+        "dv_epsilon_Mb" :  1.0,
+        "time_epsilon_s": 1,
+        "state_simulator": {
+            "es_state_update": {
+                "add_noise": false,
+                "noise_params": {
+                    "noise_type": "fractional_normal_edot",
+                    "average": 0,
+                    "std": 0.01,
+                    "min": 0.95,
+                    "max": 1.05
+                }
+            }
+        },
+        "sat_schedule_arbiter_params" : {
+            "_comments": [
+                "being conservative with the wait time here, considering how quickly the local planner runs on my machine. but I'm assuming that you wouldn't be able to run a commercial solver (e.g. gurobi) on a spacecraft... well, maybe you could",
+                "figured 15 mins (900 seconds) was a good wait time before automatically running the LP again"
+            ],
+            "replan_release_wait_time_s": 60,
+            "allow_lp_execution": true,
+            "replan_interval_s": 900
+        }
+    },
+    "sim_gs_network_params": {
+        "time_epsilon_s": 1,
+        "gsn_ps_params" : {
+            "_comments": [
+                "replan_release_wait_time_s simulates the amount of time required to actually run the global planner in real life. from the perspective of this code the global planner will run instantaneously. After it runs, the sim will wait this amount of time before making those plans available",
+                "release_first_plans_immediately = True means that global planner will immediately make its first set of global plans available (they won't be queued up for release at a later time)",
+                "3000 seconds is 50 minutes, about half the length of an orbit (95 mins) at 600 km altitude",
+                "replan release time is a conservative 10 minutes here"
+            ],
+            "replan_interval_s": 3000,
+            "replan_release_wait_time_s": 600,
+            "release_first_plans_immediately": true
+        }
+    },
+    "sim_plot_params": {
+        "start_utc": "2018-01-18T00:00:00.000000Z",
+        "end_utc": "2018-01-19T00:00:00.000000Z",
+        "sat_acts_plot": {
+            "time_units": "hours",
+            "include_obs_labels": false,
+            "include_xlnk_labels": false,
+            "include_dlnk_labels": false
+        },
+        "gs_acts_plot": {
+            "include_labels": true,
+            "time_units": "hours"
+        },
+        "energy_usage_plot": {
+            "plot_bound_e_min_Wh_delta": -1,    
+            "plot_bound_e_max_Wh_delta": 1,
+            "show_min_max_bounds": true,
+            "display_e_min_constraint": false,
+            "display_e_max_constraint": false,
+            "include_eclipse_windows": true,
+            "time_units": "hours"
+        },
+        "data_usage_plot": {
+            "plot_bound_d_min_Gb_delta": -1,    
+            "plot_bound_d_max_Gb_delta": 1,
+            "show_min_max_bounds": true,
+            "display_d_min_constraint": false,
+            "display_d_max_constraint": false,
+            "include_eclipse_windows": true,
+            "time_units": "hours"
+        },
+        "obs_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 4,
+            "x_axis_time_units": "hours"
+        },
+        "sat_cmd_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5,
+            "x_axis_time_units": "hours"
+        },
+        "sat_tlm_aoi_plot" : {
+            "plot_bound_min_aoi_hours": 0,    
+            "plot_bound_max_aoi_hours": 1.5,
+            "x_axis_time_units": "hours"
+        }
+    },
+    "sim_metrics_params" : {
+        "latency_calculation": {
+            "dlnk": "center",
+            "obs": "center"
+        },
+        "targ_id_ignore_list" : [],
+        "aoi_units": "hours"
+    },
+    "sim_run_perturbations": {
+        "do_inject_obs": false,
+        "injected_observations": [
+            {
+                "sat_id": "sat3",
+                "start_utc": "2016-02-14T05:00:00.000000Z",
+                "end_utc": "2016-02-14T05:01:00.000000Z",
+                "type": "hardcoded"
+            },
+            {
+                "sat_id": "sat5",
+                "start_utc": "2016-02-14T05:20:00.000000Z",
+                "end_utc": "2016-02-14T05:21:00.000000Z",
+                "type": "hardcoded"
+            }
+        ]
+    }
+
+}

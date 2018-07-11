@@ -2,20 +2,21 @@
 
 
 dir_opt=1day
-# scen_name=zhou2017_comparison
-scen_name=sso10sat
+scen_name=zhou2017_comparison
+# scen_name=sso10sat
 # scen_name=walker30_inc30
 # dir_opt_params=polar_gs_targs3/dlnk_only
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
-dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_moreDS
+# dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_moreDS
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_oppositetxrx
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_oppositetxrx_dlnk_disable
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_oppositetxrx_inject
 # dir_opt_params=dlnk_and_xlnk
+dir_opt_params=dlnk_and_xlnk_obj_sensitivity
 # dir_opt_params=17gs_targs3/dlnk_only
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk_oppositetxrx
-const_sim_params_inputs=const_sim_params_fullday.json
+const_sim_params_inputs=const_sim_params_gprerun.json
 
 # NOTE! THIS MUST MATCH PARAMS ABOVE!
 restore_pickle_cmdline_opt=false
@@ -30,6 +31,8 @@ restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/PhD/re
 
 gp_general_inputs_opt=custom
 const_sim_params_inputs_opt=custom
+gp_general_params_inputs=gp_general_params_inputs_var.json    
+
 
 
 CIRCINUS_SIM_PATH="../source/circinus_sim"
@@ -45,7 +48,6 @@ data_rates=data_rates_output.json
 prop_data=orbit_prop_data.json
 gp_outputs=gp_outputs.json
 sat_link=sat_link_history.json    
-gp_general_params_inputs=gp_general_params_inputs.json    
 
 echo  $opt_inp_dir_python/$prop_inputs
 echo  $opt_inp_dir_python/$link_inputs

@@ -237,7 +237,7 @@
         ]
     },
     "gs_params": {
-        "num_stations": 20,
+        "num_stations": 30,
         "gs_network_name": "Made up 1",
         "gs_network_version": "1",
         "_comment": "setting this to 20 deg to be conservative",

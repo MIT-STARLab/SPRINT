@@ -2,10 +2,10 @@
 
 # dir_opt=4hour
 dir_opt=1day
-scen_name=zhou2017_comparison
+# scen_name=zhou2017_comparison
 # scen_name=sso10sat
 # scen_name=walker18_inc30
-# scen_name=walker30_inc30
+scen_name=walker30_inc30
 # scen_name=walker100_inc60
 # scen_name=walker60_inc60
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
@@ -13,14 +13,15 @@ scen_name=zhou2017_comparison
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_obj_sensitivity
 # dir_opt_params=7gs_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk
+dir_opt_params=17gs_targs100tropics/dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk
-dir_opt_params=dlnk_and_xlnk_obj_sensitivity
+# dir_opt_params=dlnk_and_xlnk_obj_sensitivity
 
 # pickle_choice=b
-gp_inst_inputs=gp_instance_params_inputs_var.json
-# gp_inst_inputs=gp_instance_params_inputs_1.json
-gp_general_params_inputs=gp_general_params_inputs_var.json    
-# gp_general_params_inputs=gp_general_params_inputs.json    
+# gp_inst_inputs=gp_instance_params_inputs_var.json
+gp_inst_inputs=gp_instance_params_inputs_1.json
+# gp_general_params_inputs=gp_general_params_inputs_var.json    
+gp_general_params_inputs=gp_general_params_inputs.json    
 
 # pickle_choice=fast
 # pickle_choice=opt

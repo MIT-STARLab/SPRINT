@@ -11,13 +11,14 @@ scen_name=walker30_inc30
 # scen_name=zhou2017_comparison
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk
-dir_opt_params=17gs_targs80tropics/dlnk_and_xlnk
+# dir_opt_params=17gs_targs80tropics/dlnk_and_xlnk
+dir_opt_params=20gstropics_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs100tropics/dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk
 
-# run_orbit_prop="true"
-run_orbit_prop="false"
+run_orbit_prop="true"
+# run_orbit_prop="false"
 # use_cached="false"
 use_cached="true"
 

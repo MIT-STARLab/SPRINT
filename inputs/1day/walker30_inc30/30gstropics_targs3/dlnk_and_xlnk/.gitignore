@@ -1,0 +1,12 @@
+*
+!.gitignore
+!orbit_prop_inputs.json
+!orbit_link_inputs.json
+!gp_general_params_inputs.json
+!const_sim_params_fullday.json
+!gp_instance_params_inputs_fullday.json
+!gp_instance_params_inputs_1.json
+!gp_instance_params_inputs_2.json
+!gp_instance_params_inputs_3.json
+!gp_instance_params_inputs_4.json
+!const_sim_params_2.json

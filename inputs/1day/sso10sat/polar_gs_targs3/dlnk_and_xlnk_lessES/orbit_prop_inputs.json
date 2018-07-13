@@ -48,21 +48,21 @@
                         "test": 0
                     },
                     "obs":  {
-                        "Hyperspectral imager (Tsitas and Kingston, 2010)": -10
+                        "Hyperspectral imager (Tsitas and Kingston, 2010)": -20
                     },
                     "dlnk": {
                        "X-band (MDO 2018)":  -10,
-                       "X-band (BBSDR/SFN,fixed rate)":  -12.3
+                       "X-band (BBSDR/SFN,fixed rate)":  -24.6
                     },
                     "xlnk_tx": {
-                        "NODE 2.0 (MDO 2018)": -12
+                        "NODE 2.0 (MDO 2018)": -24
                     },
                     "xlnk_rx": {
                         "Kit ballpark": -5
                     },
                     "orbit_insunlight_average_charging": {
                         "MiRaTA-like (Smallsat 2014)": 11.25,
-                        "Clydspace 6U spec 2018": 19.0
+                        "Clydspace 6U spec 2018": 25.0
                     }
                 },
                 "battery_storage_Wh": {

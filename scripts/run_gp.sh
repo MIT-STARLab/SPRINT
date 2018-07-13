@@ -12,8 +12,9 @@ scen_name=walker30_inc30
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_unidirectional
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_obj_sensitivity
 # dir_opt_params=7gs_targs3/dlnk_and_xlnk
-# dir_opt_params=17gs_targs3/dlnk_and_xlnk
-dir_opt_params=17gs_targs100tropics/dlnk_and_xlnk
+dir_opt_params=17gs_targs3/dlnk_and_xlnk
+# dir_opt_params=17gs_targs100tropics/dlnk_and_xlnk
+# dir_opt_params=30gstropics_targs3/dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk_obj_sensitivity
 

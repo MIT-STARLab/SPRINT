@@ -73,10 +73,10 @@
             }
         },
         "obj_weights": {
-            "obs_dv": 1.0,
-            "route_latency": 1.0,
+            "obs_dv": 2.0,
+            "route_latency": 2.0,
             "energy_storage": 1.0,
-            "existing_routes": 1.0,
+            "existing_routes": 2.0,
             "inter_sat_act_constr_violations": 100.0,
             "intra_sat_act_constr_violations": 100.0
         },

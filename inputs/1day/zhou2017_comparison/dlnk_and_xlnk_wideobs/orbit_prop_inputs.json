@@ -1,0 +1,255 @@
+{
+    "version": "0.8",
+    "scenario_params": {
+        "start_utc": "2016-02-14T04:00:00.000000Z",
+        "end_utc": "2016-02-14T09:00:00.000000Z",
+        "timestep_s": 10.0,
+        "use_crosslinks": true,
+        "all_sats_same_time_system": true,
+        "matlab_verbose": true
+    },
+    "general_orbit_prop_params": {
+        "include_ecef_output": false
+    },
+    "sat_params": {
+        "num_satellites": 6,
+        "sat_id_prefix": "sat",
+        "sat_id_order": "default",
+        "payload_data_rate_Mbps": 50,
+        "power_params": [
+            {
+                "_comment": "these params are parsed in circinus_tools/io_tools.py. That file should be kept up to date with any changes here.",
+                "sat_id_prefix": "sat",
+                "sat_ids": "duplicate,range_inclusive,0,5",
+                "base_option": "Zhou 2017",
+                "obs_option": "Zhou 2017",
+                "dlnk_option": "Zhou 2017",
+                "xlnk_tx_option": "Zhou 2017",
+                "xlnk_rx_option": "Zhou 2017",
+                "orbit_insunlight_average_charging_option": "Zhou 2017",
+                "battery_option": "Zhou 2017",
+                "power_consumption_W": {
+                    "_comment": "power params from beginning of section 6",
+                    "base": {
+                        "Zhou 2017": -10,
+                        "test": 0
+                    },
+                    "obs":  {
+                        "Zhou 2017": -25
+                    },
+                    "dlnk": {
+                       "Zhou 2017":  -20
+                    },
+                    "xlnk_tx": {
+                        "Zhou 2017": -20
+                    },
+                    "xlnk_rx": {
+                        "Zhou 2017": -5
+                    },
+                    "orbit_insunlight_average_charging": {
+                        "Zhou 2017": 30,
+                        "_comment": "P_c from Tables II"
+                    }
+                },
+                "battery_storage_Wh": {
+                    "e_min": {
+                        "Zhou 2017": 2.78,
+                        "Zhou 2017 var": 1.6668000106675203,
+                        "_comment": "80% DOD",
+                        "_comment": "50KJ * 0.2 for nominal; 50/3.599712*0.2 = 2.778 "
+                    },
+                    "e_max": {
+                        "Zhou 2017": 13.89,
+                        "Zhou 2017 var": 8.3340000533376,
+                        "_comment": "50KJ for nominal; 50/3.599712 = 13.89",
+                        "_comment": "B_max from Figure 4"
+                    },
+                    "charge_efficiency": 1.0,
+                    "discharge_efficiency": 1.0
+                },
+                "_comment": "most of the power consumption and energy constraints were taken from the 2016 Kennedy, Cahoy JAIS paper. Xlnk and Dlnk power taken from the MDO paper, which as of March 2018 is not quite published. Orbit average charging was calculated from the 8.25 Wh figure (8.25 + 20% margin, all acquired over ~55 minutes of in-sunlight time in a 600 km orbit for 11.25 watts average during sunlight) from page 12 of Smallsat 2014 MiRaTA paper - Blackwell, W. J. et al, Microwave Radiometer Technology Acceleration Mission (MiRaTA): Advancing Weather Remote Sensing with Nanosatellites"
+            }
+        ],
+        "data_storage_params": [
+            {
+                "sat_id_prefix": "sat",                
+                "sat_ids": "duplicate,range_inclusive,0,5",
+                "storage_option": "Zhou 2017",
+                "data_storage_Gbit": {
+                    "d_min": {
+                        "Zhou 2017": 0
+                    },
+                    "d_max": {
+                        "Zhou 2017": 12
+                    }
+                }
+            }
+        ],
+        "initial_state": [
+            {
+                "sat_id_prefix": "sat",                
+                "sat_ids": "duplicate,range_inclusive,0,5",
+                "batt_e_Wh": 8
+            }
+        ],
+        "activity_params": {
+            "_comments" : [
+                "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times. by_increasing_sat_index means that if the receive sat index is larger than tx sat index (i.e. further in sat_id_order list) then the crosslink is in an INCREASING direction",
+                ""
+            ],
+            "params_option": "Zhou 2017",
+            "intra-orbit_neighbor_direction_method": "by_increasing_sat_index",
+            "transition_time_s": {
+                "_comment": "the structure here is the following: transition context (e.g. inter-sat) -> act1/act2 transition activities -> transition type -> params option",
+                "inter-sat": {
+                    "_comments": [
+                        " this accounts for activity transitions across satellites. the only real use case I can see right now is transitioning between satellites for downlink at the ground station",
+                        ""
+                    ],
+                    "default": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}},
+                    "dlnk-dlnk": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 60}}
+                },
+                "intra-sat": {
+                    "_comments": [
+                        " these transition times account for changes in activity choice on a single given satellite. ",
+                        "The transition time requirements within here assume a 0.5 deg/sec slew rate for spacecraft. This is based on the (slow) slew rate used for the MiRaTA spacecraft. See Cahoy, K. L., Marinan, A., Marlow, W., Cordeiro, T., Blackwell, W. J., Bishop, R., and Erickson, N., 'Development Of The Microwave Radiometer Technology Acceleration ( MiRaTA ) Cubesat For All-Weather Atmospheric Sounding,' IGARSS 2015, Milan, Italy: IEEE, 2015, pp. 5304–5307.",
+                        "for downlink, assumed a patch antenna like the syrlinks SPAN-X-T2 can be used for X-band, and that multiple of them can be mounted so that no repointing is required in order to perform high-rate downlink",
+                        "obs-xlnk,xlnk-obs:  assuming that observation payload is mounted 90° from lasercomm cross-link",
+                        "xlnk-xlnk:  assuming either 90 or 180° slews.  assumed 180 when fully changing directions ( including when changing to a different inter-orbit, because I assume that a change in inter-orbit means you're using the orbit on the opposite side) and 90 when transitioning from intra orbit to inter orbit and back ( because I assume that inter-orbits are always roughly in the orbit normal direction)"
+                    ],
+                    "obs-obs": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}},
+                    "obs-xlnk": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 180}},
+                    "obs-dlnk": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}},
+                    "dlnk-obs": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}},
+                    "dlnk-xlnk": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}},
+                    "dlnk-dlnk": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}},
+                    "xlnk-obs": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 180}},
+                    "xlnk-xlnk": {
+                        "intra-orbit,same direction": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0},
+                        "intra-orbit,different direction": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 360},
+                        "intra to inter-orbit/inter to intra-orbit": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 360},
+                        "inter-orbit,same orbit,same satellite": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0},
+                        "inter-orbit,same orbit,different satellite": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 360},
+                        "inter-orbit,different orbit": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 360}
+                    },
+                    "xlnk-dlnk": {"default": {"Zhou 2017": 0, "test_xlnk_txrx_one_side": 0}}
+                }
+            },
+            "min_duration_s": {
+                "obs": 15,
+                "dlnk": 60,
+                "xlnk": 60
+            }
+        }
+    },
+    "orbit_params" : {
+        "_comments": [
+            "sat_ids_by_orbit identifies which satellite ids are in which orbit. All sat ids should be accounted for. Sat ids should be stored in INCREASING order within the list for each orbit (this figures in to cross-link directionality for transition times)",
+            ""
+        ],
+        "sat_ids_by_orbit_name": {
+            "orbit0": ["sat0","sat1","sat2"],
+            "orbit1": ["sat3","sat4","sat5"]
+        },
+        "sat_orbital_elems": [
+            {
+                "sat_id": "sat0",
+                "kepler_meananom": {
+                    "a_km":  7378,
+                    "e": 0,
+                    "i_deg": 97.86,
+                    "RAAN_deg": 0,
+                    "arg_per_deg": 0,
+                    "M_deg": 90
+                },
+                "propagation_method": "matlab_delkep"
+            },
+            {
+                "sat_id": "sat1",
+                "kepler_meananom": {
+                    "a_km":  7378,
+                    "e": 0,
+                    "i_deg": 97.86,
+                    "RAAN_deg": 0,
+                    "arg_per_deg": 0,
+                    "M_deg": 180
+                },
+                "propagation_method": "matlab_delkep"
+            },
+            {
+                "sat_id": "sat2",
+                "kepler_meananom": {
+                    "a_km":  7378,
+                    "e": 0,
+                    "i_deg": 97.86,
+                    "RAAN_deg": 0,
+                    "arg_per_deg": 0,
+                    "M_deg": 270
+                },
+                "propagation_method": "matlab_delkep"
+            },
+            {
+                "sat_id": "sat3",
+                "kepler_meananom": {
+                    "a_km":  7378,
+                    "e": 0,
+                    "i_deg": 83.86,
+                    "RAAN_deg": 0,
+                    "arg_per_deg": 0,
+                    "M_deg": 60
+                },
+                "propagation_method": "matlab_delkep"
+            },
+            {
+                "sat_id": "sat4",
+                "kepler_meananom": {
+                    "a_km":  7378,
+                    "e": 0,
+                    "i_deg": 83.86,
+                    "RAAN_deg": 0,
+                    "arg_per_deg": 0,
+                    "M_deg": 120
+                },
+                "propagation_method": "matlab_delkep"
+            },
+            {
+                "sat_id": "sat5",
+                "kepler_meananom": {
+                    "a_km":  7378,
+                    "e": 0,
+                    "i_deg": 83.86,
+                    "RAAN_deg": 0,
+                    "arg_per_deg": 0,
+                    "M_deg": 180
+                },
+                "propagation_method": "matlab_delkep"
+            }
+        ]
+    },
+    "obs_params": {
+        "num_targets": 5,
+        "target_set_name": "Zhou 2017 Missions",
+        "target_set_version": "1",
+        "target_set_id": "2018-4-14",
+        "elevation_cutoff_deg":30,
+        "targets": [
+            {"id": "targ0","name": "Himalaya","name_pretty": "obs0",     "latitude_deg": 28.0,  "longitude_deg": 87.0,"height_m": 0},
+            {"id": "targ1","name": "Mamiraus","name_pretty": "obs1",     "latitude_deg": -2.0,  "longitude_deg": -66.0,"height_m": 0},
+            {"id": "targ2","name": "Cape York","name_pretty": "obs2",    "latitude_deg": -11.0, "longitude_deg": 142.5,"height_m": 0},
+            {"id": "targ3","name": "Alaska Coast","name_pretty": "obs3", "latitude_deg": 60.0,  "longitude_deg": -148,"height_m": 0},
+            {"id": "targ4","name": "Greenland","name_pretty": "obs4",    "latitude_deg": 69.0,  "longitude_deg": -49,"height_m": 0}
+        ]
+    },
+    "gs_params": {
+        "num_stations": 4,
+        "gs_network_name": "Zhou 2017 GS",
+        "gs_network_version": "1",
+        "elevation_cutoff_deg":0, 
+        "stations": [
+            {"id": "gs0", "name": "Beijing","name_pretty": "Beijing 0","latitude_deg":40.0,"longitude_deg":116.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "gs1", "name": "Kashi","name_pretty":   "Kashi 1",  "latitude_deg":39.5,"longitude_deg":76.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "gs2", "name": "Sanya","name_pretty":   "Sanya 2",  "latitude_deg":18.0,"longitude_deg":109.5,"height_m":0,"comm_type":"Zhou_2017_dlnk"},
+            {"id": "gs3", "name": "Xi'an","name_pretty":   "Xi'an 3",  "latitude_deg":34.0,"longitude_deg":108.0,"height_m":0,"comm_type":"Zhou_2017_dlnk"}
+        ]
+    }
+}

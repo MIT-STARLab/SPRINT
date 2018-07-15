@@ -27,7 +27,7 @@
                 "xlnk_tx_option": "Zhou 2017",
                 "xlnk_rx_option": "Zhou 2017",
                 "orbit_insunlight_average_charging_option": "Zhou 2017",
-                "battery_option": "Zhou 2017",
+                "battery_option": "Zhou 2017 var",
                 "power_consumption_W": {
                     "_comment": "power params from beginning of section 6",
                     "base": {
@@ -54,13 +54,13 @@
                 "battery_storage_Wh": {
                     "e_min": {
                         "Zhou 2017": 2.78,
-                        "Zhou 2017 var": 1.6668000106675203,
+                        "Zhou 2017 var": 1.9446000124454401,
                         "_comment": "80% DOD",
                         "_comment": "50KJ * 0.2 for nominal; 50/3.599712*0.2 = 2.778 "
                     },
                     "e_max": {
                         "Zhou 2017": 13.89,
-                        "Zhou 2017 var": 8.3340000533376,
+                        "Zhou 2017 var": 9.7230000622272,
                         "_comment": "50KJ for nominal; 50/3.599712 = 13.89",
                         "_comment": "B_max from Figure 4"
                     },
@@ -88,8 +88,9 @@
         "initial_state": [
             {
                 "sat_id_prefix": "sat",                
-                "sat_ids": "duplicate,range_inclusive,0,5",
-                "batt_e_Wh": 8
+                "_comment": "was using 8 before",
+                "batt_e_Wh": 9.7230000622272,
+                "sat_ids": "duplicate,range_inclusive,0,5"
             }
         ],
         "activity_params": {

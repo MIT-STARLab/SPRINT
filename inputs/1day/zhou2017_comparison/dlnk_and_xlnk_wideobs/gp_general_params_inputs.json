@@ -85,7 +85,7 @@
         "enforce_energy_storage_constr": true,
         "resource_margin_obj_num_timepoints": 30,
         "run_activity_scheduling":  true,
-        "run_coupled_rs_as": false
+        "run_coupled_rs_as": true
     },
     "pickle_params":  {
         "pickle_route_selection_step1_results":                   false,

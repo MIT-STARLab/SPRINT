@@ -2,7 +2,7 @@
     "version": "0.8",
     "scenario_params": {
         "start_utc": "2016-02-14T04:00:00.000000Z",
-        "end_utc": "2016-02-14T09:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
         "timestep_s": 10.0,
         "use_crosslinks": true,
         "all_sats_same_time_system": true,
@@ -74,7 +74,7 @@
             {
                 "sat_id_prefix": "sat",
                 "sat_ids": "duplicate,range_inclusive,0,5",
-                "storage_option": "Zhou 2017 var",
+                "storage_option": "Zhou 2017",
                 "data_storage_Gbit": {
                     "d_min": {
                         "Zhou 2017": 0,

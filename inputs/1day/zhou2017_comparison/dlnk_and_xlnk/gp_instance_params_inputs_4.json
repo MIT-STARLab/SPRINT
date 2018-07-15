@@ -1,12 +1,13 @@
 {
-    "version": "0.6",
+    "version": "0.7",
     "planning_params": {
         "_comment": "these are the bounds within which the beginning and end of activities must fall in order to be considered in current planning (route selection + scheduling) run",
         "planning_start" :  "2016-02-14T18:40:00.000000Z",
         "planning_fixed_end" :  "2016-02-14T18:40:00.000000Z",
         "planning_end_obs" :  "2016-02-14T20:40:00.000000Z",
         "planning_end_xlnk" :  "2016-02-14T20:40:00.000000Z",
-        "planning_end_dlnk" :  "2016-02-14T20:40:00.000000Z"
+        "planning_end_dlnk" :  "2016-02-14T20:40:00.000000Z",
+        "max_num_dlnks_allowed_after_planning_end_xlnk": null
     },
     "activity_scheduling_params": {
         "plot_activity_scheduling_results":   true

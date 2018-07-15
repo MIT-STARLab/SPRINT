@@ -47,7 +47,7 @@
                         "Zhou 2017": -5
                     },
                     "orbit_insunlight_average_charging": {
-                        "Zhou 2017": 20,
+                        "Zhou 2017": 30,
                         "_comment": "P_c from Tables II"
                     }
                 },
@@ -72,15 +72,17 @@
         ],
         "data_storage_params": [
             {
-                "sat_id_prefix": "sat",                
+                "sat_id_prefix": "sat",
                 "sat_ids": "duplicate,range_inclusive,0,5",
-                "storage_option": "Zhou 2017",
+                "storage_option": "Zhou 2017 var",
                 "data_storage_Gbit": {
                     "d_min": {
-                        "Zhou 2017": 0
+                        "Zhou 2017": 0,
+                        "Zhou 2017 var": 0
                     },
                     "d_max": {
-                        "Zhou 2017": 12
+                        "Zhou 2017": 12,
+                        "Zhou 2017 var": 15
                     }
                 }
             }

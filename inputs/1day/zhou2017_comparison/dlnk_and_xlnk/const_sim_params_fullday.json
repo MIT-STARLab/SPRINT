@@ -79,7 +79,7 @@
             "existing_flow_indicators": 1.0,
             "injected_inflow_dv": 0,
             "injected_inflow_indicators": 0,
-            "injected_obs_latency": 5.0,
+            "injected_obs_latency": 5,
             "energy_storage": 0
         },
         "min_latency_for_sf_1_mins" :  10,

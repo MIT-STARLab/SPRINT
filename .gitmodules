@@ -6,10 +6,6 @@
 	path = source/circinus_orbit_propagation
 	url = git@github.mit.edu:star-lab/circinus_orbit_propagation.git
 	branch = master
-[submodule "source/access_global_planner"]
-	path = source/access_global_planner
-	url = git@github.mit.edu:star-lab/access_global_planner.git
-	branch = master
 [submodule "source/circinus_orbit_viz"]
 	path = source/circinus_orbit_viz
 	url = git@github.mit.edu:star-lab/circinus_orbit_viz.git
@@ -17,4 +13,8 @@
 [submodule "source/circinus_orbit_link_public"]
 	path = source/circinus_orbit_link_public
 	url = git@github.mit.edu:star-lab/circinus_orbit_link_public.git
+	branch = master
+[submodule "source/circinus_global_planner"]
+	path = source/circinus_global_planner
+	url = git@github.mit.edu:star-lab/circinus_global_planner.git
 	branch = master

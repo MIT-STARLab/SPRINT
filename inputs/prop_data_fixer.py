@@ -1,4 +1,4 @@
-# Grab relevant data for cached xlnks/ecl file
+# Update old files that have the wrong sat_id version
 # 
 # @author Kit Kennedy
 
@@ -9,7 +9,7 @@ OUTPUT_JSON_VER = '0.4'
 
 if __name__ == '__main__':
 
-    ap = argparse.ArgumentParser(description='prop data cache file creator')
+    ap = argparse.ArgumentParser(description='prop data file fixer')
     ap.add_argument('prop_data_file',
                     type=str,
                     default='nonexistant.json',

@@ -16,8 +16,8 @@ scen_name=zhou2017_comparison
 # dir_opt_params=20gstropics_targs3/dlnk_and_xlnk
 # dir_opt_params=30gstropics_targs3/dlnk_and_xlnk
 # dir_opt_params=17gs_targs100tropics/dlnk_and_xlnk
-# dir_opt_params=dlnk_and_xlnk
-dir_opt_params=dlnk_and_xlnk_wideobs
+dir_opt_params=dlnk_and_xlnk
+# dir_opt_params=dlnk_and_xlnk_wideobs
 
 run_orbit_prop="true"
 # run_orbit_prop="false"
@@ -41,7 +41,7 @@ link_inputs=orbit_link_inputs.json
 
 
 ORBIT_PROP_PATH="../source/circinus_orbit_propagation"
-ORBIT_LINK_PATH="../source/circinus_orbit_link"
+ORBIT_LINK_PATH="../source/circinus_orbit_link_public"
 ORBIT_VIZ_PATH="../source/circinus_orbit_viz"
 
 # this is relative to THIS file

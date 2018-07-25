@@ -17,7 +17,7 @@
         "restore_gp_output_from_pickle" :  false,
         "pickle_gp_output" :  false,
         "gp_output_pickle_to_restore" :  "pickles/gp_output_2018-05-16T21_02_42.778960.pkl",
-        "gp_path" :  "../../access_global_planner",
+        "gp_path" :  "../../circinus_global_planner",
         "gp_params": {
             "_comments": [
                 "planning_past_horizon_mins allows us to look back at windows in the past in the global planner.  not sure this is useful because you can't make decisions about the scheduling of those windows.",

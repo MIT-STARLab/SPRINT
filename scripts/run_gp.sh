@@ -43,7 +43,7 @@ rs_pickle_opt=none
 gp_general_inputs_opt=custom
 
 
-GLOBAL_PLANNER_PATH="../source/access_global_planner"
+GLOBAL_PLANNER_PATH="../source/circinus_global_planner"
 
 gen_inp_dir_python="../../inputs/$dir_opt/$scen_name"
 opt_inp_dir_python="../../inputs/$dir_opt/$scen_name/$dir_opt_params"

@@ -19,7 +19,7 @@ dir_opt_params=dlnk_and_xlnk
 const_sim_params_inputs=const_sim_params_fullday.json
 
 # NOTE! THIS MUST MATCH PARAMS ABOVE!
-restore_pickle_cmdline_opt=true
+restore_pickle_cmdline_opt=false
 # restore_pickle_cmdline_opt=true
 # restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/PhD/results/thesis_v1/const_sim_validation_run3/sim_checkpoint_2016_02_15T04_00_00.pkl"
 restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/PhD/results/thesis_v1/lp_validation/sim_checkpoint_2016_02_14T14_00_00.pkl"

@@ -10,9 +10,6 @@
 	path = source/circinus_orbit_viz
 	url = git@github.com:apollokit/circinus_orbit_viz.git
 	branch = master
-[submodule "source/circinus_orbit_link_public"]
-	path = source/circinus_orbit_link_public
-	url = git@github.com:apollokit/circinus_orbit_link.git
 	branch = master
 [submodule "source/circinus_global_planner"]
 	path = source/circinus_global_planner

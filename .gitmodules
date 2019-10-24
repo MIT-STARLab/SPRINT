@@ -1,20 +1,20 @@
 [submodule "source/circinus_sim"]
 	path = source/circinus_sim
-	url = git@github.mit.edu:star-lab/circinus_sim.git
+	url = git@github.com:apollokit/circinus_sim.git 
     branch = master
 [submodule "source/circinus_orbit_propagation"]
 	path = source/circinus_orbit_propagation
-	url = git@github.mit.edu:star-lab/circinus_orbit_propagation.git
+	url = git@github.com:apollokit/circinus_orbit_propagation.git 
 	branch = master
 [submodule "source/circinus_orbit_viz"]
 	path = source/circinus_orbit_viz
-	url = git@github.mit.edu:star-lab/circinus_orbit_viz.git
+	url = git@github.com:apollokit/circinus_orbit_viz.git
 	branch = master
 [submodule "source/circinus_orbit_link_public"]
 	path = source/circinus_orbit_link_public
-	url = git@github.mit.edu:star-lab/circinus_orbit_link_public.git
+	url = git@github.com:apollokit/circinus_orbit_link.git
 	branch = master
 [submodule "source/circinus_global_planner"]
 	path = source/circinus_global_planner
-	url = git@github.mit.edu:star-lab/circinus_global_planner.git
+	url = git@github.com:apollokit/circinus_global_planner.git
 	branch = master

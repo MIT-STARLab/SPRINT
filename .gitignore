@@ -91,3 +91,7 @@ ENV/
 # For macOS users
 .DS_Store
 **/.DS_Store
+
+# other shtuff
+circinus.sublime-project
+circinus.sublime-workspace

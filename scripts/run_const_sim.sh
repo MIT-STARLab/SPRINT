@@ -2,16 +2,16 @@
 
 
 dir_opt=1day
-# scen_name=zhou2017_comparison
-scen_name=sso10sat
+scen_name=zhou2017_comparison
+# scen_name=sso10sat
 # scen_name=walker30_inc30
 # dir_opt_params=polar_gs_targs3/dlnk_only
-dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
+# dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_lessES
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_oppositetxrx
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_oppositetxrx_dlnk_disable
 # dir_opt_params=polar_gs_targs3/dlnk_and_xlnk_oppositetxrx_inject
-# dir_opt_params=dlnk_and_xlnk
+dir_opt_params=dlnk_and_xlnk
 # dir_opt_params=dlnk_and_xlnk_obj_sensitivity
 # dir_opt_params=17gs_targs3/dlnk_only
 # dir_opt_params=17gs_targs3/dlnk_and_xlnk
@@ -19,13 +19,9 @@ dir_opt_params=polar_gs_targs3/dlnk_and_xlnk
 const_sim_params_inputs=const_sim_params_fullday.json
 
 # NOTE! THIS MUST MATCH PARAMS ABOVE!
-restore_pickle_cmdline_opt=true
+restore_pickle_cmdline_opt=false
 # restore_pickle_cmdline_opt=true
-# restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/PhD/results/thesis_v1/const_sim_validation_run3/sim_checkpoint_2016_02_15T04_00_00.pkl"
-# restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/PhD/results/thesis_v1/lp_validation/sim_checkpoint_2016_02_14T14_00_00.pkl"
-# restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/source/circinus_sim/python_runner/pickles/sim_checkpoint_2016_02_14T12_00_00.pkl"
-restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/sim_checkpoint_2018_01_19T00_00_00.pkl"
-# restore_pickle_cmdline_name="/Users/ktikennedy/Dropbox (MIT)/MIT/Research/CIRCINUS/CIRCINUS/inputs/1day/walker30_inc30/17gs_targs3/dlnk_only/sim_checkpoint_2018_01_19T00_00_00.pkl"
+restore_pickle_cmdline_name="[pathto]/inputs/1day/sso10sat/polar_gs_targs3/dlnk_and_xlnk/sim_checkpoint_2018_01_19T00_00_00.pkl"
 
 
 

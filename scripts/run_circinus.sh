@@ -41,7 +41,7 @@ link_inputs=orbit_link_inputs.json
 
 
 ORBIT_PROP_PATH="../source/circinus_orbit_propagation"
-ORBIT_LINK_PATH="../source/circinus_orbit_link_public"
+ORBIT_LINK_PATH="../source/circinus_orbit_link"
 ORBIT_VIZ_PATH="../source/circinus_orbit_viz"
 
 # this is relative to THIS file

@@ -1,2 +1,0 @@
-# Source this file to source the virtualenv
-source ${HOME}/.config/virtualenvs/circinus/bin/activate

@@ -1,0 +1,61 @@
+{
+    "version": "0.0.1",
+    "which_config": "lp_general_params_inputs",
+    "where_should_i_be": "inputs/general_config/",
+    "what_goes_here": "Since we jammed the equiv into the gp_general params, this is the LP version. Again, these defaults needs to live in the LP with only mods, and those mods probably case specific.",
+    "lp_wrapper_params": {
+        "lp_params": {
+            "_comments": [
+                "planning_leaving_flow_start_mins specifies the earliest time at which we can consider an outgoing (transmission) activity window to be available for re-routing with any data. this should be greater than the release time (replan_release_wait_time_s) for the satellite schedule arbiter, so that we don't choose too late to different data through a given activity window",
+                "planning_horizon_fixed specifies how far ahead the local planner should look"
+            ],
+            "planning_leaving_flow_start_mins": 1.1,
+            "planning_horizon_mins": 210
+        }
+    },
+    "lp_general_params": {
+        "_comments": [
+            "existing_utilization_epsilon is the extra utilization allowed for existing routes so that they don't miss the minimum required dv due to roundoff error. It also functions as a general round off precision bound. It should definitely be larger than the integer integer_feasibility_tolerance",
+            "min_latency_for_sf_1_mins: this is the mimimum latency requirement for the highest latency score factor, 1.0. If multiple routes/dlnks for a single obs have latency less than this, they will both have sf 1.0"
+        ],
+        "verbose_milp": false,
+        "use_self_replanner": false,
+        "run_lp_milp_after_SRP": false,
+        "dv_epsilon_Mb": 0.1,
+        "inflow_dv_minimum_Mb": 5,
+        "existing_utilization_epsilon": 0.001,
+        "solver_name": "gurobi",
+        "solver_params": {
+            "run_remotely": false,
+            "max_runtime_s": 1000,
+            "optimality_gap": 0.001,
+            "integer_feasibility_tolerance": 1e-05,
+            "gurobi": {
+                "_helpful_links": [
+                    "http://www.gurobi.com/documentation/7.5/refman/intfeastol.html#parameter:IntFeasTol",
+                    "http://www.gurobi.com/documentation/7.5/refman/mipgap2.html#parameter:MIPGap",
+                    "http://www.gurobi.com/documentation/7.5/refman/timelimit.html#parameter:TimeLimit"
+                ]
+            },
+            "cplex": {
+                "_helpful_links": [
+                    "https://www.ibm.com/support/knowledgecenter/SSSA5P_12.8.0/ilog.odms.cplex.help/CPLEX/Parameters/topics/introListAlpha.html"
+                ]
+            }
+        },
+        "obj_weights": {
+            "flow_dv": 1.0,
+            "existing_flow_dv": 1.0,
+            "existing_flow_indicators": 1.0,
+            "injected_inflow_dv": 5,
+            "injected_inflow_indicators": 0,
+            "injected_obs_latency": 1,
+            "energy_storage": 0
+        },
+        "min_latency_for_sf_1_mins": 10,
+        "latency_calculation": {
+            "dlnk": "center",
+            "obs": "center"
+        }
+    }
+}

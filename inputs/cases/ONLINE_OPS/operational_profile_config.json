@@ -1,0 +1,32 @@
+{
+    "version":"0.0.1",
+    "which_config":"operational_profile_config",
+    "where_should_i_be":"inputs/cases/",
+    "what_goes_here":"things that only matter to the choices to be made about the current case.",
+
+    "ops_profile_params": {
+        "obs_params": {
+            "num_targets": 5,
+            "target_set_name": "Zhou 2017 Missions",
+            "target_set_version": "1",
+            "target_set_id": "2018-4-14",
+            "elevation_cutoff_deg":60,
+            "targets": [
+                {"id": "targ0","name": "Himalaya","name_pretty": "obs0",     "latitude_deg": 28.0,  "longitude_deg": 87.0,"height_m": 0},
+                {"id": "targ1","name": "Mamiraus","name_pretty": "obs1",     "latitude_deg": -2.0,  "longitude_deg": -66.0,"height_m": 0},
+                {"id": "targ2","name": "Cape York","name_pretty": "obs2",    "latitude_deg": -11.0, "longitude_deg": 142.5,"height_m": 0},
+                {"id": "targ3","name": "Alaska Coast","name_pretty": "obs3", "latitude_deg": 60.0,  "longitude_deg": -148,"height_m": 0},
+                {"id": "targ4","name": "Greenland","name_pretty": "obs4",    "latitude_deg": 69.0,  "longitude_deg": -49,"height_m": 0}
+            ]
+        },    
+        "link_disables": {
+            "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {
+            },
+            "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {
+            }
+        }
+
+    }
+
+}

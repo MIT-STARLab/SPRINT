@@ -1,0 +1,8 @@
+---
+# config for cgp_main.py
+
+server_config: 
+  port: 54202
+  log_name: 'logs/cgp_main_server.log'
+
+...

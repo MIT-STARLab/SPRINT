@@ -1,0 +1,4 @@
+# Autogen files shan't be carried around, except as example nominal files only (at this level so if a new case is made the user isn't responsible for copying this.)
+
+*/autogen_files/*.json
+*/output_files/*

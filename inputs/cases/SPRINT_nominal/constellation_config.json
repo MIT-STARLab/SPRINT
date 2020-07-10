@@ -1,0 +1,154 @@
+{
+    "config_type":"constellation_config",
+    "version-const_def":"0.0.1",
+    "verbose_details":"https://github.mit.edu/star-lab/SPRINT/blob/master/inputs/cases/case_config_READMEs/constellation_config.md",
+
+    "constellation_definition":{
+        "version-const":"0.0.1",
+
+        "default_sat_ref_model_name":"zhou_original_sat",
+
+        "constellation_params":{
+            "num_satellites": 150,   
+            "sat_id_prefix": "S",
+            "sat_ids": "duplicate,range_inclusive,0,149",
+            "sat_id_order": "default",
+
+            "_comments" : [
+                "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times. by_increasing_sat_index means that if the receive sat index is larger than tx sat index (i.e. further in sat_id_order list) then the crosslink is in an INCREASING direction",
+                ""
+            ],
+            "intra-orbit_neighbor_direction_method": "by_increasing_sat_index",
+
+            "orbit_params" : { 
+                "sat_ids_by_orbit_name": {
+                    "_comment":"defined by planes"
+                },
+                "_comment": "If using this style of remepetative elements",
+                "sat_orbital_elems": [
+
+                    {
+                        "def_type":"plane",
+                        "orbit_indx"    : 0,                "_comment"  : "A 50-sat ISS orbit",
+                        "plane_def": {
+                            "a_km"          : 6778,
+                            "e"             : 0.0005851,
+                            "i_deg"         : 51.6398,
+                            "RAAN_deg"      : 217.5041,
+                            "arg_per_deg"   : 45.9800
+                        },
+
+                        "first_M_deg"   : 0,                "_comment1" : "anomaly of first sat, which subsequent will follow",
+                        "spacing_type"  : "even",           "_comment2" : "spacing: 'even', or 'progressive', or 'set'; indicate whether the sats in the plane are evenly spaced, or should space progressively by the subsequently provided 'spacing_val', or should fix each to a anomoly in a set (array) to allow arbitrary values ",
+
+                        "first_sat_id"  : 0,                "_comment3" : "the comnbo of first_sat_id, and sats_in_plane must not result in conflicting indices, and should be 'in order' without gaps, and in total match 'num_satellites' and 'sat_ids' field above. Sorry for the restrictions for now, will make a validation function.",
+                        "sats_in_plane" : 50,
+
+                        "propagation_method": "matlab_delkep"
+                    },
+
+
+                    {
+                        "def_type":"plane",
+                        "orbit_indx"    : 1,                "_comment"  : "A 20-sat SSO orbit",
+                        "plane_def": {
+                            "a_km"          : 6945,
+                            "e"             : 0,
+                            "i_deg"         : 97.7,
+                            "RAAN_deg"      : 0,            "_comment"  : "Setting spacing of SSO's evenly by RAAN; alternating up & down (indicated by an added 180)",
+                            "arg_per_deg"   : 0
+                        },
+
+                        "first_M_deg"   : 0,                
+                        "spacing_type"  : "even",           
+
+                        "first_sat_id"  : 50,               
+                        "sats_in_plane" : 20,
+
+                        "propagation_method": "matlab_delkep"
+                    },
+                    {
+                        "def_type":"plane",
+                        "orbit_indx"    : 2,                "_comment"  : "A 20-sat SSO orbit",
+                        "plane_def": {
+                            "a_km"          : 6945,
+                            "e"             : 0,
+                            "i_deg"         : 97.7,
+                            "RAAN_deg"      : 216,          "_comment"  : "36+180 (reversed to alternate up/down)",
+                            "arg_per_deg"   : 0
+                        },
+
+                        "first_M_deg"   : 0,                
+                        "spacing_type"  : "even",           
+
+                        "first_sat_id"  : 70,               
+                        "sats_in_plane" : 20,
+
+                        "propagation_method": "matlab_delkep"
+                    },
+                    {
+                        "def_type":"plane",
+                        "orbit_indx"    : 3,                "_comment"  : "A 20-sat SSO orbit",
+                        "plane_def": {
+                            "a_km"          : 6945,
+                            "e"             : 0,
+                            "i_deg"         : 97.7,
+                            "RAAN_deg"      : 72,           "_comment"  : "36*2 (third pos)",
+                            "arg_per_deg"   : 0
+                        },
+
+                        "first_M_deg"   : 0,                
+                        "spacing_type"  : "even",           
+
+                        "first_sat_id"  : 90,              
+                        "sats_in_plane" : 20,
+
+                        "propagation_method": "matlab_delkep"
+                    },
+                    {
+                        "def_type":"plane",
+                        "orbit_indx"    : 4,                "_comment"  : "A 20-sat SSO orbit",
+                        "plane_def": {
+                            "a_km"          : 6945,
+                            "e"             : 0,
+                            "i_deg"         : 97.7,
+                            "RAAN_deg"      : 288,          "_comment"  : "36*3+180",
+                            "arg_per_deg"   : 0
+                        },
+
+                        "first_M_deg"   : 0,                
+                        "spacing_type"  : "even",           
+
+                        "first_sat_id"  : 110,              
+                        "sats_in_plane" : 20,
+
+                        "propagation_method": "matlab_delkep"
+                    },
+                    {
+                        "def_type":"plane",
+                        "orbit_indx"    : 5,                "_comment"  : "A 20-sat SSO orbit",
+                        "plane_def": {
+                            "a_km"          : 6945,
+                            "e"             : 0,
+                            "i_deg"         : 97.7,
+                            "RAAN_deg"      : 144,          "_comment"  : "36*4",
+                            "arg_per_deg"   : 0
+                        },
+
+                        "first_M_deg"   : 0,                
+                        "spacing_type"  : "even",           
+
+                        "first_sat_id"  : 130,              
+                        "sats_in_plane" : 20,
+
+                        "propagation_method": "matlab_delkep"
+                    }
+
+                ]
+            }
+        }
+
+    }
+
+
+}

@@ -1,0 +1,52 @@
+{
+    "config_type":"constellation_config",
+    "version-const_def":"0.0.1",
+    "verbose_details":"https://github.mit.edu/star-lab/CIRCINUS/blob/SPRINT-restructuring-1/inputs/nom_sprint/constellation/README.md",
+
+    "constellation_definition":{
+        "version-const":"0.0.1",
+
+        "default_sat_ref_model_name":"zhou_original_sat",
+
+        "constellation_params":{
+            "num_satellites": 15,   
+            "sat_id_prefix": "S",
+            "sat_ids": "duplicate,range_inclusive,0,14",
+            "sat_id_order": "default",
+
+            "_comments" : [
+                "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times. by_increasing_sat_index means that if the receive sat index is larger than tx sat index (i.e. further in sat_id_order list) then the crosslink is in an INCREASING direction",
+                ""
+            ],
+            "intra-orbit_neighbor_direction_method": "by_increasing_sat_index",
+
+            "orbit_params" : { 
+                "sat_ids_by_orbit_name": {
+                    "orbit0": ["S0","S1","S2","S3","S4"],
+                    "orbit1": ["S5","S6","S7","S8","S9"],
+                    "orbit2": ["S10","S11","S12","S13","S14"]
+                },
+                "sat_orbital_elems": [
+                    {
+                        "sat_id_prefix": "S",
+                        "sat_ids": "synthesize,range_inclusive,0,14",
+                        "def_type": "walker",
+                        "walker": {
+                            "num_sats": 15,
+                            "i_deg": 30,
+                            "num_planes": 3,
+                            "f_relative_spacing": 1,
+                            "a_km": 6978,
+                            "RAAN_p1_deg": 0,
+                            "M_p1_deg": 0
+                        },
+                        "propagation_method": "matlab_delkep"
+                    }
+                ]
+            }
+        }
+
+    }
+
+
+}

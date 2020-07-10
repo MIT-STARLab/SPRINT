@@ -1,0 +1,94 @@
+{
+    "config_title":"sim_general_config",
+    "version-gencfg":"0.0.1",
+    "verbose_details":"https://github.mit.edu/star-lab/CIRCINUS/blob/SPRINT-restructuring-1/",
+
+    "general_sim_params":{
+        "timestep_s": 10.0,
+        "matlab_verbose": true,
+        "matlab_version": "MATLAB_R2018a",
+        "include_ecef_output": false,
+        "gs_time_epsilon_s": 1,
+        "use_standalone_gp" : false,
+        
+        "sim_run_params": {
+            "restore_from_checkpoint": false,
+            "pickle_checkpoints": true,
+            "checkpoint_spacing_s": 900,
+            "_comments": [
+                "the sim tick [now under timestep_s] should be larger than the minimum activity window length allowed by the GP for scheduling"
+            ]
+        },
+        "general_link_params": {    
+            "xlnk_max_len_s": 200,
+            "dlnk_max_len_s": 1200,
+            "dlnk_decimation": 2,
+            "xlnk_decimation": 5,
+            "assume_max_datarate": true,
+            "include_xlnk_range_in_output": false,
+            "include_dlnk_aer_in_output": false,
+            "matlab_verbose_links":  true
+        },
+        "sim_plot_params": {
+            "sat_acts_plot": {
+                "time_units": "hours",
+                "include_obs_labels": true,
+                "include_xlnk_labels": false,
+                "include_dlnk_labels": false
+            },
+            "gs_acts_plot": {
+                "include_labels": true,
+                "time_units": "hours"
+            },
+            "energy_usage_plot": {
+                "plot_bound_e_min_Wh_delta": -1,
+                "plot_bound_e_max_Wh_delta": 1,
+                "show_min_max_bounds": true,
+                "display_e_min_constraint": false,
+                "display_e_max_constraint": false,
+                "include_eclipse_windows": true,
+                "time_units": "hours"
+            },
+            "data_usage_plot": {
+                "plot_bound_d_min_Gb_delta": -1,
+                "plot_bound_d_max_Gb_delta": 1,
+                "show_min_max_bounds": true,
+                "display_d_min_constraint": false,
+                "display_d_max_constraint": false,
+                "include_eclipse_windows": true,
+                "time_units": "hours"
+            },
+            "failures_on_data_usage_plot": {
+                "plot_bound_d_min_Gb_delta": -1,
+                "plot_bound_d_max_Gb_delta": 1,
+                "show_min_max_bounds": true,
+                "display_d_min_constraint": false,
+                "display_d_max_constraint": false,
+                "time_units": "hours"
+            },
+            "obs_aoi_plot" : {
+                "plot_bound_min_aoi_hours": 0,
+                "plot_bound_max_aoi_hours": 5,
+                "x_axis_time_units": "hours"
+            },
+            "sat_cmd_aoi_plot" : {
+                "plot_bound_min_aoi_hours": 0,
+                "plot_bound_max_aoi_hours": 2,
+                "x_axis_time_units": "hours"
+            },
+            "sat_tlm_aoi_plot" : {
+                "plot_bound_min_aoi_hours": 0,
+                "plot_bound_max_aoi_hours": 2,
+                "x_axis_time_units": "hours"
+            }
+        },
+        "sim_metrics_params" : {
+            "latency_calculation": {
+                "dlnk": "center",
+                "obs": "center"
+            },
+            "targ_id_ignore_list" : [],
+            "aoi_units": "hours"
+        }
+    }
+}

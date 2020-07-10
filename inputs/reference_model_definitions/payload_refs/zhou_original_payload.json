@@ -1,0 +1,21 @@
+{
+    "config_type":"payload_model_def",
+    "version-sat_def":"0.0.1",
+
+    "payload_model_definition":{
+        "payload_type_name":"zhou_original_payload",
+        "version-sat_type":"0.0.1",
+        "description":"Contains the payload information used in the original circinus.",
+
+        "payload_params":{
+            "payload_data_rate_Mbps": 50,
+            "power_consumption_W":{
+                "base":0,
+                "obs":-10
+            },
+            "min_duration_s": {
+                "obs": 15
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "config_title":"gs_model_def",
+    "version-gs_def":"0.0.1",
+    "verbose_details":"",
+
+    "gs_model_definition":{
+        "gs_type_name":"nen_nom_gs",
+        "version-gs":"0.0.1",
+        "description":"This defines a generic X-band groundstation that may be found in the NASA NEN.  Specifics should be adjusted by the instance which refers to this model, by reassigning the fields which differ.   https://sbir.gsfc.nasa.gov/sites/default/files/453-NENUG%20R2.pdf",
+        
+        "gs_model_params": { 
+            "_comment":"A 'typical' NEN groundstation using S-band for uplink and X-band for downlink, with approximately median parameters that can be adjusted in ",
+            "time_epsilon_s"    : 1,
+
+            "type"              : "parabolic",
+            "diameter_m"        : 10,
+            "max_slew_degPerS"  : 10,
+
+            "transmitters":[
+                {
+                    "name":"S-band-RX",
+                    "TX_freq_MHz": {
+                        "min":2025,
+                        "max":2120
+                    },
+                    "EIRP_dBWi":65,
+                    "freq_MHz"      : -1,
+                    "bandwidth_MHz" : -1,
+                    "enabled"       : true,
+                    "_comment":"A common TX band in NEN. A small minority of GS have a second TX band available.  Actual freq MUST be set when instance made. Adjustments to generic model (actual range, etc) should be set as well if differs."
+                }
+            ],
+            "receivers":[
+                {
+                    "name":"X-band-TX",
+                    "RX_freq_MHz": {
+                        "min":8025,
+                        "max":8500
+                    },
+                    "G_over_T_dB":35,
+                    "freq_MHz"      : -1,
+                    "bandwidth_MHz" : -1,
+                    "enabled"       : true,
+                    "_comment":"A common X-band RX band in NEN. Most also have S-band available. Actual freq MUST be set when instance made. Adjustments to generic model (actual range, etc) should be set as well if differs."
+                }
+            ]
+
+        },
+
+
+        "sim_gs_params": { 
+            "_comment": "currently params are same for every gs",
+            "time_epsilon_s": 1
+        }
+    }
+    }
+
+
+}

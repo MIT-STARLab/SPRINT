@@ -1,0 +1,124 @@
+{
+    "config_type":"sat_model_def",
+    "version-sat_def":"0.0.1",
+
+
+    "sat_model_definition":{
+        "sat_type_name":"sprint_nom_sat",
+        "version-sat_type":"0.0.1",
+        "description":"Set up to match NEN in SPRINT's primary nominal case.",
+        "default_payload_ref_model_name":"zhou_original_payload",
+        
+        "sat_model_params": {
+            "power_params":{
+               "power_consumption_W": {
+                    "base": -10,
+                    "dlnk": -20,
+                    "xlnk_tx": -20,
+                    "xlnk_rx": -5,
+                    "orbit_insunlight_average_charging": 30
+                },
+                "battery_storage_Wh": {
+                    "e_min": 2.78,
+                    "e_max": 13.89,
+                    "charge_efficiency": 1.0,
+                    "discharge_efficiency": 1.0
+                },
+                "_comment": "most of the power consumption and energy constraints were taken from the 2016 Kennedy, Cahoy JAIS paper. Xlnk and Dlnk power taken from the MDO paper, which as of March 2018 is not quite published. Orbit average charging was calculated from the 8.25 Wh figure (8.25 + 20% margin, all acquired over ~55 minutes of in-sunlight time in a 600 km orbit for 11.25 watts average during sunlight) from page 12 of Smallsat 2014 MiRaTA paper - Blackwell, W. J. et al, Microwave Radiometer Technology Acceleration Mission (MiRaTA): Advancing Weather Remote Sensing with Nanosatellites. All these values are shown for zhou 2017."
+            },
+            "data_storage_params": {
+                "_comment":"unit:GB",
+                "d_min": 0,
+                "d_max": 12
+            },
+            "sat_link_params": [
+                {
+                    "dlnk_params": {
+                        "HPBW_rad": 0.2,
+                        "P_tx_W": 0.5,
+                        "comm_type": {
+                            "built_in": false,
+                            "name": "Zhou_2017_dlnk"
+                        }
+                    },
+                    "xlnk_params": {
+                        "HPBW_rad": 0.2,
+                        "P_tx_W": 0.5,
+                        "comm_type": {
+                            "built_in": false,
+                            "name": "Zhou_2017_xlnk"
+                        }
+                    },
+                    "pointing_error_deg": 0.01,
+                    "_comments": [
+                        "pointing_error_deg is assuming a pointing accuracy achievable with star trackers for now"
+                    ],
+                    "dlnk_disallowed": {
+                    }
+                }
+            ],
+            "initial_state": {
+                "batt_e_Wh": 12
+            },
+            "activity_params": {
+                "transition_time_s": {
+                    "inter-sat": 0,
+                    "dlnk-dlnk": 0,
+                    "intra-sat": {
+                        "obs-obs": 0,
+                        "obs-xlnk": 0,
+                        "obs-dlnk": 0,
+                        "dlnk-obs": 0,
+                        "dlnk-xlnk": 0,
+                        "dlnk-dlnk": 0,
+                        "xlnk-obs": 0,
+                        "xlnk-xlnk": {
+                            "intra-orbit,same direction": 0,
+                            "intra-orbit,different direction": 0,
+                            "intra to inter-orbit/inter to intra-orbit": 0,
+                            "inter-orbit,same orbit,same satellite": 0,
+                            "inter-orbit,same orbit,different satellite": 0,
+                            "inter-orbit,different orbit": 0
+                        },
+                        "xlnk-dlnk": 0
+                    }
+                },
+                "min_duration_s": {
+                    "dlnk": 60,
+                    "xlnk": 60
+                }
+            }
+        },
+
+
+
+        "sim_satellite_params": {
+            "_comment": "currently params are same for every sat. remains the same from circinus.",
+            "dv_epsilon_Mb" :  1.0,
+            "time_epsilon_s": 1,
+            "state_simulator": {
+                "es_state_update": {
+                    "add_noise": false,
+                    "noise_params": {
+                        "noise_type": "fractional_normal_edot",
+                        "average": 0,
+                        "std": 0.01,
+                        "min": 0.95,
+                        "max": 1.05
+                    }
+                }
+            },
+            "sat_schedule_arbiter_params" : {
+                "_comments": [
+                    "being conservative with the wait time here, considering how quickly the local planner runs on my machine. but I'm assuming that you wouldn't be able to run a commercial solver (e.g. gurobi) on a spacecraft... well, maybe you could",
+                    "figured 15 mins (900 seconds) was a good wait time before automatically running the LP again"
+                ],
+                "replan_release_wait_time_s": 60,
+                "allow_lp_execution": true,
+                "replan_interval_s": 900
+            }
+        }
+
+    }
+
+}

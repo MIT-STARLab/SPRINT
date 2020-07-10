@@ -1,0 +1,47 @@
+{
+    "version":"0.0.1",
+    "which_config":"operational_profile_config",
+    "where_should_i_be":"inputs/cases/",
+    "what_goes_here":"things that only matter to the choices to be made about the current case.",
+
+    "ops_profile_params": {
+        "obs_params": {
+            "num_targets": 20,
+            "target_set_name": "targets_tropics_100.json (from CIRCINUS tools)",
+            "target_set_version": "1",
+            "target_set_id": "4",
+            "elevation_cutoff_deg":60,
+            "targets": [
+                {"id": "targ0","name": "midlat60 0","name_pretty": "obs0","latitude_deg": -24.0,"longitude_deg": -174.0,"height_m": 0},
+                {"id": "targ1","name": "midlat60 1","name_pretty": "obs1","latitude_deg": -24.0,"longitude_deg": -156.0,"height_m": 0},
+                {"id": "targ2","name": "midlat60 2","name_pretty": "obs2","latitude_deg": -24.0,"longitude_deg": -138.0,"height_m": 0},
+                {"id": "targ3","name": "midlat60 3","name_pretty": "obs3","latitude_deg": -24.0,"longitude_deg": -120.0,"height_m": 0},
+                {"id": "targ4","name": "midlat60 4","name_pretty": "obs4","latitude_deg": -24.0,"longitude_deg": -102.0,"height_m": 0},
+                {"id": "targ5","name": "midlat60 5","name_pretty": "obs5","latitude_deg": -24.0,"longitude_deg": -84.0,"height_m": 0},
+                {"id": "targ6","name": "midlat60 6","name_pretty": "obs6","latitude_deg": -24.0,"longitude_deg": -66.0,"height_m": 0},
+                {"id": "targ7","name": "midlat60 7","name_pretty": "obs7","latitude_deg": -24.0,"longitude_deg": -48.0,"height_m": 0},
+                {"id": "targ8","name": "midlat60 8","name_pretty": "obs8","latitude_deg": -24.0,"longitude_deg": -30.0,"height_m": 0},
+                {"id": "targ9","name": "midlat60 9","name_pretty": "obs9","latitude_deg": -24.0,"longitude_deg": -12.0,"height_m": 0},
+                {"id": "targ10","name": "midlat60 10","name_pretty": "obs10","latitude_deg": -24.0,"longitude_deg": 6.0,"height_m": 0},
+                {"id": "targ11","name": "midlat60 11","name_pretty": "obs11","latitude_deg": -24.0,"longitude_deg": 24.0,"height_m": 0},
+                {"id": "targ12","name": "midlat60 12","name_pretty": "obs12","latitude_deg": -24.0,"longitude_deg": 42.0,"height_m": 0},
+                {"id": "targ13","name": "midlat60 13","name_pretty": "obs13","latitude_deg": -24.0,"longitude_deg": 60.0,"height_m": 0},
+                {"id": "targ14","name": "midlat60 14","name_pretty": "obs14","latitude_deg": -24.0,"longitude_deg": 78.0,"height_m": 0},
+                {"id": "targ15","name": "midlat60 15","name_pretty": "obs15","latitude_deg": -24.0,"longitude_deg": 96.0,"height_m": 0},
+                {"id": "targ16","name": "midlat60 16","name_pretty": "obs16","latitude_deg": -24.0,"longitude_deg": 114.0,"height_m": 0},
+                {"id": "targ17","name": "midlat60 17","name_pretty": "obs17","latitude_deg": -24.0,"longitude_deg": 132.0,"height_m": 0},
+                {"id": "targ18","name": "midlat60 18","name_pretty": "obs18","latitude_deg": -24.0,"longitude_deg": 150.0,"height_m": 0},
+                {"id": "targ19","name": "midlat60 19","name_pretty": "obs19","latitude_deg": -24.0,"longitude_deg": 168.0,"height_m": 0}
+            ]
+        },   
+        "link_disables": {
+            "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {
+            },
+            "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {
+            }
+        }
+
+    }
+
+}

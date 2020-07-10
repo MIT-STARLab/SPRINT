@@ -1,0 +1,33 @@
+{
+    "version":"0.0.1",
+    "which_config":"operational_profile_config",
+    "where_should_i_be":"inputs/cases/",
+    "what_goes_here":"things that only matter to the choices to be made about the current case.",
+
+    "ops_profile_params": {
+        "obs_params": {
+            "num_targets": 6,
+            "target_set_name": "Chesapeake Bay",
+            "target_set_version": "1",
+            "target_set_id": "CB_Test_1",
+            "elevation_cutoff_deg":60,
+            "targets": [
+                {"id": "targ0","name": "Bay 0",     "name_pretty": "Bay 0",     "latitude_deg": 37.983013,  "longitude_deg": -75.429088,"height_m": 0},
+                {"id": "targ1","name": "Himalaya",  "name_pretty": "Ocean 1",   "latitude_deg": 37.910802,  "longitude_deg": -75.470739,"height_m": 0},
+                {"id": "targ2","name": "Bay 1",     "name_pretty": "Bay 1",     "latitude_deg": 37.850126,  "longitude_deg": -75.680622,"height_m": 0},
+                {"id": "targ3","name": "Bay 2",     "name_pretty": "Bay 2",     "latitude_deg": 37.388679,  "longitude_deg": -75.972138,"height_m": 0},
+                {"id": "targ4","name": "Bay 3",     "name_pretty": "Bay 3",     "latitude_deg": 37.267298,  "longitude_deg": -76.536600,"height_m": 0},
+                {"id": "targ5","name": "Norfolk",   "name_pretty": "Nofolk",    "latitude_deg": 36.897200,  "longitude_deg": -76.334132,"height_m": 0}
+            ]
+        },    
+        "link_disables": {
+            "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {
+            },
+            "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {
+            }
+        }
+
+    }
+
+}

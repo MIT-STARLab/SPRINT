@@ -29,6 +29,7 @@ var/
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+*.pylintrc
 
 # Installer logs
 pip-log.txt
@@ -92,6 +93,24 @@ ENV/
 .DS_Store
 **/.DS_Store
 
-# other shtuff
-circinus.sublime-project
-circinus.sublime-workspace
+# files intended as local only
+*.local
+
+# VSCode
+.vscode
+
+# multirun_tests outputs and script
+multirun_tests/SRP_zhou_tests
+multirun_tests/15_Walker
+multirun_tests/30_Walker
+multirun_tests/*.json
+
+# windows env_var_setup
+scripts/windows_env_var_setup.bat
+
+# gurobi/planners
+*.lp
+
+# logs & such:
+*.txt
+*.log

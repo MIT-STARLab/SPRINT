@@ -1,0 +1,60 @@
+{
+    "version":"0.0.1",
+    "which_config":"sim_case_config",
+    "where_should_i_be":"inputs/cases/",
+    "what_goes_here":"things that only matter to the simulation, or definition of time, that is relatively likely to vary per case.  Things which vary for tweaks and will stay the same otherwise should go in /inputs/admin_config/sim_general_config.json instead",
+
+    "scenario_params": {
+        "start_utc": "2018-01-01T06:00:00.000000Z", 
+        "end_utc": "2018-01-01T09:00:00.000000Z", 
+        "use_crosslinks": true, 
+        "all_sats_same_time_system": true,
+
+        "restore_pkl_name": "pickles/_.pkl",
+
+        "sat_schedule_hotstart": true,
+
+        "lookup_params": {          
+            "xlnk_range_rates" : {
+                "_comment": "The names here should be different from built-in comm type names", 
+                "Zhou_2017_xlnk": {
+                    "range_units": "km",
+                    "rates_units": "Mbps",
+                    "interpolation_method": "floor",
+                    "range_rates_table": [
+                        [0,    10]
+                    ]
+                }
+            },
+            "dlnk_range_rates" : {
+                "_comment1": "The names here should be different from built-in comm type names", 
+                "_comment2": "they say this rate is a random distribution over {0,20,40} Mbps for each downlink timeslot. I'll just use the average...",
+                "Zhou_2017_dlnk": {
+                    "range_units": "km",
+                    "rates_units": "Mbps",
+                    "interpolation_method": "floor",
+                    "range_rates_table": [
+                        [0,    20]
+                    ]
+                }
+            }  
+        },
+        "sim_run_perturbations": {                            
+            "do_inject_obs": true,          
+            "injected_observations": [
+                {
+                    "indx": 0,
+                    "end_utc": "2018-01-01T07:01:00.000000Z",
+                    "sat_id": "S1",
+                    "type": "hardcoded",
+                    "start_utc": "2018-01-01T07:00:00.000000Z"
+                }
+             ],
+            "schedule_disruptions": {
+                "_comment": "each key is the global UID of a sim agent, time windows correspond to outage periods",
+                "G0": [["2018-01-01T06:00:00.000000Z","2018-01-01T08:07:30.000000Z"]]
+            }
+        }
+
+    }
+}

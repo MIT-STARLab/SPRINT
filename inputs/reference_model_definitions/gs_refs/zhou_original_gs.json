@@ -1,0 +1,18 @@
+{
+    "config_title":"gs_model_def",
+    "version-gs_def":"0.0.1",
+    "verbose_details":"https://github.mit.edu/star-lab/CIRCINUS/blob/SPRINT-restructuring-1/inputs/nom_sprint/groundstation_network/gs_model_defs/README.md",
+
+    "gs_model_definition":{
+        "gs_type_name":"Zhou_2017_dlnk",
+        "version-gs":"0.0.1",
+        "description":"This is an aggregation of the gs-centric terms in the configuration files.",
+        
+        "sim_gs_params": { 
+            "_comment": "currently params are same for every gs",
+            "time_epsilon_s": 1
+        }
+    }
+
+
+}

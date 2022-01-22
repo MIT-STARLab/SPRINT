@@ -1,6 +1,6 @@
 #! /bin/bash
 printf "running: $0\n"
-
+printf "IN INDGP"
 # ---------------------------- PATHS AND FILE NAMES  ---------------------------- #
 
 #PATH TO LOCATION OF THIS SCRIPT (FROM WHICH ALL OTHER PATHS ARE RELATIVE).

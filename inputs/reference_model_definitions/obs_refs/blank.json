@@ -1,0 +1,20 @@
+{
+    "version": "0.0.1",
+    "which_config": "operational_profile_config",
+    "where_should_i_be": "inputs/cases/",
+    "what_goes_here": "things that only matter to the choices to be made about the current case.",
+    "ops_profile_params": {
+        "obs_params": {
+            "num_targets": [],
+            "target_set_name": "blank, for generating. replace this with the description of the new observation set.",
+            "target_set_id": "4",
+            "elevation_cutoff_deg": 60,
+            "targets": []
+        },
+        "link_disables": {
+            "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {},
+            "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {}
+        }
+    }
+}

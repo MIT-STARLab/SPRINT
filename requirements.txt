@@ -1,3 +1,4 @@
+pyutilib==5.8.0
 jdcal==1.4
 Pyomo==5.5.1
 numpy==1.15.4
@@ -6,3 +7,6 @@ scipy==1.1.0
 ipdb==0.11
 poliastro==0.11.0
 networkx==2.2
+pyOpenSSL==19.1.0
+pyyaml==5.4.1
+

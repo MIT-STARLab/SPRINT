@@ -1,0 +1,21 @@
+{
+    "config_type":"payload_model_def",
+    "version-sat_def":"0.0.1",
+
+    "payload_model_definition":{
+        "payload_type_name":"tropics_payload",
+        "version-sat_type":"0.0.1",
+        "description":"Contains the payload information. Not sure if this is used but just in case",
+
+        "payload_params":{
+            "payload_data_rate_Mbps": 3,
+            "power_consumption_W":{
+                "base":0,
+                "obs":-10
+            },
+            "min_duration_s": {
+                "obs": 15
+            }
+        }
+    }
+}

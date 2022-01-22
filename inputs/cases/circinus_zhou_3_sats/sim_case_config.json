@@ -1,0 +1,254 @@
+{
+    "version": "0.0.1",
+    "which_config": "sim_case_config",
+    "where_should_i_be": "inputs/cases/",
+    "what_goes_here": "things that only matter to the simulation, or definition of time, that is relatively likely to vary per case.  Things which vary for tweaks and will stay the same otherwise should go in /inputs/admin_config/sim_general_config.json instead",
+    "scenario_params": {
+        "start_utc": "2016-02-14T04:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
+        "use_crosslinks": true,
+        "all_sats_same_time_system": true,
+        "restore_pkl_name": "pickles/",
+        "sat_schedule_hotstart": true,
+        "lookup_params": {
+            "xlnk_range_rates": {
+                "_comment": "The names here should be different from built-in comm type names",
+                "Zhou_2017_xlnk": {
+                    "range_units": "km",
+                    "rates_units": "Mbps",
+                    "interpolation_method": "floor",
+                    "range_rates_table": [
+                        [
+                            0,
+                            10
+                        ]
+                    ]
+                }
+            },
+            "dlnk_range_rates": {
+                "_comment1": "The names here should be different from built-in comm type names",
+                "_comment2": "they say this rate is a random distribution over {0,20,40} Mbps for each downlink timeslot. I'll just use the average...",
+                "Zhou_2017_dlnk": {
+                    "range_units": "km",
+                    "rates_units": "Mbps",
+                    "interpolation_method": "floor",
+                    "range_rates_table": [
+                        [
+                            0,
+                            20
+                        ]
+                    ]
+                }
+            }
+        },
+        "sim_run_perturbations": {
+            "do_inject_obs": true,
+            "schedule_disruptions": {
+                "G1": [
+                    [
+                        "2016-02-14T04:00:00.000000Z",
+                        "2016-02-14T16:00:00.000000Z"
+                    ]
+                ]
+            },
+            "injected_observations": [
+                {
+                    "indx": 0,
+                    "end_utc": "2016-02-14T09:55:37.164153Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T09:54:37.164153Z"
+                },
+                {
+                    "indx": 1,
+                    "end_utc": "2016-02-14T12:00:35.483029Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T11:59:35.483029Z"
+                },
+                {
+                    "indx": 3,
+                    "end_utc": "2016-02-14T21:23:23.298319Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T21:22:23.298319Z"
+                },
+                {
+                    "indx": 5,
+                    "end_utc": "2016-02-14T18:10:00.708361Z",
+                    "sat_id": "S1",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T18:09:00.708361Z"
+                },
+                {
+                    "indx": 6,
+                    "end_utc": "2016-02-14T04:16:54.450560Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T04:15:54.450560Z"
+                },
+                {
+                    "indx": 8,
+                    "end_utc": "2016-02-14T15:12:02.827026Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T15:11:02.827026Z"
+                },
+                {
+                    "indx": 9,
+                    "end_utc": "2016-02-14T07:06:41.520948Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T07:05:41.520948Z"
+                },
+                {
+                    "indx": 10,
+                    "end_utc": "2016-02-14T16:37:02.412884Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T16:36:02.412884Z"
+                },
+                {
+                    "indx": 11,
+                    "end_utc": "2016-02-14T10:06:12.829820Z",
+                    "sat_id": "S1",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T10:05:12.829820Z"
+                },
+                {
+                    "indx": 13,
+                    "end_utc": "2016-02-14T09:55:20.718866Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T09:54:20.718866Z"
+                },
+                {
+                    "indx": 15,
+                    "end_utc": "2016-02-14T20:39:46.383513Z",
+                    "sat_id": "S1",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T20:38:46.383513Z"
+                },
+                {
+                    "indx": 17,
+                    "end_utc": "2016-02-14T10:55:33.461534Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T10:54:33.461534Z"
+                },
+                {
+                    "indx": 19,
+                    "end_utc": "2016-02-14T21:55:09.278231Z",
+                    "sat_id": "S1",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T21:54:09.278231Z"
+                },
+                {
+                    "indx": 20,
+                    "end_utc": "2016-02-14T18:46:56.198028Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T18:45:56.198028Z"
+                },
+                {
+                    "indx": 21,
+                    "end_utc": "2016-02-14T19:43:40.340492Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T19:42:40.340492Z"
+                },
+                {
+                    "indx": 22,
+                    "end_utc": "2016-02-14T15:13:31.779520Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T15:12:31.779520Z"
+                },
+                {
+                    "indx": 24,
+                    "end_utc": "2016-02-14T14:12:12.058434Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T14:11:12.058434Z"
+                },
+                {
+                    "indx": 25,
+                    "end_utc": "2016-02-14T16:22:00.816409Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T16:21:00.816409Z"
+                },
+                {
+                    "indx": 26,
+                    "end_utc": "2016-02-14T10:01:28.150822Z",
+                    "sat_id": "S1",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T10:00:28.150822Z"
+                },
+                {
+                    "indx": 27,
+                    "end_utc": "2016-02-14T08:40:39.036326Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T08:39:39.036326Z"
+                },
+                {
+                    "indx": 28,
+                    "end_utc": "2016-02-14T05:02:51.509312Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T05:01:51.509312Z"
+                },
+                {
+                    "indx": 29,
+                    "end_utc": "2016-02-14T21:53:18.709511Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T21:52:18.709511Z"
+                },
+                {
+                    "indx": 31,
+                    "end_utc": "2016-02-14T19:26:09.145608Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T19:25:09.145608Z"
+                },
+                {
+                    "indx": 34,
+                    "end_utc": "2016-02-14T14:00:13.611338Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T13:59:13.611338Z"
+                },
+                {
+                    "indx": 35,
+                    "end_utc": "2016-02-14T18:10:56.972232Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T18:09:56.972232Z"
+                },
+                {
+                    "indx": 36,
+                    "end_utc": "2016-02-14T17:36:05.824133Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T17:35:05.824133Z"
+                },
+                {
+                    "indx": 37,
+                    "end_utc": "2016-02-14T21:31:32.705353Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T21:30:32.705353Z"
+                },
+                {
+                    "indx": 38,
+                    "end_utc": "2016-02-14T13:34:49.865042Z",
+                    "sat_id": "S2",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T13:33:49.865042Z"
+                }
+            ]
+        }
+    }
+}

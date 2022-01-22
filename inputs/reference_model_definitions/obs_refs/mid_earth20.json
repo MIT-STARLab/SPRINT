@@ -1,0 +1,182 @@
+{
+    "version": "0.0.1",
+    "which_config": "operational_profile_config",
+    "where_should_i_be": "inputs/cases/",
+    "what_goes_here": "things that only matter to the choices to be made about the current case.",
+    "ops_profile_params": {
+        "obs_params": {
+            "num_targets": "20",
+            "target_set_name": "20 observations from -30 latitude to +30 latitude",
+            "target_set_version": "1",
+            "target_set_id": "4",
+            "elevation_cutoff_deg": 60,
+            "targets": [
+                {
+                    "id": "obs0",
+                    "name": "generated0",
+                    "name_pretty": "generated0",
+                    "latitude_deg": 2,
+                    "longitude_deg": -178,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs1",
+                    "name": "generated1",
+                    "name_pretty": "generated1",
+                    "latitude_deg": 16,
+                    "longitude_deg": 112,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs2",
+                    "name": "generated2",
+                    "name_pretty": "generated2",
+                    "latitude_deg": 27,
+                    "longitude_deg": 137,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs3",
+                    "name": "generated3",
+                    "name_pretty": "generated3",
+                    "latitude_deg": -13,
+                    "longitude_deg": -10,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs4",
+                    "name": "generated4",
+                    "name_pretty": "generated4",
+                    "latitude_deg": -14,
+                    "longitude_deg": -70,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs5",
+                    "name": "generated5",
+                    "name_pretty": "generated5",
+                    "latitude_deg": -4,
+                    "longitude_deg": -116,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs6",
+                    "name": "generated6",
+                    "name_pretty": "generated6",
+                    "latitude_deg": -5,
+                    "longitude_deg": -169,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs7",
+                    "name": "generated7",
+                    "name_pretty": "generated7",
+                    "latitude_deg": -12,
+                    "longitude_deg": -35,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs8",
+                    "name": "generated8",
+                    "name_pretty": "generated8",
+                    "latitude_deg": -20,
+                    "longitude_deg": 169,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs9",
+                    "name": "generated9",
+                    "name_pretty": "generated9",
+                    "latitude_deg": 10,
+                    "longitude_deg": -112,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs10",
+                    "name": "generated10",
+                    "name_pretty": "generated10",
+                    "latitude_deg": -2,
+                    "longitude_deg": -28,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs11",
+                    "name": "generated11",
+                    "name_pretty": "generated11",
+                    "latitude_deg": -20,
+                    "longitude_deg": -114,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs12",
+                    "name": "generated12",
+                    "name_pretty": "generated12",
+                    "latitude_deg": -24,
+                    "longitude_deg": -142,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs13",
+                    "name": "generated13",
+                    "name_pretty": "generated13",
+                    "latitude_deg": -19,
+                    "longitude_deg": 49,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs14",
+                    "name": "generated14",
+                    "name_pretty": "generated14",
+                    "latitude_deg": -15,
+                    "longitude_deg": -102,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs15",
+                    "name": "generated15",
+                    "name_pretty": "generated15",
+                    "latitude_deg": 3,
+                    "longitude_deg": 67,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs16",
+                    "name": "generated16",
+                    "name_pretty": "generated16",
+                    "latitude_deg": -7,
+                    "longitude_deg": 130,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs17",
+                    "name": "generated17",
+                    "name_pretty": "generated17",
+                    "latitude_deg": -7,
+                    "longitude_deg": -141,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs18",
+                    "name": "generated18",
+                    "name_pretty": "generated18",
+                    "latitude_deg": 16,
+                    "longitude_deg": 54,
+                    "height_m": 0
+                },
+                {
+                    "id": "obs19",
+                    "name": "generated19",
+                    "name_pretty": "generated19",
+                    "latitude_deg": -15,
+                    "longitude_deg": -164,
+                    "height_m": 0
+                }
+            ]
+        },
+        "link_disables": {
+            "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {},
+            "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {}
+        }
+    }
+}

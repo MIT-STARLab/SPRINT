@@ -1,0 +1,363 @@
+{
+    "Num_Failures_by_Type": {
+        "exec": {
+            "Not in plan at execution time for transmitter": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            },
+            "Not in plan at execution time for receiver": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            },
+            "Schedule disruption at receiving end": {
+                "xlnk": 0,
+                "dlnk": 1,
+                "obs": 0
+            },
+            "Schedule disruption at transmission end": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            },
+            "Actual Data state does not support activity": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 2
+            },
+            "Actual Energy state does not support activity": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            },
+            "Invalid geometry at transmission time": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            },
+            "No tx data containers associated with route": {
+                "xlnk": 0,
+                "dlnk": 1,
+                "obs": 0
+            },
+            "Unknown": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            }
+        },
+        "non-exec": {
+            "Planning info received after action end time": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 3
+            },
+            "Action relies on another action that occurs in the past": {
+                "xlnk": 0,
+                "dlnk": 0,
+                "obs": 0
+            }
+        }
+    },
+    "Percentage_of_Exec_Act_Failure_by_Act": {
+        "xlnk": 0,
+        "dlnk": 66.66666666666667,
+        "obs": 33.333333333333336
+    },
+    "dv_stats": {
+        "average_obvs_throughput": 0.34999999999992,
+        "num_obs_poss": 5,
+        "num_obs_poss_nonzero_dv": 5,
+        "num_obs_exec": 2,
+        "total_poss_dv": 12100.000000000142,
+        "total_exec_dv": 9550.0,
+        "ave_obs_dv_poss": 2420.000000000028,
+        "ave_obs_dv_exec": 4775.0,
+        "std_obs_dv_poss": 2473.3782565559413,
+        "std_obs_dv_exec": 1025.000000002,
+        "min_obs_dv_poss": 99.99999999997,
+        "min_obs_dv_exec": 3749.999999998,
+        "max_obs_dv_poss": 5800.000000002,
+        "max_obs_dv_exec": 5800.000000002,
+        "exec_over_poss": 0.7892561983470981
+    },
+    "d_rsrc_stats": {
+        "min_ave_d_margin": 5140.03125,
+        "max_ave_d_margin": 5140.03125,
+        "min_min_d_margin": 0.0,
+        "min_ave_d_margin_prcnt": 42.83359375,
+        "prcntl25_ave_d_margin_prcnt": 42.83359375,
+        "median_ave_d_margin_prcnt": 42.83359375,
+        "prcntl75_ave_d_margin_prcnt": 42.83359375,
+        "max_ave_d_margin_prcnt": 42.83359375,
+        "min_min_d_margin_prcnt": 0.0
+    },
+    "e_rsrc_stats": {
+        "min_ave_e_margin": 9.86874035493823,
+        "max_ave_e_margin": 9.86874035493823,
+        "std_ave_e_margin": 0.0,
+        "min_min_e_margin": 3.30444444444437,
+        "min_ave_e_margin_prcnt": 88.82754594903896,
+        "prcntl25_ave_e_margin_prcnt": 88.82754594903896,
+        "median_ave_e_margin_prcnt": 88.82754594903896,
+        "prcntl75_ave_e_margin_prcnt": 88.82754594903896,
+        "max_ave_e_margin_prcnt": 88.82754594903896,
+        "min_min_e_margin_prcnt": 29.742974297429072
+    },
+    "lat_stats": {
+        "min_obs_initial_lat_poss": 15.741666666666667,
+        "prcntl25_obs_initial_lat_poss": 171.82500000000002,
+        "median_obs_initial_lat_poss": 327.90833333333336,
+        "prcntl75_obs_initial_lat_poss": 483.9916666666667,
+        "max_obs_initial_lat_poss": 640.075,
+        "min_obs_initial_lat_exec": 640.075,
+        "prcntl25_obs_initial_lat_exec": 675.1583333333333,
+        "median_obs_initial_lat_exec": 710.2416666666667,
+        "prcntl75_obs_initial_lat_exec": 745.325,
+        "max_obs_initial_lat_exec": 780.4083333333333,
+        "ave_obs_final_lat_exec": 710.2416666666667,
+        "min_obs_final_lat_exec": 640.075,
+        "max_obs_final_lat_exec": 780.4083333333333
+    },
+    "obs_aoi_stats_w_routing": {
+        "min_av_aoi_poss": 6.16443350935571,
+        "prcntl25_av_aoi_poss": 6.614559035815329,
+        "median_av_aoi_poss": 7.064684562274948,
+        "prcntl75_av_aoi_poss": 7.726548079427083,
+        "max_av_aoi_poss": 8.388411596579218,
+        "min_av_aoi_exec": 10.54765787358539,
+        "prcntl25_av_aoi_exec": 10.78455076115612,
+        "median_av_aoi_exec": 11.021443648726851,
+        "prcntl75_av_aoi_exec": 11.25833653629758,
+        "max_av_aoi_exec": 11.495229423868311,
+        "poss_targIDs_found": [
+            "targ3",
+            "targ2",
+            "targ4"
+        ],
+        "exec_targIDs_found": [
+            "targ2",
+            "targ4"
+        ],
+        "av_aoi_by_targID_poss": {
+            "targ2": 6.16443350935571,
+            "targ4": 7.064684562274948,
+            "targ3": 8.388411596579218
+        },
+        "av_aoi_by_targID_exec": {
+            "targ4": 10.54765787358539,
+            "targ2": 11.495229423868311
+        },
+        "aoi_curves_by_targID_poss": {
+            "targ2": {
+                "x": [
+                    0.0,
+                    1.5206944444444443,
+                    1.5206944444444443,
+                    14.265138888888888,
+                    14.265138888888888,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    1.5206944444444443,
+                    0.27625,
+                    13.020694444444445,
+                    1.5075,
+                    11.24236111111111,
+                    0.0
+                ]
+            },
+            "targ4": {
+                "x": [
+                    0.0,
+                    14.265138888888888,
+                    14.265138888888888,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    14.265138888888888,
+                    2.097777777777778,
+                    11.832638888888889,
+                    0.0
+                ]
+            },
+            "targ3": {
+                "x": [
+                    0.0,
+                    14.265138888888888,
+                    14.265138888888888,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    14.265138888888888,
+                    5.36125,
+                    15.096111111111112,
+                    0.0
+                ]
+            }
+        },
+        "aoi_curves_by_targID_exec": {
+            "targ4": {
+                "x": [
+                    0.0,
+                    14.265138888888888,
+                    14.265138888888888,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    14.265138888888888,
+                    10.684583333333334,
+                    20.419444444444444,
+                    0.0
+                ]
+            },
+            "targ2": {
+                "x": [
+                    0.0,
+                    14.265138888888888,
+                    14.265138888888888,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    14.265138888888888,
+                    13.020694444444445,
+                    22.755555555555556,
+                    0.0
+                ]
+            }
+        }
+    },
+    "obs_aoi_stats_at_collection": {
+        "min_av_aoi_poss": 4.720103141878858,
+        "prcntl25_av_aoi_poss": 5.0735200255594135,
+        "median_av_aoi_poss": 5.426936909239969,
+        "prcntl75_av_aoi_poss": 5.91317478821052,
+        "max_av_aoi_poss": 6.39941266718107,
+        "min_av_aoi_exec": 8.953626864711934,
+        "prcntl25_av_aoi_exec": 9.420240724665637,
+        "median_av_aoi_exec": 9.886854584619343,
+        "prcntl75_av_aoi_exec": 10.353468444573046,
+        "max_av_aoi_exec": 10.82008230452675,
+        "poss_targIDs_found": [
+            "targ3",
+            "targ2",
+            "targ4"
+        ],
+        "exec_targIDs_found": [
+            "targ2",
+            "targ4"
+        ],
+        "av_aoi_by_targID_poss": {
+            "targ2": 5.426936909239969,
+            "targ4": 4.720103141878858,
+            "targ3": 6.39941266718107
+        },
+        "av_aoi_by_targID_exec": {
+            "targ4": 8.953626864711934,
+            "targ2": 10.82008230452675
+        },
+        "aoi_curves_by_targID_poss": {
+            "targ2": {
+                "x": [
+                    0.0,
+                    1.2444444444444445,
+                    1.2444444444444445,
+                    12.75763888888889,
+                    12.75763888888889,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    1.2444444444444445,
+                    0.0,
+                    11.513194444444444,
+                    0.0,
+                    11.24236111111111,
+                    0.0
+                ]
+            },
+            "targ4": {
+                "x": [
+                    0.0,
+                    3.5805555555555557,
+                    3.5805555555555557,
+                    12.167361111111111,
+                    12.167361111111111,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    3.5805555555555557,
+                    0.0,
+                    8.586805555555555,
+                    0.0,
+                    11.832638888888889,
+                    0.0
+                ]
+            },
+            "targ3": {
+                "x": [
+                    0.0,
+                    8.903888888888888,
+                    8.903888888888888,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    8.903888888888888,
+                    0.0,
+                    15.096111111111112,
+                    0.0
+                ]
+            }
+        },
+        "aoi_curves_by_targID_exec": {
+            "targ4": {
+                "x": [
+                    0.0,
+                    3.5805555555555557,
+                    3.5805555555555557,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    3.5805555555555557,
+                    0.0,
+                    20.419444444444444,
+                    0.0
+                ]
+            },
+            "targ2": {
+                "x": [
+                    0.0,
+                    1.2444444444444445,
+                    1.2444444444444445,
+                    24.0,
+                    24.0
+                ],
+                "y": [
+                    0.0,
+                    1.2444444444444445,
+                    0.0,
+                    22.755555555555556,
+                    0.0
+                ]
+            }
+        }
+    }
+}

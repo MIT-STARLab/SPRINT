@@ -1,30 +1,45 @@
 {
-    "config_type":"constellation_config",
-    "version-const_def":"0.0.1",
-    "verbose_details":"https://github.mit.edu/star-lab/CIRCINUS/blob/SPRINT-restructuring-1/inputs/nom_sprint/constellation/README.md",
-
-    "constellation_definition":{
-        "version-const":"0.0.1",
-
-        "default_sat_ref_model_name":"zhou_original_sat",
-
-        "constellation_params":{
-            "num_satellites": 18,   
+    "config_type": "constellation_config",
+    "version-const_def": "0.0.1",
+    "verbose_details": "https://github.mit.edu/star-lab/CIRCINUS/blob/SPRINT-restructuring-1/inputs/nom_sprint/constellation/README.md",
+    "constellation_definition": {
+        "version-const": "0.0.1",
+        "constellation_params": {
+            "num_satellites": 18,
             "sat_id_prefix": "S",
             "sat_ids": "duplicate,range_inclusive,0,18",
             "sat_id_order": "default",
-
-            "_comments" : [
+            "_comments": [
                 "orbit_neighbor_direction_method specifies how to figure out which direction an orbit neighbor is in, for determining activity transition times. by_increasing_sat_index means that if the receive sat index is larger than tx sat index (i.e. further in sat_id_order list) then the crosslink is in an INCREASING direction",
                 ""
             ],
             "intra-orbit_neighbor_direction_method": "by_increasing_sat_index",
-
-            "orbit_params" : { 
+            "orbit_params": {
                 "sat_ids_by_orbit_name": {
-                    "orbit0": ["S0","S1","S2","S3","S4","S5"],
-                    "orbit1": ["S6","S7","S8","S9","S10","S11"],
-                    "orbit2": ["S12","S13","S14","S15","S16","S17"]
+                    "orbit0": [
+                        "S0",
+                        "S1",
+                        "S2",
+                        "S3",
+                        "S4",
+                        "S5"
+                    ],
+                    "orbit1": [
+                        "S6",
+                        "S7",
+                        "S8",
+                        "S9",
+                        "S10",
+                        "S11"
+                    ],
+                    "orbit2": [
+                        "S12",
+                        "S13",
+                        "S14",
+                        "S15",
+                        "S16",
+                        "S17"
+                    ]
                 },
                 "sat_orbital_elems": [
                     {
@@ -44,9 +59,7 @@
                     }
                 ]
             }
-        }
-
+        },
+        "sat_ref_model_name": "zhou_original_sat"
     }
-
-
 }

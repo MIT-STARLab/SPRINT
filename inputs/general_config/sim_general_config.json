@@ -10,10 +10,13 @@
         "include_ecef_output": false,
         "gs_time_epsilon_s": 1,
         "use_standalone_gp" : false,
+        "rem_gp_server_address" : "localhost",
+        "ground_server_address": "localhost",
+	"_comment": ["put ip address of ground in ground_server_address"],
         
         "sim_run_params": {
             "restore_from_checkpoint": false,
-            "pickle_checkpoints": true,
+            "pickle_checkpoints": false,
             "checkpoint_spacing_s": 900,
             "_comments": [
                 "the sim tick [now under timestep_s] should be larger than the minimum activity window length allowed by the GP for scheduling"
@@ -24,7 +27,7 @@
             "dlnk_max_len_s": 1200,
             "dlnk_decimation": 2,
             "xlnk_decimation": 5,
-            "assume_max_datarate": true,
+            "assume_max_datarate": false,
             "include_xlnk_range_in_output": false,
             "include_dlnk_aer_in_output": false,
             "matlab_verbose_links":  true

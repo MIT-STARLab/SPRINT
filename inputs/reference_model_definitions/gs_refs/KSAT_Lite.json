@@ -1,0 +1,131 @@
+{
+    "config_title": "ground_station_network_config",
+    "version-gsndef": "0.0.1",
+    "network_definition": {
+        "version-gsn": "0.0.1",
+        "sim_gs_network_params": {
+            "time_epsilon_s": 1,
+            "gsn_ps_params": {
+                "replan_interval_s": 6300,
+                "replan_release_wait_time_s": 60,
+                "release_first_plans_immediately": true
+            }
+        },
+        "gs_net_params": {
+            "num_stations": 12,
+            "gs_network_name": "KSAT_Lite",
+            "gs_network_version": 1,
+            "elevation_cutoff_deg": 10,
+            "stations": [
+                {
+                    "id": "G0",
+                    "name": "Inuvik",
+                    "name_pretty": "Inuvik0",
+                    "latitude_deg": 68.4,
+                    "longitude_deg": -133.5,
+                    "height_m": 51,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G1",
+                    "name": "LA",
+                    "name_pretty": "LA1",
+                    "latitude_deg": 34.05,
+                    "longitude_deg": -118.24,
+                    "height_m": 87,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G2",
+                    "name": "Punta Arenas",
+                    "name_pretty": "Punta Arenas2",
+                    "latitude_deg": 53.16,
+                    "longitude_deg": -70.92,
+                    "height_m": 34,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G3",
+                    "name": "Svalbard",
+                    "name_pretty": "Svalbard3",
+                    "latitude_deg": 78.23,
+                    "longitude_deg": 15.41,
+                    "height_m": 400,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G4",
+                    "name": "Tromso",
+                    "name_pretty": "Tromso4",
+                    "latitude_deg": 69.65,
+                    "longitude_deg": 18.96,
+                    "height_m": 4,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G5",
+                    "name": "Puertollano",
+                    "name_pretty": "Puertollano5",
+                    "latitude_deg": 38.69,
+                    "longitude_deg": -4.11,
+                    "height_m": 703,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G6",
+                    "name": "Nemea",
+                    "name_pretty": "Nemea6",
+                    "latitude_deg": 3,
+                    "longitude_deg": 546,
+                    "height_m": 2,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G7",
+                    "name": "Hartebeesthoek",
+                    "name_pretty": "Hartebeesthoek7",
+                    "latitude_deg": -25.64,
+                    "longitude_deg": 28.08,
+                    "height_m": 1288,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G8",
+                    "name": "Antarctica",
+                    "name_pretty": "Antarctica8",
+                    "latitude_deg": -72.1,
+                    "longitude_deg": 2.32,
+                    "height_m": 1270,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G9",
+                    "name": "Mauritius",
+                    "name_pretty": "Mauritius9",
+                    "latitude_deg": -20.35,
+                    "longitude_deg": 57.55,
+                    "height_m": 579,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G10",
+                    "name": "Jeju",
+                    "name_pretty": "Jeju10",
+                    "latitude_deg": 33,
+                    "longitude_deg": 126,
+                    "height_m": 89,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G11",
+                    "name": "Awarua",
+                    "name_pretty": "Awarua11",
+                    "latitude_deg": -46.02,
+                    "longitude_deg": 167.81,
+                    "height_m": 120,
+                    "comm_type": ""
+                }
+            ]
+        }
+    }
+}

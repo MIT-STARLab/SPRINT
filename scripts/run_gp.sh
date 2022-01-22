@@ -113,6 +113,7 @@ fi
 
 pushd  $GLOBAL_PLANNER_PATH/python_runner/
 echo "python runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2" $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2""
+# replace 'python' with 'mprof run' (ater pip installing memory_profiler) to track memory use; afterwards, 'mprof plot' in the python folder will display
 python runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2"  $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2"
 # # python -m cProfile runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r"  $rs_s1_pickle_arg $rs_s2_pickle_arg $as_pickle_arg
 # python -m ipdb -c continue runner_gp.py --prop_inputs_file  "$prop_inputs_r"  --data_rates_file "$data_rates_r" --link_inputs_file "$link_inputs_r" $gp_general_inputs_arg1 "$gp_general_inputs_arg2" --gp_inst_inputs_file "$gp_inst_inputs_r" $rs_s1_pickle_arg1 "$rs_s1_pickle_arg2" $rs_s2_pickle_arg1 "$rs_s2_pickle_arg2" $as_pickle_arg1 "$as_pickle_arg2"

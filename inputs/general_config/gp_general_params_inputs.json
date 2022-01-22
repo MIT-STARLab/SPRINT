@@ -60,7 +60,7 @@
         "solver_name" :  "gurobi",
         "solver_params": {
             "run_remotely" :   false,
-            "max_runtime_s" : 1000,
+            "max_runtime_s" : 100000,
             "optimality_gap" :  1e-2,
             "integer_feasibility_tolerance" :  1e-5,
             "gurobi": {

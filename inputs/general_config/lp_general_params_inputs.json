@@ -19,15 +19,15 @@
             "min_latency_for_sf_1_mins: this is the mimimum latency requirement for the highest latency score factor, 1.0. If multiple routes/dlnks for a single obs have latency less than this, they will both have sf 1.0"
         ],
         "verbose_milp": false,
-        "use_self_replanner": false,
-        "run_lp_milp_after_SRP": false,
+        "use_self_replanner": true,
+        "run_lp_milp_after_SRP": true,
         "dv_epsilon_Mb": 0.1,
         "inflow_dv_minimum_Mb": 5,
         "existing_utilization_epsilon": 0.001,
-        "solver_name": "gurobi",
+        "solver_name": "cbc",
         "solver_params": {
             "run_remotely": false,
-            "max_runtime_s": 1000,
+            "max_runtime_s": 10000,
             "optimality_gap": 0.001,
             "integer_feasibility_tolerance": 1e-05,
             "gurobi": {
@@ -40,6 +40,16 @@
             "cplex": {
                 "_helpful_links": [
                     "https://www.ibm.com/support/knowledgecenter/SSSA5P_12.8.0/ilog.odms.cplex.help/CPLEX/Parameters/topics/introListAlpha.html"
+                ]
+            }, 
+            "cbc":{
+                "_helpful_links":[
+                    "https://projects.coin-or.org/Cbc"
+                ]
+            },
+            "glpk":{
+                "_helpful_links":[
+                    "https://www.gnu.org/software/glpk/"
                 ]
             }
         },

@@ -1,0 +1,119 @@
+{
+    "config_title": "sat_model_def",
+    "version-sat_def": "0.0.1",
+    "sat_model_definition": {
+        "sat_type_name": "tropics",
+        "sat_model_params": {
+            "payload_def": {
+                "definition": "local",
+                "name": "tropics_pl",
+                "payload_params": {
+                    "name": "tropics_pl",
+                    "payload_data_rate_Mbps": 60,
+                    "power_consumption_W": {
+                        "base": 0,
+                        "obs": -2
+                    },
+                    "min_duration_s": {
+                        "obs": 15
+                    }
+                }
+            },
+            "power_params": {
+                "power_consumption_W": {
+                    "base": -11.1,
+                    "dlnk": -20,
+                    "xlnk_tx": -20,
+                    "xlnk_rx": -5,
+                    "orbit_insunlight_average_charging": 20.8
+                },
+                "battery_storage_Wh": {
+                    "e_min": 2.78,
+                    "e_max": 30,
+                    "charge_efficiency": 1,
+                    "discharge_efficiency": 1
+                }
+            },
+            "data_storage_params": {
+                "d_min": 0,
+                "d_max": 200
+            },
+            "initial_state": {
+                "batt_e_Wh": 30
+            },
+            "activity_params": {
+                "transition_time_s": {
+                    "inter-sat": 0,
+                    "dlnk-dlnk": 0,
+                    "intra-sat": {
+                        "obs-obs": 0,
+                        "obs-xlnk": 0,
+                        "obs-dlnk": 0,
+                        "dlnk-obs": 0,
+                        "dlnk-xlnk": 0,
+                        "dlnk-dlnk": 0,
+                        "xlnk-obs": 0,
+                        "xlnk-xlnk": {
+                            "intra-orbit,same direction": 0.0,
+                            "intra-orbit,different direction": 0.0,
+                            "intra to inter-orbit/inter to intra-orbit": 0.0,
+                            "inter-orbit,same orbit,same satellite": 0.0,
+                            "inter-orbit,same orbit,different satellite": 0.0,
+                            "inter-orbit,different orbit": 0.0
+                        },
+                        "xlnk-dlnk": 0
+                    }
+                },
+                "min_duration_s": {
+                    "dlnk": 60,
+                    "xlnk": 60
+                }
+            },
+            "sat_link_params": [
+                {
+                    "dlnk_params": {
+                        "HPBW_rad": 0.2,
+                        "P_tx_W": 0.5,
+                        "comm_type": {
+                            "built_in": false,
+                            "name": "Tropics_dlnk"
+                        }
+                    },
+                    "xlnk_params": {
+                        "HPBW_rad": 0.2,
+                        "P_tx_W": 0.5,
+                        "comm_type": {
+                            "built_in": false,
+                            "name": "Tropics_xlnk"
+                        }
+                    },
+                    "pointing_error_deg": 0.2,
+                    "dlnk_disallowed": {}
+                }
+            ]
+        },
+        "sim_satellite_params": {
+            "crosslink_new_plans_only_during_BDT": false,
+            "dv_epsilon_Mb": 1,
+            "time_epsilon_s": 1,
+            "state_simulator": {
+                "es_state_update": {
+                    "add_noise": 0,
+                    "noise_params": {
+                        "noise_type": "fractional_normal_edot",
+                        "average": 0,
+                        "std": 0.01,
+                        "min": 0.95,
+                        "max": 1.05
+                    }
+                }
+            },
+            "sat_schedule_arbiter_params": {
+                "replan_release_wait_time_s": 0,
+                "allow_lp_execution": true,
+                "replan_interval_s": 900,
+                "frac_dv_lost_for_activity_failure_threshold": 0.5
+            }
+        }
+    }
+}

@@ -1,0 +1,137 @@
+"""
+MESSAGE PROTOCOL TO AND FROM SAT < - > GS and SIM
+
+NOTE:
+---------------------------------------------
+- GROUND refers to ground simulation manager
+  that orchestrates sim
+- GS refers to singular GS
+- Each Message is structured as follows:
+    - req_type : The request type
+    - dest: The destination
+    - payload: Any corresponding data
+    - sender: The id of the object sending the message
+
+Protocol is formatted as follows:
+----------------------------------------------
+#) ____ SENDS: <req_type>
+    - <Description>
+    - Payload: <Payload description>
+    - Target: <Destination description>
+    - Sender: <Sender description>
+
+- Steps with parts a, b, c, etc. indicate no strict ordering of messages sent
+  in that numbered step, only that they are all sent before the next numbered
+  step and after the previous numbered step
+
+- (*) is only used once
+
+========================================
+============= BEFORE SIM ===============
+========================================
+
+1) SAT SENDS: JOIN
+   - Request to join simulation
+   - Payload: address of socket
+   - Target: ground
+
+2) GROUND SENDS: INIT PARAMS
+    - Parameters for satellite and simulation
+    - Payload: Parameters
+    - Target: Client that sent most recent JOIN
+    - Sender: ground
+
+3) GROUND SENDS: ALL_IPS
+    - Once all satellites joined
+    - IP addresses of all satellites in simulation
+    - Payload: Map keyed on satellite IDs with IP addresses as values
+    - Target: All satellites
+    - Sender: ground
+
+4) GROUND SENDS: INJECT_OBS
+    - Injects observations into satellites (sat-specific)
+    - Payload: the injected observations
+    - Target: All satellites
+    - Sender: ground
+
+5) GROUND SENDS: SAT_WINDOWS_INIT
+    - Initializes each satellite's windows
+    - Payload: The map of windows
+    - Target: All satellites
+    - Sender: ground
+
+6) GROUND SENDS: START
+    - Request to start simulation
+    - Payload: None
+    - Target: All satellites
+    - Sender: ground
+
+========================================
+============= DURING SIM ===============
+=============== REPEAT =================
+========================================
+
+1a) SAT SENDS: BDT
+    - Bulk Data transfer as downlink and or crosslink
+    - Payload: The data
+    - Target: Intended receiver (gs id of sat id)
+    - Sender: sat_id
+
+1b) SAT SENDS: PLAN
+    - Sends plan after each BDT run
+    - Payload: Planning data
+    - Target: Intended receiver (gs id of sat id)
+    - Sender: sat_id
+
+2) SAT SENDS: ACTS_DONE
+    - Indicates done sending all executive act related messages
+    - Payload: None
+    - Target: All
+    - Sender: sat_id
+
+3) GS SENDS: PLAN
+    - ONLY on first iteration and ONLY if hot start
+    - Payload: GS planning info
+    - Target: Satellites in view
+    - Sender: gs id
+
+4) GROUND SENDS: UPDATE
+    - Request for recipient to update state
+    - Payload: None
+    - Target: All satellites
+    - Sender: ground
+
+5a) SAT SENDS: STATE
+    - Current state of satellite to send via crosslink only if
+      the time since the last state sending is over a threshold amount of time
+    - Payload: State
+    - Target: Any satellite in view
+    - Sender: sat id
+
+5b) GS SENDS: PLAN
+    - Planning info of each gs if GP ran
+    - Payload: Planning info
+    - Target: Any satellite in view
+    - Sender: gs id
+
+5c) SAT SENDS: PLAN
+    - Send to other satellites if allowed, and send to gs in view if LP ran
+    - Payload: Planning info
+    - Target: satellite (if allowed) or gs in view (if LP ran)
+    - Sender: sat id
+
+6) SAT and GROUND SEND: FINISHED_PROP
+    - Indicates done propagating plans
+    - Payload: None
+    - Target: All
+    - Sender: ground or sat id
+
+7) SAT AND GROUND SEND: READY_FOR_TIME_UPDATE
+    - Indicates ready for time update
+    - Payload: None
+    - Target: All
+    - Sender: ground or sat id
+
+
+
+

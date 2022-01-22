@@ -1,0 +1,108 @@
+{
+    "version": "0.0.1",
+    "which_config": "sim_case_config",
+    "where_should_i_be": "inputs/cases/",
+    "what_goes_here": "things that only matter to the simulation, or definition of time, that is relatively likely to vary per case.  Things which vary for tweaks and will stay the same otherwise should go in /inputs/admin_config/sim_general_config.json instead",
+    "scenario_params": {
+        "start_utc": "2016-02-14T04:00:00.000000Z",
+        "end_utc": "2016-02-15T04:00:00.000000Z",
+        "use_crosslinks": true,
+        "all_sats_same_time_system": true,
+        "restore_pkl_name": "pickles/",
+        "sat_schedule_hotstart": true,
+        "lookup_params": {
+            "xlnk_range_rates": {
+                "_comment": "The names here should be different from built-in comm type names",
+                "Zhou_2017_xlnk": {
+                    "range_units": "km",
+                    "rates_units": "Mbps",
+                    "interpolation_method": "floor",
+                    "range_rates_table": [
+                        [
+                            0,
+                            10
+                        ]
+                    ]
+                }
+            },
+            "dlnk_range_rates": {
+                "_comment1": "The names here should be different from built-in comm type names",
+                "_comment2": "they say this rate is a random distribution over {0,20,40} Mbps for each downlink timeslot. I'll just use the average...",
+                "Zhou_2017_dlnk": {
+                    "range_units": "km",
+                    "rates_units": "Mbps",
+                    "interpolation_method": "floor",
+                    "range_rates_table": [
+                        [
+                            0,
+                            20
+                        ]
+                    ]
+                }
+            }
+        },
+        "sim_run_perturbations": {
+            "do_inject_obs": true,
+            "schedule_disruptions": {
+                "G0": [
+                        [
+                            "2016-02-14T04:00:00.000000Z",
+                            "2016-02-14T16:00:00.000000Z"
+                        ]
+                    ]
+            },
+            "injected_observations": [
+                {
+                    "indx": 8,
+                    "end_utc": "2016-02-14T15:12:02.827026Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T15:11:02.827026Z"
+                },
+                {
+                    "indx": 20,
+                    "end_utc": "2016-02-14T18:46:56.198028Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T18:45:56.198028Z"
+                },
+                {
+                    "indx": 22,
+                    "end_utc": "2016-02-14T15:13:31.779520Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T15:12:31.779520Z"
+                },
+                {
+                    "indx": 24,
+                    "end_utc": "2016-02-14T14:12:12.058434Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T14:11:12.058434Z"
+                },
+                {
+                    "indx": 28,
+                    "end_utc": "2016-02-14T05:02:51.509312Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T05:01:51.509312Z"
+                },
+                {
+                    "indx": 31,
+                    "end_utc": "2016-02-14T19:26:09.145608Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T19:25:09.145608Z"
+                },
+                {
+                    "indx": 34,
+                    "end_utc": "2016-02-14T14:00:13.611338Z",
+                    "sat_id": "S0",
+                    "type": "hardcoded",
+                    "start_utc": "2016-02-14T13:59:13.611338Z"
+                }
+
+            ]
+        }
+    }
+}

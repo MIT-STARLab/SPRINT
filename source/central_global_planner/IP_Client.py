@@ -1,4 +1,4 @@
-import logging  
+import logging
 import sys, os, socket
 import pickle
 from OpenSSL import SSL # pip install pyOpenSSL
@@ -56,10 +56,10 @@ class IP_Client:
         ctx = SSL.Context(SSL.SSLv23_METHOD)
         ctx.set_verify(SSL.VERIFY_PEER, self.verify_cb) # Demand a certificate
         # print("trying to use: ",os.path.join(c_dir, 'client.pkey'))
-        ctx.use_privatekey_file  ( os.path.join(c_dir, 'client.pkey') )
-        ctx.use_certificate_file ( os.path.join(c_dir, 'client.cert') )
+        ctx.use_privatekey_file  ( os.path.join(c_dir, 'Client.pkey') )
+        ctx.use_certificate_file ( os.path.join(c_dir, 'Client.cert') )
         ctx.load_verify_locations( os.path.join(c_dir, 'CA.cert')     )
-
+    
         self.node_client = SSL.Connection(ctx,  socket.socket(socket.AF_INET, socket.SOCK_STREAM) )
 
 
@@ -75,7 +75,6 @@ class IP_Client:
         try:
             self.__setup_client()   # Setting up & tearing down seems to be necessary to use the same overall client wrapper for different server IPs; that, or maintain a connection for each
             self.node_client.connect((self.ips_by_id[targ_id], self.port))
-
             toSend   = len(bytes_tx)
 
             self.node_client.send(START_MARKER+encodeStrLen(bytes_tx))

@@ -10,7 +10,7 @@ Incorporating the **C**onstellation **I**nvestigation **R**epository with **C**o
 
 # General Setup
 
-1. Clone the repo: `git clone git@github.com:MIT-STARLab/SPRINT.git`
+1. Clone the repo: `git clone git@github.mit.edu:star-lab/SPRINT.git`
 1. Init the appropriate submodules: 
     1. `cd SPRINT/source` 
     1. `git submodule init circinus_global_planner circinus_orbit_link_public circinus_orbit_propagation circinus_orbit_viz circinus_sim circinus_tools`
@@ -40,7 +40,20 @@ Incorporating the **C**onstellation **I**nvestigation **R**epository with **C**o
 1. Navigate to `SPRINT/scripts`
 1. Run simulation: <br>
     a. `./run_const_sim.sh --use orig_circinus_zhou` to specify a case corresponding to `inputs/cases/orig_circinus_zhou`.<br>
-    b. `./run_const_sim.sh --help` for a description of the other options.<br>
+    b. `./run_const_sim.sh --help` for a description of the other options.<br> 
+    
+## Separated Simulation Demo 
+This simulation can be run such that each satellite runs on separate hardware, say a Raspberry Pi. The following demo is for a 2-satellite constellation.
+1. For the ground station network: <br> 
+   a. Navigate to `SRPINT/scripts`
+   b. `./run_const_sim.sh --use circinus_zhou_2_sats --ground` to specify a two-satellite case and to run the ground station network part
+2. For each satellite: <br>
+   a. Navigate to `SPRINT/scripts`
+   b. `./run_const_sim.sh --use circinus_zhou_2_sats --satellite` to specify a two-satellite case and to run the satellite part
+
+The satellites can be initialized before the ground station network; however, satellites are given 100 tries to connect to the ground station network, once every second. If the ground station network isn't initialized in time, the satellite program exits.
+   
+   
 
 # Submodule dependencies
 * [circinus_global_planner](https://github.com/MIT-STARLab/circinus_global_planner)
@@ -53,4 +66,4 @@ Incorporating the **C**onstellation **I**nvestigation **R**epository with **C**o
 These should be managed as if they are independent and up to date with their own master, before committing the folder from the the SPRINT main repository (which then tracks the commit of the subrepo).
 
 # History
-SPRINT was initiated as CIRCINUS, by [apollokit](https://github.com/apollokit)
+SPRINT was initiated by CIRCINUS, by [apollokit](https://github.com/apollokit).

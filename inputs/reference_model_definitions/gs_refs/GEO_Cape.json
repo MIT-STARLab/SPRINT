@@ -1,0 +1,46 @@
+{
+    "version":"0.0.1",
+    "which_config":"operational_profile_config",
+    "where_should_i_be":"inputs/cases/",
+    "what_goes_here":"things that only matter to the choices to be made about the current case.",
+
+    "ops_profile_params": {
+        "obs_params": {
+            "num_targets": 19,
+            "target_set_name": "GEO-CAPE Scenes",
+            "target_set_version": "1",
+            "target_set_id": "2019-2-20",
+            "elevation_cutoff_deg":60,
+            "_comment":"Scene numbers listed correspond to GEO-CAPE FR scenes. Lat/long correspond to the center of each scene.",
+            "targets": [
+                {"id": "targ0",  "name": "scene1",  "name_pretty": "obs0",  "latitude_deg": 47.9395, "longitude_deg": -126.8506, "height_m": 0},
+                {"id": "targ1",  "name": "scene2",  "name_pretty": "obs1",  "latitude_deg": 43.4326, "longitude_deg": -127.9426, "height_m": 0},
+                {"id": "targ2",  "name": "scene3",  "name_pretty": "obs2",  "latitude_deg": 36.8907, "longitude_deg": -121.5899, "height_m": 0},
+                {"id": "targ3",  "name": "scene4",  "name_pretty": "obs3",  "latitude_deg": 31.8694, "longitude_deg": -119.7753, "height_m": 0},
+                {"id": "targ4",  "name": "scene5",  "name_pretty": "obs4",  "latitude_deg": 26.9929, "longitude_deg": -95.3666,  "height_m": 0},
+                {"id": "targ5",  "name": "scene6",  "name_pretty": "obs5",  "latitude_deg": 28.3815, "longitude_deg": -89.9399,  "height_m": 0},
+                {"id": "targ6",  "name": "scene7",  "name_pretty": "obs6",  "latitude_deg": 27.7502, "longitude_deg": -84.8929,  "height_m": 0},
+                {"id": "targ7",  "name": "scene8",  "name_pretty": "obs7",  "latitude_deg": 30.3431, "longitude_deg": -72.8011,  "height_m": 0},
+                {"id": "targ8",  "name": "scene9",  "name_pretty": "obs8",  "latitude_deg": 30.7858, "longitude_deg": -79.1106,  "height_m": 0},
+                {"id": "targ9",  "name": "scene10", "name_pretty": "obs9",  "latitude_deg": 24.7100, "longitude_deg": -77.3878,  "height_m": 0},
+                {"id": "targ10", "name": "scene11", "name_pretty": "obs10", "latitude_deg": 34.9294, "longitude_deg": -69.5721,  "height_m": 0},
+                {"id": "targ11", "name": "scene12", "name_pretty": "obs11", "latitude_deg": 43.4378, "longitude_deg": -74.9875,  "height_m": 0},
+                {"id": "targ12", "name": "scene13", "name_pretty": "obs12", "latitude_deg": 44.9772, "longitude_deg": -83.2117,  "height_m": 0},
+                {"id": "targ13", "name": "scene14", "name_pretty": "obs13", "latitude_deg": 45.7600, "longitude_deg": -87.0750,  "height_m": 0},
+                {"id": "targ14", "name": "scene15", "name_pretty": "obs14", "latitude_deg": 22.2823, "longitude_deg": -94.9570,  "height_m": 0},
+                {"id": "targ15", "name": "scene16", "name_pretty": "obs15", "latitude_deg": 42.4901, "longitude_deg": -64.4311,  "height_m": 0},
+                {"id": "targ16", "name": "scene17", "name_pretty": "obs16", "latitude_deg": 35.4907, "longitude_deg": -75.4724,  "height_m": 0},
+                {"id": "targ17", "name": "scene18", "name_pretty": "obs17", "latitude_deg": 24.4862, "longitude_deg": -82.5786,  "height_m": 0},
+                {"id": "targ18", "name": "scene19", "name_pretty": "obs18", "latitude_deg": 41.7472, "longitude_deg": -68.6284,  "height_m": 0}
+            ]
+        },
+        "link_disables": {
+            "_comment": "The satellite and GS ids below will always be interpreted as strings. if the ids are specified as integers in other files,  they will be considered the same if their string representation is the same",
+            "dlnk_direc_disabled_gs_ID_by_sat_IDstr": {
+            },
+            "xlnk_direc_disabled_xsat_ID_by_sat_IDstr": {
+            }
+        }
+    }
+
+}

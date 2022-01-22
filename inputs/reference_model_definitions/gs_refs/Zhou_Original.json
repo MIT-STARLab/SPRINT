@@ -1,0 +1,67 @@
+{
+    "config_title": "ground_station_network_config",
+    "version-gsndef": "0.0.1",
+    "verbose_details": "https://github.mit.edu/star-lab/CIRCINUS/blob/SPRINT-restructuring-1/inputs/nom_sprint/groundstation_network/README.md",
+    "network_definition": {
+        "version-gsn": "0.0.1",
+        "gs_net_params": {
+            "num_stations": 4,
+            "gs_network_name": "Zhou 2017 GS",
+            "gs_network_version": "1",
+            "elevation_cutoff_deg": 10,
+            "stations": [
+                {
+                    "id": "G0",
+                    "name": "Beijing",
+                    "name_pretty": "Beijing 0",
+                    "latitude_deg": 40.0,
+                    "longitude_deg": 116.0,
+                    "height_m": 0,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G1",
+                    "name": "Kashi",
+                    "name_pretty": "Kashi 1",
+                    "latitude_deg": 39.5,
+                    "longitude_deg": 76.0,
+                    "height_m": 0,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G2",
+                    "name": "Sanya",
+                    "name_pretty": "Sanya 2",
+                    "latitude_deg": 18.0,
+                    "longitude_deg": 109.5,
+                    "height_m": 0,
+                    "comm_type": ""
+                },
+                {
+                    "id": "G3",
+                    "name": "Xi'an",
+                    "name_pretty": "Xi'an 3",
+                    "latitude_deg": 34.0,
+                    "longitude_deg": 108.0,
+                    "height_m": 0,
+                    "comm_type": ""
+                }
+            ]
+        },
+        "sim_gs_network_params": {
+            "_comments": "TODO: Reevaluate the location of these params. (Should they go in the sim file? Or GP? I think they are describing the behavior of the network, so this should be ok)",
+            "time_epsilon_s": 1,
+            "gsn_ps_params": {
+                "_comments": [
+                    "replan_release_wait_time_s simulates the amount of time required to actually run the global planner in real life. from the perspective of this code the global planner will run instantaneously. After it runs, the sim will wait this amount of time before making those plans available",
+                    "release_first_plans_immediately = True means that global planner will immediately make its first set of global plans available (they won't be queued up for release at a later time)",
+                    "6300 seconds is 105 minutes, about the length of an orbit at 1000 km altitude",
+                    "replan release time is conservative here"
+                ],
+                "replan_interval_s": 6300,
+                "replan_release_wait_time_s": 60,
+                "release_first_plans_immediately": true
+            }
+        }
+    }
+}

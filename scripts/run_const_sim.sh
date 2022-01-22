@@ -7,7 +7,7 @@ printf "running: $0\n"
 # NOTE! THIS MUST MATCH PARAMS IN const_sim_params_inputs!
 restore_pickle_cmdline_opt=false
 restore_pickle_cmdline_name=""
-PoM='python'
+PoM='python' #'matlab'  # Signalling matlab attempts to use it for orbit propagation & access calculation
 
 CASE_NAME="NONE"  # Don't replace here; replace using "--use NEW_CASE_DIR_NAME" as flag and value on CLI
 OPS_CASE="NONE" # USE TBD
@@ -17,6 +17,8 @@ RECOMPUTE_ALL=false
 RECOMP_ORBIT_PROP=false
 RECOMP_ORBIT_LINK=false
 STANDALONE_GP=false
+GROUND_ONLY=false
+SATELLITE_ONLY=false
 ipdb=''
 
 # ---- Accept user command line input ---- #
@@ -37,6 +39,8 @@ then
             echo "To call, do so in this manner: ./runner_const_sim.sh [--flag [arg1 [arg2 []]]"
             echo "With no flags or arguments, defaults are used, including the nominal use case."
             echo "Available flags:"
+            printf '%s\t\t%s\n' "--ground_sim" "Starts only ground simulation (GP, Ground Stations)"
+            printf '%s\t\t%s\n' "--satellite" "Starts standalone satellite simulation"
             printf '%s\t\t%s\n' "--rem_gp" "Starts standalone GP server in background before launching sim."
             printf '%s\t\t%s\n' "--F_all" "Forces all modules to be recomputed, rather than using previously computed (supposedly identical) versions of input files."
             printf '%s\t\t%s\n' "--F_prop" "Forces propagation module to be recomputed, rather than using previously computed (supposedly identical) version."
@@ -46,12 +50,14 @@ then
             printf '%s\t\t%s\n' "--use [arg]" "Supply the folder-name of the use case under circinus/inputs/cases/[use case]"
             exit 0
         fi
-        if [ "${!i}" = "--rem_gp" ];  then STANDALONE_GP=true;     echo "Starting standalone GP server in background: $STANDALONE_GP"; fi
-        if [ "${!i}" = "--F_all" ];   then RECOMPUTE_ALL=true;     echo "Forcing recomputation of all modules: $RECOMPUTE_ALL "; fi
-        if [ "${!i}" = "--F_prop" ];  then RECOMP_ORBIT_PROP=true; echo "Forcing recomputation orbit propagation module: $RECOMP_ORBIT_PROP "; fi
-        if [ "${!i}" = "--F_link" ];  then RECOMP_ORBIT_LINK=true; echo "Forcing recomputation orbit link module: $RECOMP_ORBIT_LINK "; fi
-        if [ "${!i}" = "--recomp" ];  then RECOMPUTE_ALL=true;     echo "Forcing recomputation of all modules: $RECOMPUTE_ALL "; fi
-        if [ "${!i}" = "--fromPkl" ]; then h=$((i+1)); restore_pickle_cmdline_opt=true; restore_pickle_cmdline_name="${!h}"; ((skip=1)); echo "restore_pickle_cmdline_opt from $restore_pickle_cmdline_name"; fi
+        if [ "${!i}" = "--ground" ];         then GROUND_ONLY=true;                   echo "Starting only ground simulation (GP, Ground Stations): $GROUND_ONLY"; fi
+        if [ "${!i}" = "--satellite" ];      then SATELLITE_ONLY=true;                echo "Starting only satellite simulation: $SATELLITE_ONLY"; fi
+        if [ "${!i}" = "--rem_gp" ];         then STANDALONE_GP=true;                 echo "Starting standalone GP server in background: $STANDALONE_GP"; fi
+        if [ "${!i}" = "--F_all" ];          then RECOMPUTE_ALL=true;                 echo "Forcing recomputation of all modules: $RECOMPUTE_ALL "; fi
+        if [ "${!i}" = "--F_prop" ];         then RECOMP_ORBIT_PROP=true;             echo "Forcing recomputation orbit propagation module: $RECOMP_ORBIT_PROP "; fi
+        if [ "${!i}" = "--F_link" ];         then RECOMP_ORBIT_LINK=true;             echo "Forcing recomputation orbit link module: $RECOMP_ORBIT_LINK "; fi
+        if [ "${!i}" = "--recomp" ];         then RECOMPUTE_ALL=true;                 echo "Forcing recomputation of all modules: $RECOMPUTE_ALL "; fi
+        if [ "${!i}" = "--fromPkl" ];        then h=$((i+1)); restore_pickle_cmdline_opt=true; restore_pickle_cmdline_name="${!h}"; ((skip=1)); echo "restore_pickle_cmdline_opt from $restore_pickle_cmdline_name"; fi
         if [ "${!i}" = "--ipdb" ];    then ipdb=' -m ipdb -c continue'; echo "Running with IPDB enabled for exceptions "; fi
         if [ "${!i}" = "--use" ];     then h=$((i+1)); CASE_NAME="${!h}"; ((skip=1)); echo "Use case: $CASE_NAME"; fi
     done
@@ -130,7 +136,6 @@ fi
 
 # --------------------------------- EXECUTION  --------------------------------- #
 
-
 # -------- ORBIT PROPAGATION  -------- #
 if [ ! -f $prop_data_r ] || [ $RECOMP_ORBIT_PROP == true ] || [ $RECOMPUTE_ALL == true ]; # Avoid recomputing if it exists, unless told otherwise
 then
@@ -138,6 +143,7 @@ then
     cd $ORBIT_PROP_PATH/python_runner &>/dev/null
     printf "\nrunning circinus_orbit_propagation:\npython$ipdb runner_orbitprop.py --inputs_location $PATH_TO_INPUTS --case_name $CASE_NAME --prop_and_accesses_language $PoM\n\n"
     python $ipdb runner_orbitprop.py --inputs_location $PATH_TO_INPUTS --case_name $CASE_NAME --prop_and_accesses_language $PoM
+    echo "$ORBIT_PROP_PATH\n"
 
 else
     printf "Skipping Orbit Propagation Calculation, exists...\n\n"
@@ -153,11 +159,11 @@ then
     printf "\nrunning circinus_orbit_link_public:\npython$ipdb runner_orbitlink.py --inputs_location $PATH_TO_INPUTS --case_name $CASE_NAME --link_calculator_language $PoM\n\n"
     python $ipdb runner_orbitlink.py --inputs_location $PATH_TO_INPUTS --case_name $CASE_NAME --link_calculator_language $PoM
 
+
 else
     printf "Skipping Orbit Link Calculation, exists...\n\n"
 fi
 if [ ! -f $data_rates_r ]; then echo "Orbit Link Calc Failed, exiting..."; exit 1; fi
-
 
 
 if [ $STANDALONE_GP == true ]; # Avoid recomputing if it exists, unless told otherwise
@@ -167,12 +173,11 @@ then
     sleep 5 # time to spin up
 fi
 
-
 # -------- SIMULATION  -------- #
 cd  $CIRCINUS_SIM_PATH/python_runner/
-# replace 'python' with 'mprof run' (ater pip installing memory_profiler) to track memory use; afterwards, 'mprof plot' in the python folder will display
-python $ipdb runner_const_sim.py --inputs_location $PATH_TO_INPUTS --case_name $CASE_NAME --rem_gp $STANDALONE_GP --restore_pickle "$restore_pickle_cmdline_arg"
-# python -m cProfile 
+# replace 'python' with 'mprof run -M' (after pip installing memory_profiler) to track memory use; afterwards, 'mprof plot' in the python folder will display
+python $ipdb runner_const_sim.py --inputs_location $PATH_TO_INPUTS --case_name $CASE_NAME --rem_gp $STANDALONE_GP --ground_sim $GROUND_ONLY --satellite $SATELLITE_ONLY --restore_pickle "$restore_pickle_cmdline_arg"
+    # python -m cProfile
 
 
 # ---- Replace unused submodule empty directories, quietly ---- #

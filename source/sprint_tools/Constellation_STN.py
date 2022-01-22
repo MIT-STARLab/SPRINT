@@ -1,24 +1,30 @@
 import json
-import sys
 import networkx as nx
 import matplotlib.pyplot as plt
 from sprint_tools.Sprint_Types import AgentType 
 
-## Constellation_STN will track the network topologically, with embedded temporal info.
-#
-#  This object is built to manage the underlying STN which describes the 
-#  domain over which planning and replanning takes place.  It will provide
-#  concise access to these details, searchability, and fracturability such that"
-#  subgraphs can be appropriately spun off of it.  It will provide time evolution
-#  functionality.
-class Constellation_STN:
+"""
+Constellation_STN will track the network topologically, with embedded temporal info.
 
-    ## Constellation_STN.from_orbit_prop_data_file
-    # 
-    #  This classmethod-style constructor ingests a file of the format given by 
-    #  orbit_prop_data.json, the output of the orbit propagator.
-    #  @param self      The object pointer.
-    #  @param file_name Name of the file where the access data is generated
+This object is built to manage the underlying STN which describes the 
+domain over which planning and replanning takes place.  It will provide
+concise access to these details, searchability, and fracturability such that"
+subgraphs can be appropriately spun off of it.  It will provide time evolution
+functionality.
+
+"""
+
+class Constellation_STN:
+    """
+    Constellation_STN.from_orbit_prop_data_file
+
+    This classmethod-style constructor ingests a file of the format given by
+    orbit_prop_data.json, the output of the orbit propagator.
+    :param self      The object pointer.
+    :param file_name Name of the file where the access data is generated
+
+    """
+
     @classmethod
     def from_orbit_prop_data_file(cls, file_name):
         orbit_prop_data_FILENAME = file_name
@@ -27,14 +33,17 @@ class Constellation_STN:
         return cls(opd)
 
 
-    ## Constellation_STN::Constructor
     #
-    #  Takes the datablob expected in the orbit_prop_data file.  Good for when
-    #  the sim startup loads the file ahead of time.  To be superceded by 
-    #  a bare constructor.
-    #  @param self              The object pointer.
-    #  @param orbit_prop_data   Blob of orbit_prop_data.json file
+
     def __init__(self, stn_params):
+        """
+        Takes the datablob expected in the orbit_prop_data file.  Good for when
+        the sim startup loads the file ahead of time.  To be superceded by
+        a bare constructor.
+        :param self              The object pointer.
+        :param orbit_prop_data   Blob of orbit_prop_data.json file
+        :param stn_params:
+        """
         self.graph = nx.Graph()
 
         # All of these structures: 
@@ -52,7 +61,6 @@ class Constellation_STN:
 
         # The count in this shall be a proxy for number and ID-order of 
         # satellites, and reused in the subsequent listing retrievals
-
 
         #  Add all elements to graph to establish types ahead of use
         for sat_ID in sat_id_by_indx:
@@ -136,12 +144,16 @@ class Constellation_STN:
                 o+=1
 
 
-    ## Show Constellation_STN
-    # 
-    #  Provides a quick and dirty visualizer. Not suitable for large networks.
-    #  Only shows overall topology, not temporal features.
-    #  @param self      The object pointer to the Constellation_STN.
+
     def show(self):
+        """
+        Show Constellation_STN
+
+        Provides a quick and dirty visualizer. Not suitable for large networks.
+        Only shows overall topology, not temporal features.
+        :param self      The object pointer to the Constellation_STN.
+
+        """
         color_map = []
         for node in self.graph:
             if node['type'] == AgentType.SAT:
@@ -155,28 +167,28 @@ class Constellation_STN:
         plt.show()
 
 
-    ## Window Checker
-    #
-    #  private: Abstracted as such to allow us to change how we validate the window
-    #  @param self  internal for now, could be remove from class
-    #  @param edge  edge under consideration (carries windows in it)
-    #  @param time  time to check - type dictated by constructor; mjd float, based in input format
     def check_linkwindow_valid(self, edge, time):
+        """
+        Window Checker
+        private: Abstracted as such to allow us to change how we validate the window
+        :param edge: edge under consideration (carries windows in it)
+        :param time: time to check - type dictated by constructor; mjd float, based in input format
+        """
         for w in edge[2]['windows']:  # If we guarentee the windows are in order, could cut this iteration off sooner
             if time > w[0] and time < w[1]:
                 return True
         return False
 
-
-
-    ## Check if a link to/from ground is available. 
-    #       # NOTE: Depricated, use Constellation_STN::get_graph_neighbors()  (or at least CALL it)
-    #  For a particular node and time, checks if an access to any GS exists.
-    #  @param self      The object pointer to the Constellation_STN.
-    #  @param node_ID   The node (a sat) we want to confirm can reach a GS
-    #  @param time      The time when we want to check if the time exists - type dictated by constructor; mjd float, based in input format
-    #  @return list     Returns an empty list if none available
     def check_groundlink_available(self, node_ID, time):
+        """
+        Check if a link to/from ground is available.
+        NOTE: Deprecated, use Constellation_STN::get_graph_neighbors()  (or at least CALL it)
+
+        :param node_ID: The node (a sat) we want to confirm can reach a GS
+        :param time: The time when we want to check if the time exists - type dictated by constructor; mjd float,
+                     based in input format
+        :return:     Returns an empty list if none available
+        """
         downlinks = [e for e in self.graph.edges(node_ID,data=True) if (self.graph.nodes[e[1]]['type'] == AgentType.GS) ]  # Filter link windows over those including the node of interest, and paired with a GS
         accessable_GS = []   
         i = 0
@@ -186,15 +198,18 @@ class Constellation_STN:
             i+=1
         return accessable_GS
 
-
-    ## Check if a particular link between two nodes is valid
-    # 
-    #  For a particular node and time, checks if an access to any GS exists.
-    #  @param self      The object pointer to the Constellation_STN.
-    #  @param node_1_ID     a particular node (sat or GS or obs)
-    #  @param node_2_ID     another particular node (sat or GS or obs)
-    #  @param time      The time when we want to check if the time exists - type dictated by constructor; mjd float, based in input format
     def check_access_available(self, node_1_ID, node_2_ID, time):
+        """
+        Check if a particular link between two nodes is valid
+
+        For a particular node and time, checks if an access to any GS exists.
+
+        :param node_1_ID:  a particular node (sat or GS or obs)
+        :param node_2_ID:  another particular node (sat or GS or obs)
+        :param time:       The time when we want to check if the time exists - type dictated by constructor; mjd float,
+                           based in input format
+        :return:
+        """
         accesses = [e for e in self.graph.edges(node_1_ID,data=True) if (e[1] == node_2_ID)]  # Filter link windows over those including the node of interest, and paired with a GS
         assert(len(accesses) <= 1) # Looking for a particular link, should be singular at most, or graph built wrong
         if(len(accesses) == 0):
@@ -202,38 +217,37 @@ class Constellation_STN:
         else:
             return self.check_linkwindow_valid(accesses[0], time)
 
+    def get_sats_with_cur_access_to(self, agent_ID, time, check_satlist=None):  # TODO, add some negative version of the check that we can avoid
+        """
+        Get all the sats with a valid current window for this groundstation; can limit it to a list if provided
+        # NOTE: Deprecated, use Constellation_STN::get_graph_neighbors()
 
-    ## get_satID_list
-    #
-    #  @param self  pointer to self
-    #  works, but removed as unneeded and shouldn't be the authority on this list (useful for test though)
-    # def satID_list(self):
-    #     return [n for n in self.graph.nodes if ('S' in n)]
-
-
-    ## Get all the sats with a valid current window for this groundstation; can limit it to a list if provided
-    #       # NOTE: Depricated, use Constellation_STN::get_graph_neighbors()
-    #  @param self          pointer to self
-    #  @param agent_ID      ID of the groundstation or sat of interest
-    #  @param check_satlist list of SatID's to limit the search to
-    def get_sats_with_cur_access_to(self, agent_ID, time, check_satlist=None):  # TODO, add some negatgive version of the check that we can avoid
+        :param agent_ID: ID of the groundstation or sat of interest
+        :param time:
+        :param check_satlist: list of SatID's to limit the search to
+        :return:
+        """
         if check_satlist is None: # just get all current accesses for this GS
             accessable_sats = (e[1] for e in self.graph.edges(agent_ID,data=True) if self.check_linkwindow_valid(e, time) ) # Access for this GS that are currently valid
         else:
             accessable_sats = (e[1] for e in self.graph.edges(agent_ID,data=True) if (self.check_linkwindow_valid(e, time) and (e[1] in check_satlist) ) )  # But limited to the list;  TODO - if this list itir blows up, optimize
-        
         return accessable_sats
-    
-    ## Get all the agents with line-of-sight access to neighbors, with optional filters
-    #
-    #  @param self          this Constellation_STN
-    #  @param agent_ID      ID of the groundstation or sat of interest
-    #  @param time          If time provided, only return neighbors whose corresponding access link window (edge) is active
-    #  @param neigh_type    If type provided, only return neighbors who match that type
-    #  @param guest_list    If list provided, only return neighbors exist on the list       TODO - what use case shouldn't this filter be in the caller's flow?
-    def get_graph_neighbors(self, agent_ID, time=None, neigh_type=None, guest_list=None):  
 
-        # TODO - when get_sats_with_cur_access_to is fully replaced by get_graph_neighbors, replace the object check_linkwindow_valid implementation with this.
+    def get_graph_neighbors(self, agent_ID, time=None, neigh_type=None, guest_list=None):
+        """
+        Get all the agents with line-of-sight access to neighbors, with optional filters
+
+        :param agent_ID:    ID of the groundstation or sat of interest
+        :param time:        If time provided, only return neighbors whose corresponding access link window (edge) is
+                            active
+        :param neigh_type:  If type provided, only return neighbors who match that type
+        :param guest_list:  If list provided, only return neighbors exist on the list
+                            TODO - what use case shouldn't this filter be in the caller's flow?
+        :return:
+        """
+
+        # TODO - when get_sats_with_cur_access_to is fully replaced by get_graph_neighbors,
+        #  replace the object check_linkwindow_valid implementation with this.
         def check_access_active(edge_data, time):
             for w in edge_data['windows']:  
                 if time > w[0] and time < w[1]:

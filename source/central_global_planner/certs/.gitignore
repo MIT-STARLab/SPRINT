@@ -1,2 +1,4 @@
 *.cert
 *.pkey
+*.req
+*.pem

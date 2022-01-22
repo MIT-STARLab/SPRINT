@@ -91,8 +91,8 @@ class IP_Server(Thread):
         ctx = SSL.Context(SSL.SSLv23_METHOD)
         ctx.set_options(SSL.OP_NO_SSLv2)
         ctx.set_verify(SSL.VERIFY_PEER|SSL.VERIFY_FAIL_IF_NO_PEER_CERT, self.__verify_cb) # Demand a certificate
-        ctx.use_privatekey_file  ( os.path.join(s_dir, 'server.pkey') )
-        ctx.use_certificate_file ( os.path.join(s_dir, 'server.cert') )
+        ctx.use_privatekey_file  ( os.path.join(s_dir, 'Server.pkey') )
+        ctx.use_certificate_file ( os.path.join(s_dir, 'Server.cert') )
         ctx.load_verify_locations( os.path.join(s_dir, 'CA.cert'    ) )
 
         bind_ip = '' # '0.0.0.0' # listen to all IP's...hence why we have SSL!

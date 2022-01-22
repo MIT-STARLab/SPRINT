@@ -34,8 +34,8 @@ except ImportError:
     exit()
 
 try:
-    sys.path.insert(0, "../circinus_orbit_link/python_runner")
-    from circinus_orbit_link.python_runner import simple_link_calc # py_links_wrapper
+    sys.path.insert(0, "../circinus_orbit_link_public/python_runner")
+    from circinus_orbit_link_public.python_runner import simple_link_calc # py_links_wrapper
 except ImportError:
     print("Error while importing Link Calculator")
     exit()
@@ -142,7 +142,7 @@ def main():
     gp_wrapper = GlobalPlannerWrapper(sim_params)
 
 
-    ##### Relevant Imorts   #####
+    ##### Relevant Imports   #####
 
     from sprint_tools.OEnum import PrintVerbosity
     from IP_Server import IP_Server
@@ -159,7 +159,7 @@ def main():
             __print(exc,always=True)
 
     server_cfg = yaml_content['server_config']
-
+    print("server config in cgp_main.py:",server_cfg)
     global server
     server = IP_Server(server_cfg['port'], server_cfg['log_name'], printVerbose=PrintVerbosity.ALL if global_verbose_flag else PrintVerbosity.WARNINGS)   # Lazy - config['omni_port']  # was 54202
     server.setName("Receiver Thread")

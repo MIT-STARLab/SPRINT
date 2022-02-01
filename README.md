@@ -8,6 +8,8 @@
 
 Incorporating the **C**onstellation **I**nvestigation **R**epository with **C**ommunications, **I**nter-agent **N**etworking, **U**ncertainty, and **S**cheduling
 
+For details on the structure of SPRINT, please see the SPRINT Documentation document located in the documentation folder.
+
 # General Setup
 
 1. Clone the repo: `git clone git@github.mit.edu:star-lab/SPRINT.git`
